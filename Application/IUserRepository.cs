@@ -1,4 +1,4 @@
-// using Entities.Models;
+// using Domain.Core.Models;
 //
 // namespace UseCases;
 //
