@@ -8,25 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9654f08-df99-43e1-add7-45ae708fd92a" name="Changes" comment="добавил проект для соблюдение clean acrhiture">
-      <change afterPath="$PROJECT_DIR$/Entities/Templates/AppIdDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entities/Templates/ChangePasswordDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entities/Templates/CheckExistDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entities/Templates/DeleteFriendDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entities/Templates/FriendDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entities/Templates/LoginDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entities/Templates/RegisterDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entities/Templates/RegisterTgDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Class1.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProxyAPILeval/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProxyAPILeval/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProxyAPILeval/ProxyAPILeval.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProxyAPILeval/ProxyAPILeval.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProxyAPILeval/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProxyAPILeval/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OTSCAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OTSCAPI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/Entities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Entities.csproj" afterDir="false" />
+    <list default="true" id="d9654f08-df99-43e1-add7-45ae708fd92a" name="Changes" comment="всех удалили">
+      <change beforePath="$PROJECT_DIR$/Application/IFriendRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/IFriendRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +55,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Launch Settings Profile.ProxyAPILeval: http.executor": "Debug",
     "DefaultPlantUmlFileTemplate": "UML Use Case",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -123,7 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1741603648372</updated>
-      <workItem from="1741603649439" duration="5500000" />
+      <workItem from="1741603649439" duration="9045000" />
     </task>
     <task id="LOCAL-00001" summary="стартуем">
       <option name="closed" value="true" />
@@ -149,7 +135,39 @@
       <option name="project" value="LOCAL" />
       <updated>1741609031615</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="подабавлял классов">
+      <option name="closed" value="true" />
+      <created>1741609328291</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741609328291</updated>
+    </task>
+    <task id="LOCAL-00005" summary="переписал плант">
+      <option name="closed" value="true" />
+      <created>1741610285839</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741610285839</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[p">
+      <option name="closed" value="true" />
+      <created>1741611857148</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741611857148</updated>
+    </task>
+    <task id="LOCAL-00007" summary="всех удалили">
+      <option name="closed" value="true" />
+      <created>1741612481202</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741612481202</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +179,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="стартуем" />
     <MESSAGE value="добавил проект для соблюдение clean acrhiture" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавил проект для соблюдение clean acrhiture" />
+    <MESSAGE value="подабавлял классов" />
+    <MESSAGE value="переписал плант" />
+    <MESSAGE value="[p" />
+    <MESSAGE value="всех удалили" />
+    <option name="LAST_COMMIT_MESSAGE" value="всех удалили" />
   </component>
 </project>

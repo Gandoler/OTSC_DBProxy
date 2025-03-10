@@ -1,4 +1,3 @@
-using Entities.Models;
 using Entities.Templates;
 
 namespace UseCases;
