@@ -1,0 +1,106 @@
+@startuml
+rectangle "Прокси" as DBPROXY { 
+    rectangle "Domain" as Domain {
+        rectangle "Domain.Core" as DomainCore {
+            rectangle "Модель" as MODEL {
+                rectangle "FriendList" as FriendList
+                rectangle "Связь APPID - Mail" as MailC
+                rectangle "Связь APPID - Telegram" as TgC
+                rectangle "Поздравление" as Pozdrik
+                rectangle "Аккаунты" as Users
+            }
+            
+            rectangle "Шаблоны" as Templates {
+                    rectangle "Регистрация" as RegistTemp
+                    rectangle "Подписка Telegram" as RegistTGTemp
+                    rectangle "Вход" as LoginTemp
+                    rectangle "Проверка существования" as CHExistTemp
+                    rectangle "Смена пароля" as ChangePswTemp
+                    rectangle "Передача ID" as AppidTemp
+                    rectangle "Добавление/Обновление" as ADDAndUpdateTemp
+                    rectangle "Удаление" as DeleteTemp
+            }
+        }
+        
+        rectangle "Domain.Interfaces" as DomainInterfaces {
+            rectangle "User" as IUser {
+                rectangle "CreateUser"
+                rectangle "UpdateUser"
+                rectangle "ExistUserCheck"
+            }
+
+            rectangle "MailComp" as IMAILCOMP {
+                rectangle "AddMail"
+                rectangle "GetId"
+            }
+
+            rectangle "TGComp" as ITGCOMP {
+                rectangle "AddTG"
+                rectangle "GetId"
+            }
+
+            rectangle "FriendList" as IFriendlist {
+                rectangle "AddFriend"
+                rectangle "DeleteFriend"
+                rectangle "UpdateFriend"
+                rectangle "SelectForAppID"
+                rectangle "GetIdPozdr"
+                rectangle "GetTodayKents"
+            }
+
+            rectangle "Pozdrik" as IPozdrik {
+                rectangle "AddIntrAndPozh"
+                rectangle "SelectPozdr"
+            }
+        }
+    }
+
+   
+    rectangle "Уровень интерфейсов" as Application {
+        rectangle "User" as IUser {
+            rectangle "CreateUser"
+            rectangle "UpdateUser"
+            rectangle "ExistUserCheck"
+        }
+
+        rectangle "MailComp" as IMAILCOMP {
+            rectangle "AddMail"
+            rectangle "GetId"
+        }
+
+        rectangle "TGComp" as ITGCOMP {
+            rectangle "AddTG"
+            rectangle "GetId"
+        }
+
+        rectangle "FriendList" as IFriendlist {
+            rectangle "AddFriend"
+            rectangle "DeleteFriend"
+            rectangle "UpdateFriend"
+            rectangle "SelectForAppID"
+            rectangle "GetIdPozdr"
+            rectangle "GetTodayKents"
+        }
+
+        rectangle "Pozdrik" as IPozdrik {
+            rectangle "AddIntrAndPozh"
+            rectangle "SelectPozdr"
+        }
+    }
+
+    rectangle "API" as APIlevel {
+        rectangle "Регистрация (Login, Psw, Email)" as REGISTR
+        rectangle "Регистрация TG (APPID, TGID)" as RegistrTGID
+        rectangle "Вход (Login, Psw)" as LOGIN
+        rectangle "Забыли пароль? (Email)" as CheckEXIST
+        rectangle "Смена пароля (APPID, Psw)" as ChangePsw
+        
+        rectangle "Выбор (APPID)" as SELECTAPPID
+        rectangle "Обновление (APPID, FriendUsername, FriendName, DateB, Interest, Pozh)" as Update
+        rectangle "Добавление (APPID, FriendUsername, FriendName, DateB, Interest, Pozh)" as Add
+        rectangle "Удаление (APPID, FriendUsername)" as Delete
+    }
+}
+
+database "База данных" as db
+@enduml
