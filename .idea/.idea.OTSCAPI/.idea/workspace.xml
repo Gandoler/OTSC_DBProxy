@@ -8,11 +8,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9654f08-df99-43e1-add7-45ae708fd92a" name="Changes" comment="стартуем">
-      <change afterPath="$PROJECT_DIR$/Entities/ProxyPlant.puml" afterDir="false" />
+    <list default="true" id="d9654f08-df99-43e1-add7-45ae708fd92a" name="Changes" comment="добавил проект для соблюдение clean acrhiture">
+      <change afterPath="$PROJECT_DIR$/Entities/Templates/AppIdDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/Templates/ChangePasswordDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/Templates/CheckExistDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/Templates/DeleteFriendDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/Templates/FriendDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/Templates/LoginDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/Templates/RegisterDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/Templates/RegisterTgDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Class1.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProxyAPILeval/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProxyAPILeval/Properties/launchSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProxyAPILeval/ProxyAPILeval.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProxyAPILeval/ProxyAPILeval.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProxyAPILeval/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProxyAPILeval/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OTSCAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OTSCAPI/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Entities/Entities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Entities.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OTSC_API.sln" beforeDir="false" afterPath="$PROJECT_DIR$/OTSC_API.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +55,9 @@
     "accountId": "f3e73c4f-cf3f-42ba-87f4-89c2d2980552"
   }
 }]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Application/Class1.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 6
@@ -106,7 +123,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1741603648372</updated>
-      <workItem from="1741603649439" duration="5028000" />
+      <workItem from="1741603649439" duration="5500000" />
     </task>
     <task id="LOCAL-00001" summary="стартуем">
       <option name="closed" value="true" />
@@ -124,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741604722576</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="добавил проект для соблюдение clean acrhiture">
+      <option name="closed" value="true" />
+      <created>1741609031615</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741609031615</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +160,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="стартуем" />
-    <option name="LAST_COMMIT_MESSAGE" value="стартуем" />
+    <MESSAGE value="добавил проект для соблюдение clean acrhiture" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил проект для соблюдение clean acrhiture" />
   </component>
 </project>
