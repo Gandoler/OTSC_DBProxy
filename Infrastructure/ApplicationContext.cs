@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entities.Models;
 
-public partial class AppContext : DbContext
+public partial class ApplicationContext : DbContext
 {
-    public AppContext()
+    public ApplicationContext()
     {
     }
 
-    public AppContext(DbContextOptions<AppContext> options)
+    public ApplicationContext(DbContextOptions<ApplicationContext> options)
         : base(options)
     {
     }
@@ -34,8 +34,10 @@ public partial class AppContext : DbContext
         modelBuilder.Entity<FriendList>(entity =>
         {
             entity
-                .HasNoKey()
-                .ToTable("friend_list");
+                .HasKey(e => new { e.Appid, e.FriendUsername }) // Композитный ключ
+                .HasName("friend_list_pkey");
+
+            entity.ToTable("friend_list");
 
             entity.Property(e => e.Appid).HasColumnName("appid");
             entity.Property(e => e.DateBirth).HasColumnName("date_birth");
