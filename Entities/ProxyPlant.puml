@@ -22,7 +22,35 @@ rectangle "прокси" as DBPROXY{
             
         }
     }
-
+    rectangle "Уровень интерфейсов" as Aplication{
+        rectangle "User" as IUser{
+            rectangle CreateUser
+            rectangle UpdateUser
+            rectangle ExistUserCheck
+        }
+        
+         rectangle "MailComp" as IMAILCOMP{
+            rectangle ADDMAIL
+            rectangle GETID
+        }
+        rectangle "TGComp" as ITGCOMP{
+            rectangle ADDTG
+            rectangle GETID
+        }
+        
+         rectangle "Friendlist" as IFriendlist"{
+            rectangle ADDFriend
+            rectangle DELETEFriend
+            rectangle UPDATEFriend
+            rectangle SELECTFORappID
+            rectangle GetIdPozdr
+            rectangle GetTodayKents 
+        }
+        rectangle "Pozdrik" as IPozdrik"{
+            rectangle AddIntrAndPozh
+            rectangle SELECTPOZDR
+        }
+    }
 
 
 
