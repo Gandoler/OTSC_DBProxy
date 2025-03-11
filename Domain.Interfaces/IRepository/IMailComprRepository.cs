@@ -5,6 +5,6 @@ namespace Domain.Interfaces;
 
 public interface IMailComprRepository
 {
-    Task<MailComprehension> AddMail(Guid appid, string mail);
-    Task<Guid> GETIdByMail(Guid appid);
+    Task<MailComprehension> AddMailAsync(Guid appid, string mail);
+    Task<Guid> GetIdByMailAsync(string mail);
 }
