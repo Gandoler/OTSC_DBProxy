@@ -1,10 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBProxy", "DBProxy", "{D77DCA1C-72C6-4E3C-B3DA-B37B75F23621}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBProxyService", "DBProxyService", "{D77DCA1C-72C6-4E3C-B3DA-B37B75F23621}"
 	ProjectSection(SolutionItems) = preProject
-		ProxyPlant.puml = ProxyPlant.puml
 		ProxyPlant.png = ProxyPlant.png
-		Full Shema.png = Full Shema.png
+		ProxyPlant.puml = ProxyPlant.puml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Core", "Domain.Core\Domain.Core.csproj", "{952A3CDC-5E3E-40DD-A126-8E22FF5EC7A3}"
@@ -22,9 +21,20 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2FA49607-C64B-485B-87BF-2BD31F074143}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APPLevel", "APPLevel", "{5BF3ADFD-C3D5-439D-B5C7-64C5694E3985}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MANAGER", "MANAGER", "{EE105F9A-E00D-4AA6-9992-CA23E6230256}"
 	ProjectSection(SolutionItems) = preProject
+		Full Shema.png = Full Shema.png
 		Full Shema.puml = Full Shema.puml
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FriendsCrudService", "FriendsCrudService", "{8A3E1091-4887-40B0-A322-5C584E0FD168}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LoginService", "LoginService", "{3639D5C5-CC7E-43A9-9EEE-29CF31403EB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuthService", "AuthService", "{4D687E13-6F8D-4CEA-84A2-CA8A4F3E09BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RegistrationService", "RegistrationService", "{74485C0A-85DF-48E5-A687-531669041C3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,5 +72,7 @@ Global
 		{45E932A9-A505-46C1-A1C6-F7039CCEF6CC} = {2FA49607-C64B-485B-87BF-2BD31F074143}
 		{5BF3ADFD-C3D5-439D-B5C7-64C5694E3985} = {D77DCA1C-72C6-4E3C-B3DA-B37B75F23621}
 		{21D3D01B-717B-4B4A-B80B-64F127CD3335} = {5BF3ADFD-C3D5-439D-B5C7-64C5694E3985}
+		{4D687E13-6F8D-4CEA-84A2-CA8A4F3E09BB} = {3639D5C5-CC7E-43A9-9EEE-29CF31403EB6}
+		{74485C0A-85DF-48E5-A687-531669041C3E} = {3639D5C5-CC7E-43A9-9EEE-29CF31403EB6}
 	EndGlobalSection
 EndGlobal
