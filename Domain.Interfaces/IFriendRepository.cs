@@ -1,8 +1,14 @@
-using Entities.Templates;
+using Domain.Models;
 
-namespace UseCases;
+namespace Domain.Interfaces;
 
-public class IFriendRepository
+public interface IFriendRepository
 {
-    // Task<FriendDto> ADDFriendTOList(FriendDto);
+    Task<FriendList> AddFriendInList(FriendList friendList);
+    Task<FriendList> DeleteFriendFromList(FriendList friendList);
+    Task<FriendList> UpdateFriendInList(FriendList friendList);
+    Task<List<FriendList>> SelectByAppId(FriendList friendList);
+    Task<int?> GetPozdrikId(FriendList friendList);
+    Task<List<FriendList>> SelectByAppId();
+    
 }

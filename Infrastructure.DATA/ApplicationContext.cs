@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 
-namespace Infrastructure.Models;
+namespace Infrastructure.DATA;
 
 public partial class ApplicationContext : DbContext
 {
@@ -39,10 +40,10 @@ public partial class ApplicationContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https: //go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
     {
-        // if (!optionsBuilder.IsConfigured)
-        // {
-        //     optionsBuilder.UseNpgsql(_connectionString);
-        // }
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseNpgsql(_connectionString);
+        }
 #if DEBUG
         if (!optionsBuilder.IsConfigured)
         {
