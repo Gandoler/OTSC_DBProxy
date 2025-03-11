@@ -50,6 +50,7 @@ rectangle "Прокси" as DBPROXY {
 
             rectangle "Pozdrik" as IPozdrik {
                 rectangle "AddIntrAndPozh"
+                rectangle "ADDPozdr"
                 rectangle "SelectPozdr"
             }
         }

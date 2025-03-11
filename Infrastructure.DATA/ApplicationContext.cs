@@ -40,10 +40,10 @@ public partial class ApplicationContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https: //go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
     {
-        if (!optionsBuilder.IsConfigured)
-        {
-            optionsBuilder.UseNpgsql(_connectionString);
-        }
+        // if (!optionsBuilder.IsConfigured)
+        // {
+        //     optionsBuilder.UseNpgsql(_connectionString);
+        // }
 #if DEBUG
         if (!optionsBuilder.IsConfigured)
         {
@@ -73,7 +73,9 @@ public partial class ApplicationContext : DbContext
             entity.ToTable("friend_list");
 
             entity.Property(e => e.Appid).HasColumnName("appid");
-            entity.Property(e => e.FriendUsername).HasColumnName("friend_username");
+            entity.Property(e => e.FriendUsername)
+                .HasColumnName("friend_username")
+                .IsRequired();
             entity.Property(e => e.FriendName).HasColumnName("friend_name");
             entity.Property(e => e.DateBirth).HasColumnName("date_birth");
             entity.Property(e => e.IdPozdr).HasColumnName("id_pozdr");

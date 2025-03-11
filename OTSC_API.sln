@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBProxyService", "DBProxySe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Core", "Domain.Core\Domain.Core.csproj", "{952A3CDC-5E3E-40DD-A126-8E22FF5EC7A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyAPILeval", "ProxyAPILeval\ProxyAPILeval.csproj", "{21D3D01B-717B-4B4A-B80B-64F127CD3335}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyAPILevel", "ProxyAPILevel\ProxyAPILevel.csproj", "{21D3D01B-717B-4B4A-B80B-64F127CD3335}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Buisiness", "Infrastructure.Buisiness\Infrastructure.Buisiness.csproj", "{45E932A9-A505-46C1-A1C6-F7039CCEF6CC}"
 EndProject

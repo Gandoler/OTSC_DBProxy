@@ -22,7 +22,7 @@ namespace Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Infrastructure.Models.FriendList", b =>
+            modelBuilder.Entity("Domain.Models.FriendList", b =>
                 {
                     b.Property<Guid>("Appid")
                         .HasColumnType("uuid")
@@ -53,7 +53,7 @@ namespace Infrastructure.Migrations
                     b.ToTable("friend_list", (string)null);
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.MailComprehension", b =>
+            modelBuilder.Entity("Domain.Models.MailComprehension", b =>
                 {
                     b.Property<Guid>("Appid")
                         .HasColumnType("uuid")
@@ -72,7 +72,7 @@ namespace Infrastructure.Migrations
                     b.ToTable("mail_comprehensions", (string)null);
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.Pozdrik", b =>
+            modelBuilder.Entity("Domain.Models.Pozdrik", b =>
                 {
                     b.Property<int>("IdPozdr")
                         .ValueGeneratedOnAdd()
@@ -99,7 +99,7 @@ namespace Infrastructure.Migrations
                     b.ToTable("pozdrik", (string)null);
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.TgComprehension", b =>
+            modelBuilder.Entity("Domain.Models.TgComprehension", b =>
                 {
                     b.Property<Guid>("Appid")
                         .HasColumnType("uuid")
@@ -117,7 +117,7 @@ namespace Infrastructure.Migrations
                     b.ToTable("tg_comprehensions", (string)null);
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.User", b =>
+            modelBuilder.Entity("Domain.Models.User", b =>
                 {
                     b.Property<Guid>("Appid")
                         .ValueGeneratedOnAdd()
@@ -144,16 +144,16 @@ namespace Infrastructure.Migrations
                     b.ToTable("users", (string)null);
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.FriendList", b =>
+            modelBuilder.Entity("Domain.Models.FriendList", b =>
                 {
-                    b.HasOne("Infrastructure.Models.User", "App")
+                    b.HasOne("Domain.Models.User", "App")
                         .WithMany()
                         .HasForeignKey("Appid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("friend_list_appid_fkey");
 
-                    b.HasOne("Infrastructure.Models.Pozdrik", "IdPozdrNavigation")
+                    b.HasOne("Domain.Models.Pozdrik", "IdPozdrNavigation")
                         .WithMany()
                         .HasForeignKey("IdPozdr")
                         .OnDelete(DeleteBehavior.SetNull)
@@ -164,9 +164,9 @@ namespace Infrastructure.Migrations
                     b.Navigation("IdPozdrNavigation");
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.MailComprehension", b =>
+            modelBuilder.Entity("Domain.Models.MailComprehension", b =>
                 {
-                    b.HasOne("Infrastructure.Models.User", "App")
+                    b.HasOne("Domain.Models.User", "App")
                         .WithMany()
                         .HasForeignKey("Appid")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -176,9 +176,9 @@ namespace Infrastructure.Migrations
                     b.Navigation("App");
                 });
 
-            modelBuilder.Entity("Infrastructure.Models.TgComprehension", b =>
+            modelBuilder.Entity("Domain.Models.TgComprehension", b =>
                 {
-                    b.HasOne("Infrastructure.Models.User", "App")
+                    b.HasOne("Domain.Models.User", "App")
                         .WithMany()
                         .HasForeignKey("Appid")
                         .OnDelete(DeleteBehavior.Cascade)
