@@ -9,6 +9,7 @@ public interface IFriendRepository
     Task<FriendList> UpdateFriendInList(FriendList friendList);
     Task<List<FriendList>> SelectByAppId(Guid appid);
     Task<int?> GetPozdrikId( string username, Guid appid);
+    Task<List<FriendList>> SelectForTodayBithrday();
     
     
 }

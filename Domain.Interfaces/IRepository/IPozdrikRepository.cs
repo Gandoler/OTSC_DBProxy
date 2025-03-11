@@ -7,5 +7,5 @@ public interface IPozdrikRepository
     Task<Pozdrik> AddIntAndPozhAsync(int idPozdr,string interests, string pozhelania);
     Task<Pozdrik> SelectIntAndPozhAsync(int idPozdr);
     Task<Pozdrik> SelectPozdrikAsync(int idPozdr);
-    Task<Pozdrik> AddPozdrAsync(string pozdr);
+    Task<Pozdrik> AddPozdrAsync(int idPozdr, string pozdr);
 }
