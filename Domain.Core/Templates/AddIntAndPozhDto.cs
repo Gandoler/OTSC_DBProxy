@@ -1,6 +1,6 @@
 namespace Entities.Templates;
 
-public class AddPozdrikDto
+public class AddIntAndPozhDto
 {
     public int IdPozdr { get; set; }
     public string? Interests { get; set; }

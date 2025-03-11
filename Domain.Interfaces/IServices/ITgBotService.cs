@@ -1,10 +1,12 @@
 using Domain.Models;
+using Entities.Templates;
 
 namespace Domain.Interfaces.IServices;
 
 public interface ITgBotService
 {
-    Task<List<FriendList>> SelectForTodayBithrday();
+    Task<List<FriendList>> SelectForTodayBithrdayAsync();
     
-    Task<Pozdrik> SelectPozdrikAsync(int idPozdr);
+    Task<long> GetTgIdAsync(AppIdDto appId);
+    Task<Pozdrik> SelectPozdrikAsync(AppIdDto appId);
 }

@@ -4,12 +4,12 @@ namespace Domain.Interfaces;
 
 public interface IFriendRepository
 {
-    Task<FriendList> AddFriendInList(FriendList friendList);
-    Task<FriendList> DeleteFriendFromList(FriendList friendList);
-    Task<FriendList> UpdateFriendInList(FriendList friendList);
-    Task<List<FriendList>> SelectByAppId(Guid appid);
-    Task<int?> GetPozdrikId( string username, Guid appid);
-    Task<List<FriendList>> SelectForTodayBithrday();
+    Task<FriendList> AddFriendInListAsync(FriendList friendList);
+    Task<FriendList> DeleteFriendFromListAsync(FriendList friendList);
+    Task<FriendList> UpdateFriendInListAsync(FriendList friendList);
+    Task<List<FriendList>> SelectByAppIdAsync(Guid appid);
+    Task<int?> GetPozdrikIdAsync( string username, Guid appid);
+    Task<List<FriendList>> SelectForTodayBithrdayAsync();
     
     
 }
