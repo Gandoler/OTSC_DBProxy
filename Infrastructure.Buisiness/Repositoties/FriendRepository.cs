@@ -1,5 +1,6 @@
 using Domain.Interfaces;
 using Domain.Models;
+using Entities.Templates;
 using Microsoft.EntityFrameworkCore;
 
 namespace UseCases.Repositoties;
@@ -19,14 +20,24 @@ public class FriendRepository: IFriendRepository
         return affectedRows > 0; // Возвращаем true, если изменения были сохранены
     }
 
-    public Task<bool> DeleteFriendFromListAsync(FriendList friendList)
+    public async Task<bool> DeleteFriendFromListAsync(Guid appid)
     {
-        throw new NotImplementedException();
+        var friend = await _context.Set<FriendList>().FirstOrDefaultAsync(f => f.Appid == appid);
+    
+        if (friend == null)
+            return false; // Друг не найден
+
+        _context.Set<FriendList>().Remove(friend);
+        int affectedRows = await _context.SaveChangesAsync();
+    
+        return affectedRows > 0;
     }
 
     public async Task<bool> UpdateFriendInListAsync(FriendList friendList)
     {
-        
+        _context.Set<FriendList>().Update(friendList);
+        int affectedRows = await _context.SaveChangesAsync();
+        return affectedRows > 0;
     }
 
     public async Task<List<FriendList>> SelectByAppIdAsync(Guid appid)
