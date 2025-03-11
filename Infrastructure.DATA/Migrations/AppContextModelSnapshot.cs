@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Infrastructure.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(ApplicationContext))]
     partial class AppContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -28,6 +28,10 @@ namespace Infrastructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("appid");
 
+                    b.Property<string>("FriendUsername")
+                        .HasColumnType("text")
+                        .HasColumnName("friend_username");
+
                     b.Property<DateOnly>("DateBirth")
                         .HasColumnType("date")
                         .HasColumnName("date_birth");
@@ -37,15 +41,12 @@ namespace Infrastructure.Migrations
                         .HasColumnType("text")
                         .HasColumnName("friend_name");
 
-                    b.Property<string>("FriendUsername")
-                        .HasColumnType("text")
-                        .HasColumnName("friend_username");
-
                     b.Property<int?>("IdPozdr")
                         .HasColumnType("integer")
                         .HasColumnName("id_pozdr");
 
-                    b.HasIndex("Appid");
+                    b.HasKey("Appid", "FriendUsername")
+                        .HasName("friend_list_pkey");
 
                     b.HasIndex("IdPozdr");
 

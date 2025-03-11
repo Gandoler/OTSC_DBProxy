@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Infrastructure.Models;
 
@@ -8,11 +9,20 @@ public partial class ApplicationContext : DbContext
 {
     public ApplicationContext()
     {
+        
     }
 
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
         : base(options)
     {
+    }
+    
+    private readonly string? _connectionString;
+
+    public ApplicationContext(DbContextOptions<ApplicationContext> options, IConfiguration configuration)
+        : base(options)
+    {
+        _connectionString = configuration.GetConnectionString("DefaultConnection");
     }
 
     public virtual DbSet<FriendList> FriendLists { get; set; }
@@ -26,28 +36,35 @@ public partial class ApplicationContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=localhost;Database=App;Username=proxy_user;Password=MegaProxy");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https: //go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseNpgsql(_connectionString);
+        }
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<FriendList>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("friend_list");
+            entity.HasKey(e => new { e.Appid, e.FriendUsername }).HasName("friend_list_pkey");
+
+            entity.ToTable("friend_list");
 
             entity.Property(e => e.Appid).HasColumnName("appid");
-            entity.Property(e => e.DateBirth).HasColumnName("date_birth");
-            entity.Property(e => e.FriendName).HasColumnName("friend_name");
             entity.Property(e => e.FriendUsername).HasColumnName("friend_username");
+            entity.Property(e => e.FriendName).HasColumnName("friend_name");
+            entity.Property(e => e.DateBirth).HasColumnName("date_birth");
             entity.Property(e => e.IdPozdr).HasColumnName("id_pozdr");
 
-            entity.HasOne(d => d.App).WithMany()
+            entity.HasOne(d => d.App)
+                .WithMany()
                 .HasForeignKey(d => d.Appid)
                 .HasConstraintName("friend_list_appid_fkey");
 
-            entity.HasOne(d => d.IdPozdrNavigation).WithMany()
+            entity.HasOne(d => d.IdPozdrNavigation)
+                .WithMany()
                 .HasForeignKey(d => d.IdPozdr)
                 .OnDelete(DeleteBehavior.SetNull)
                 .HasConstraintName("friend_list_id_pozdr_fkey");
