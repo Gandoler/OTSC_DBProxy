@@ -6,16 +6,16 @@ namespace Domain.Interfaces.IServices;
 public interface IFriendService
 {
     // с френдрепизитория
-    Task<FriendList> AddFriendInListAsync(FriendDto  friend);
-    Task<FriendList> DeleteFriendFromListAsync(AppIdDto appid);
-    Task<FriendList> UpdateFriendInListAsync(FriendDto  friend);
+    Task<bool> AddFriendInListAsync(FriendDto  friend);
+    Task<bool> DeleteFriendFromListAsync(AppIdDto appid);
+    Task<bool> UpdateFriendInListAsync(FriendDto  friend);
     Task<List<FriendList>> SelectByAppIdAsync( AppIdDto appid);
     Task<PozdrikIdDto> GetPozdrikIdAsync(GetPozdrikQueryDto queryDto);
   
     
     
     // c поздрик репозитория
-    Task<Pozdrik> AddIntAndPozhAsync(AddIntAndPozhDto intAndPozh);
+    Task<bool> AddIntAndPozhAsync(AddIntAndPozhDto intAndPozh);
     Task<Pozdrik> SelectIntAndPozhAsync(PozdrikIdDto pozdrik);
     
 }

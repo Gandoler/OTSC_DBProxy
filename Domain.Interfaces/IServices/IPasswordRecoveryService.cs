@@ -5,9 +5,9 @@ namespace Domain.Interfaces.IServices;
 
 public interface IPasswordRecoveryService
 {
-    Task<Guid> GetIdByMailAsync(string mail);
+    Task<AppIdDto> GetIdByMailAsync(string mail);
     
     Task<bool> ExicstCheckByLoginAsync(string login);
     
-    Task<User> UpdateAsync(LoginDto loginDto);
+    Task<bool> UpdateAsync(LoginDto loginDto);
 }

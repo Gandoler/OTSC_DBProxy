@@ -6,5 +6,5 @@ public interface INeiroGenService
 {
     Task<Pozdrik> SelectIntAndPozhAsync(int idPozdr);
     
-    Task<Pozdrik> AddPozdrAsync(int idPozdr,string pozdr);
+    Task<bool> AddPozdrAsync(int idPozdr,string pozdr);
 }

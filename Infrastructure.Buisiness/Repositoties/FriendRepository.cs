@@ -12,19 +12,19 @@ public class FriendRepository: IFriendRepository
     {
         _context = context;
     }
-    public Task<int> AddFriendInListAsync(FriendList friendList)
+    public async Task<bool> AddFriendInListAsync(FriendList friendList)
     {
         _context.Set<FriendList>().Add(friendList);
-        await _context.SaveChangesAsync();
-        return await _context.
+        int affectedRows = await _context.SaveChangesAsync();
+        return affectedRows > 0; // Возвращаем true, если изменения были сохранены
     }
 
-    public Task<int> DeleteFriendFromListAsync(FriendList friendList)
+    public Task<bool> DeleteFriendFromListAsync(FriendList friendList)
     {
         throw new NotImplementedException();
     }
 
-    public async Task<int> UpdateFriendInListAsync(FriendList friendList)
+    public async Task<bool> UpdateFriendInListAsync(FriendList friendList)
     {
         
     }

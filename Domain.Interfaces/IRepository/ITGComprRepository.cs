@@ -4,7 +4,7 @@ namespace Domain.Interfaces;
 
 public interface ITgComprRepository
 {
-    Task<TgComprehension> AddTgAsync(Guid appid, long telegramId);
+    Task<bool> AddTgAsync(Guid appid, long telegramId);
     Task<Guid> GetIdByTgAsync(long tgId);
     
     Task<long> GetTgId(Guid appId);
