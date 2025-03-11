@@ -8,11 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9654f08-df99-43e1-add7-45ae708fd92a" name="Changes" comment="всех удалили">
-      <change beforePath="$PROJECT_DIR$/Application/IFriendRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/IFriendRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/IUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="d9654f08-df99-43e1-add7-45ae708fd92a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +37,12 @@
   }
 }]]></component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Application/Class1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain.Core/Templates/AppIdDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain.Core/Templates/DeleteFriendDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain.Core/Templates/FriendDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain.Core/Templates/LoginDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain.Core/Templates/RegisterDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Domain.Core/Templates/RegisterTgDto.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo"><![CDATA[{
@@ -109,7 +110,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1741603648372</updated>
-      <workItem from="1741603649439" duration="9045000" />
+      <workItem from="1741603649439" duration="14874000" />
     </task>
     <task id="LOCAL-00001" summary="стартуем">
       <option name="closed" value="true" />
@@ -167,7 +168,55 @@
       <option name="project" value="LOCAL" />
       <updated>1741612481202</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="надо будет подкрутить">
+      <option name="closed" value="true" />
+      <created>1741615315163</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1741615315163</updated>
+    </task>
+    <task id="LOCAL-00009" summary="а">
+      <option name="closed" value="true" />
+      <created>1741615321461</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1741615321461</updated>
+    </task>
+    <task id="LOCAL-00010" summary="перетасовываем для поддержания структуры">
+      <option name="closed" value="true" />
+      <created>1741620492334</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1741620492334</updated>
+    </task>
+    <task id="LOCAL-00011" summary="перекрут случился теперь все по версии метанит">
+      <option name="closed" value="true" />
+      <created>1741620802519</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1741620802519</updated>
+    </task>
+    <task id="LOCAL-00012" summary="перекинул для лучшей структуризации">
+      <option name="closed" value="true" />
+      <created>1741621388485</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1741621388485</updated>
+    </task>
+    <task id="LOCAL-00013" summary="надо заполнять кентов">
+      <option name="closed" value="true" />
+      <created>1741622572986</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1741622572986</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +232,12 @@
     <MESSAGE value="переписал плант" />
     <MESSAGE value="[p" />
     <MESSAGE value="всех удалили" />
-    <option name="LAST_COMMIT_MESSAGE" value="всех удалили" />
+    <MESSAGE value="надо будет подкрутить" />
+    <MESSAGE value="а" />
+    <MESSAGE value="перетасовываем для поддержания структуры" />
+    <MESSAGE value="перекрут случился теперь все по версии метанит" />
+    <MESSAGE value="перекинул для лучшей структуризации" />
+    <MESSAGE value="надо заполнять кентов" />
+    <option name="LAST_COMMIT_MESSAGE" value="надо заполнять кентов" />
   </component>
 </project>

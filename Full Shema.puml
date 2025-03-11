@@ -1,0 +1,87 @@
+@startuml
+
+skinparam dpi 150
+skinparam padding 30
+skinparam horizontalSpacing 50
+skinparam verticalSpacing 50
+skinparam linetype ortho
+
+actor "Telegram Client" as UserTG
+actor "Email" as EBOX
+actor "Desktop or Web Client" as Client
+
+rectangle "Система" {
+    
+    rectangle "Бизнес-логика" as BusinessLogic {
+        rectangle "Gateway" as API
+        
+        
+        
+        rectangle "Auth" as Auth
+        rectangle "Friends" as CRUD
+        rectangle "TG подписка" as TGSUB
+        rectangle "Восстановление пароля" as Eforgot
+        rectangle "Нейро заполнение" as Neyro
+        
+        
+    }
+    
+    
+
+    rectangle "Боты" as Bots {
+        rectangle "Telegram-бот" as TelegramBot
+        rectangle "Email-бот" as EmailBot
+    }
+
+    
+
+    rectangle "База данных" as Database {
+        database "БД" as DB
+        rectangle "Прокси для БД" as DBProxy
+    }
+
+    
+
+    rectangle "Аутентификация" as AuthSystem {
+        rectangle "Вход" as LOGIN
+        rectangle "Регистрация" as Registr
+    }
+}
+
+' --- Клиентские взаимодействия ---
+Client -right-> API : Вход и управление друзьями
+
+' --- Работа ботов ---
+TelegramBot -down-> UserTG : Отправка поздравления
+EmailBot -down-> EBOX : Отправка поздравления
+TelegramBot -right-> DBProxy : Запрос ДР сегодня
+EmailBot -right-> DBProxy : Запрос ДР сегодня
+
+' --- API и бизнес-логика ---
+API -down-> CRUD : Управление друзьями
+API -down-> Auth : Регистрация и аутентификация
+API -right-> TGSUB : Подписка на бота
+API -right-> Eforgot : Восстановление пароля
+
+Auth -right-> LOGIN : Проверка пользователя
+Auth -right-> Registr : Регистрация нового пользователя
+
+' --- Взаимодействие с БД ---
+CRUD -down-> DBProxy : CRUD-запросы
+LOGIN -down-> DBProxy : Проверка пользователя
+Registr -down-> DBProxy : Попытка регистрации
+TGSUB -left-> DBProxy : Операции с подписками
+Eforgot -left-> DBProxy : Восстановление пароля
+Neyro -left-> DBProxy : Заполнение поздравлений
+
+DBProxy -down-> DB : Запросы к БД
+DB -up-> DBProxy : Ответы из БД
+
+' --- Возврат данных ---
+DBProxy -left-> Eforgot : Результат восстановления
+DBProxy -left-> TGSUB : Результат подписки
+DBProxy -left-> Registr : Результат регистрации
+DBProxy -up-> LOGIN : Результат проверки
+DBProxy -up-> CRUD : Результат операций
+
+@enduml

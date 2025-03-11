@@ -4,6 +4,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBProxy", "DBProxy", "{D77D
 	ProjectSection(SolutionItems) = preProject
 		ProxyPlant.puml = ProxyPlant.puml
 		ProxyPlant.png = ProxyPlant.png
+		Full Shema.png = Full Shema.png
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Core", "Domain.Core\Domain.Core.csproj", "{952A3CDC-5E3E-40DD-A126-8E22FF5EC7A3}"
@@ -21,6 +22,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2FA49607-C64B-485B-87BF-2BD31F074143}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APPLevel", "APPLevel", "{5BF3ADFD-C3D5-439D-B5C7-64C5694E3985}"
+	ProjectSection(SolutionItems) = preProject
+		Full Shema.puml = Full Shema.puml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
