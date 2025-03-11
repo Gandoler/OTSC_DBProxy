@@ -7,5 +7,5 @@ public interface ITgComprRepository
     Task<bool> AddTgAsync(Guid appid, long telegramId);
     Task<Guid> GetIdByTgAsync(long tgId);
     
-    Task<long> GetTgId(Guid appId);
+    Task<long?> GetTgId(Guid appId);
 }
