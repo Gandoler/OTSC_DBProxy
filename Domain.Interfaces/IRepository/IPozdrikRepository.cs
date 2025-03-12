@@ -4,8 +4,8 @@ namespace Domain.Interfaces;
 
 public interface IPozdrikRepository
 {
-    Task<bool> AddIntAndPozhAsync(int idPozdr,string interests, string pozhelania);
-    Task<(string?, string?)> SelectIntAndPozhAsync(int idPozdr);
+    Task<bool> AddIntAndPozhAsync(int idPozdr,string? interests, string? pozhelania);
+    Task<(string?, string?)> SelectIntAndPozhAsync(int? idPozdr);
     Task<string?> SelectPozdrikAsync(int idPozdr);
     Task<bool> AddPozdrAsync(int idPozdr, string pozdrtext);
 }

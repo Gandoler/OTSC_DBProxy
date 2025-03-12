@@ -78,7 +78,10 @@ public partial class ApplicationContext : DbContext
                 .IsRequired();
             entity.Property(e => e.FriendName).HasColumnName("friend_name");
             entity.Property(e => e.DateBirth).HasColumnName("date_birth");
-            entity.Property(e => e.IdPozdr).HasColumnName("id_pozdr");
+            entity.Property(e => e.IdPozdr)
+                .HasColumnName("id_pozdr")
+                .UseIdentityAlwaysColumn()
+                .IsRequired();
 
             entity.HasOne(d => d.App)
                 .WithMany()
@@ -154,5 +157,27 @@ public partial class ApplicationContext : DbContext
         OnModelCreatingPartial(modelBuilder);
     }
 
+    public override int SaveChanges()
+    {
+        foreach (var entry in ChangeTracker.Entries<FriendList>())
+        {
+            if (entry.State == EntityState.Added)
+
+            {
+                var pozdrik = new Pozdrik
+                {
+                    Interest = "",
+                    Pozhelanie = "",
+                    Textpozdr = ""
+                };
+                Pozdriks.Add(pozdrik);
+                SaveChanges(); // Сохранить, чтобы получить IdPozdr
+
+                entry.Entity.IdPozdr = pozdrik.IdPozdr;
+            }
+        }
+        return base.SaveChanges();
+    }
+    
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

@@ -14,7 +14,7 @@ public class PozdrikRepository: IPozdrikRepository
         _context = context;
     }
     
-    public async Task<bool> AddIntAndPozhAsync(int idPozdr, string interests, string pozhelania)
+    public async Task<bool> AddIntAndPozhAsync(int idPozdr, string? interests, string? pozhelania)
     {
         Pozdrik pozdrik = new Pozdrik{IdPozdr = idPozdr, Interest = interests,Pozhelanie = pozhelania};
        _context.Set<Pozdrik>().Add(pozdrik);
@@ -23,7 +23,7 @@ public class PozdrikRepository: IPozdrikRepository
 
     }
 
-    public async Task<(string?, string?)> SelectIntAndPozhAsync(int idPozdr)
+    public async Task<(string?, string?)> SelectIntAndPozhAsync(int? idPozdr)
     {
         Pozdrik? pozd =  await _context.Set<Pozdrik>().Where(f=>f.IdPozdr == idPozdr).FirstOrDefaultAsync();
         return (pozd?.Interest, pozd?.Pozhelanie);
@@ -35,7 +35,7 @@ public class PozdrikRepository: IPozdrikRepository
         return pozd?.Textpozdr;
     }
 
-    public async Task<bool> AddPozdrAsync(int idPozdr, string pozdrtext)
+    public async Task<bool> AddPozdrAsync(int idPozdr, string? pozdrtext)
     {
         Pozdrik? zapis = await _context.Set<Pozdrik>().Where(f=>f.IdPozdr == idPozdr).FirstOrDefaultAsync();
         if (zapis != null)

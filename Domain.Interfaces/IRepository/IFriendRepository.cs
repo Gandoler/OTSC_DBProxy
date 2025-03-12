@@ -9,7 +9,7 @@ public interface IFriendRepository
     Task<bool> DeleteFriendFromListAsync(Guid appId);
     Task<bool> UpdateFriendInListAsync(FriendList friendList);
     Task<List<FriendList>> SelectByAppIdAsync(Guid appid);
-    Task<int?> GetPozdrikIdAsync( string username, Guid appid);
+    Task<int?> GetPozdrikIdAsync( string? username, Guid appid);
     Task<List<FriendList>> SelectForTodayBithrdayAsync();
     
     

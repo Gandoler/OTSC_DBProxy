@@ -16,6 +16,6 @@ public interface IFriendService
     
     // c поздрик репозитория
     Task<bool> AddIntAndPozhAsync(AddIntAndPozhDto intAndPozh);
-    Task<Pozdrik> SelectIntAndPozhAsync(PozdrikIdDto pozdrik);
+    Task<AddIntAndPozhDto> SelectIntAndPozhAsync(PozdrikIdDto pozdrik);
     
 }

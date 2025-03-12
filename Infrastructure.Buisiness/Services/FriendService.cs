@@ -1,0 +1,70 @@
+using Domain.Interfaces;
+using Domain.Interfaces.IServices;
+using Domain.Models;
+using Entities.Templates;
+
+namespace UseCases.Services;
+
+public class FriendService:IFriendService
+{
+    private readonly IFriendRepository _friendRepository;
+    private readonly IPozdrikRepository _pozdrikRepository;
+
+    public FriendService(IFriendRepository friendRepository, IPozdrikRepository pozdrikRepository)
+    {
+        _friendRepository = friendRepository;
+        _pozdrikRepository = pozdrikRepository;
+    }
+    
+    public async Task<bool> AddFriendInListAsync(FriendDto friend)
+    {
+        FriendList friendList = new FriendList
+        {
+            FriendUsername = friend.FriendUsername,
+            FriendName = friend.FriendName,
+            DateBirth = friend.DateBirth,
+            
+        };
+        return await _friendRepository.AddFriendInListAsync(friendList);
+        
+    }
+
+    public async Task<bool> DeleteFriendFromListAsync(AppIdDto appid)
+    {
+        return await _friendRepository.DeleteFriendFromListAsync(appid.AppId);
+    }
+
+    public async Task<bool> UpdateFriendInListAsync(FriendDto friend)
+    {
+        FriendList friendList = new FriendList
+        {
+            FriendUsername = friend.FriendUsername,
+            FriendName = friend.FriendName,
+            DateBirth = friend.DateBirth,
+            
+        };
+        return await _friendRepository.UpdateFriendInListAsync(friendList);
+    }
+
+    public async Task<List<FriendList>> SelectByAppIdAsync(AppIdDto appid)
+    {
+       return await _friendRepository.SelectByAppIdAsync(appid.AppId);
+    }
+
+    public async Task<PozdrikIdDto> GetPozdrikIdAsync(GetPozdrikQueryDto queryDto)
+    {
+        return new PozdrikIdDto
+            { _pozdrikId = await _friendRepository.GetPozdrikIdAsync(queryDto.Username, queryDto.Appid) };
+    }
+
+    public async Task<bool> AddIntAndPozhAsync(AddIntAndPozhDto intAndPozh)
+    {
+      return await _pozdrikRepository.AddIntAndPozhAsync(intAndPozh.IdPozdr, intAndPozh.Interests, intAndPozh.Pozhelania);
+    }
+
+    public async Task<AddIntAndPozhDto> SelectIntAndPozhAsync(PozdrikIdDto pozdrik)
+    {
+        (string?, string?) pozdr = await _pozdrikRepository.SelectIntAndPozhAsync(pozdrik._pozdrikId);
+        return new AddIntAndPozhDto{ Interests = pozdr.Item1, Pozhelania = pozdr.Item2};
+    }
+}
