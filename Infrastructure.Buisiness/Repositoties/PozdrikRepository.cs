@@ -29,7 +29,7 @@ public class PozdrikRepository: IPozdrikRepository
         return (pozd?.Interest, pozd?.Pozhelanie);
     }
 
-    public async Task<string?> SelectPozdrikAsync(int idPozdr)
+    public async Task<string?> SelectPozdrikAsync(int? idPozdr)
     {
         Pozdrik? pozd =  await _context.Set<Pozdrik>().Where(f=>f.IdPozdr == idPozdr).FirstOrDefaultAsync();
         return pozd?.Textpozdr;

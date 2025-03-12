@@ -7,4 +7,6 @@ public interface IMailComprRepository
 {
     Task<bool> AddMailAsync(Guid appid, string mail);
     Task<Guid> GetIdByMailAsync(string mail);
+    
+    Task <string?> GetMailByIdAsync(Guid appid);
 }

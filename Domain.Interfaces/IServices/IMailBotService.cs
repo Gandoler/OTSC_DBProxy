@@ -7,5 +7,7 @@ public interface IMailBotService
 {
     Task<List<FriendList>> SelectForTodayBithrday();
     
-    Task<Pozdrik> SelectPozdrikAsync(PozdrikIdDto pozdrikId);
+    Task<string?> SelectPozdStringAsync(PozdrikIdDto pozdrikId);
+    
+    Task<string?> GetEmailAsync(AppIdDto appId);
 }
