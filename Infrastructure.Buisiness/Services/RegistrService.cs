@@ -5,11 +5,11 @@ using Entities.Templates;
 
 namespace UseCases.Services;
 
-public class RegitrService:IRegitrService
+public class RegistrService:IRegistrService
 {
     private readonly IUserRepository _userRepository;
 
-    public RegitrService(IUserRepository userRepository)
+    public RegistrService(IUserRepository userRepository)
     {
         _userRepository = userRepository;
     }

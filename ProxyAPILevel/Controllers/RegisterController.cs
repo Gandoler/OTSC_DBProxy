@@ -8,9 +8,9 @@ namespace ProxyAPILeval;
 [Route("api/register")]
 public class RegisterController : ControllerBase
 {
-    private readonly IRegitrService _registerService;
+    private readonly IRegistrService _registerService;
 
-    public RegisterController(IRegitrService registerService)
+    public RegisterController(IRegistrService registerService)
     {
         _registerService = registerService;
     }

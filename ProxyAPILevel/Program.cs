@@ -18,10 +18,23 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IFriendService, FriendService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IMailBotService, MailBotService>(); 
+builder.Services.AddScoped<INeiroGenService, NeiroGenService>();
+builder.Services.AddScoped<IPasswordRecoveryService, PasswordRecoveryService>();
+builder.Services.AddScoped<ITgBotService, TgBotService>();
+builder.Services.AddScoped<IRegistrService, RegistrService>();
+builder.Services.AddScoped<ITgSubscriptionService, TgSubscriptionService>();
+
+
+    
+
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IFriendRepository, FriendRepository>();
 builder.Services.AddScoped<IPozdrikRepository, PozdrikRepository>();
+builder.Services.AddScoped<ITgComprRepository, TgComprRepository>();
+builder.Services.AddScoped<IMailComprRepository, MailComprRepository>();
+
 
 
 builder.Services.AddControllers();
@@ -33,6 +46,7 @@ app.UseSwaggerUI();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapControllers();
 }
 
 app.UseHttpsRedirection();
