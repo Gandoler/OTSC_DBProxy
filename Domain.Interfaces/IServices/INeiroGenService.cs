@@ -1,10 +1,11 @@
 using Domain.Models;
+using Entities.Templates;
 
 namespace Domain.Interfaces.IServices;
 
 public interface INeiroGenService
 {
-    Task<Pozdrik> SelectIntAndPozhAsync(int idPozdr);
+    Task<Pozdrik> SelectIntAndPozhAsync(PozdrikIdDto pozdrikId);
     
-    Task<bool> AddPozdrAsync(int idPozdr,string pozdr);
+    Task<bool> AddPozdrAsync(PozdrStringDTO pozdr);
 }

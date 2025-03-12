@@ -29,9 +29,9 @@ public class FriendService:IFriendService
         
     }
 
-    public async Task<bool> DeleteFriendFromListAsync(AppIdDto appid)
+    public async Task<bool> DeleteFriendFromListAsync(DeleteFriendDto friend)
     {
-        return await _friendRepository.DeleteFriendFromListAsync(appid.AppId);
+        return await _friendRepository.DeleteFriendFromListAsync(friend.AppId,friend.FriendUsername);
     }
 
     public async Task<bool> UpdateFriendInListAsync(FriendDto friend)

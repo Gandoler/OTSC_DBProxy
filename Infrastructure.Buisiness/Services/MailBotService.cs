@@ -32,6 +32,6 @@ public class MailBotService: IMailBotService
 
     public Task<string?> GetEmailAsync(AppIdDto appId)
     {
-        return _mailComprRepository.
+        return _mailComprRepository.GetMailByIdAsync(appId.AppId);
     }
 }
