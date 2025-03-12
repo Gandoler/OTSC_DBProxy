@@ -4,5 +4,5 @@ namespace Domain.Interfaces.IServices;
 
 public interface IAuthService
 {
-    Task<bool> ExicstCheckAsync(CheckExistDto dto);
+    Task<bool> ExicstCheckAsync(LoginDto dto);
 }
