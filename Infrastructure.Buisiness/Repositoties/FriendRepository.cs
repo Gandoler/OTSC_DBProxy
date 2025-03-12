@@ -20,9 +20,9 @@ public class FriendRepository: IFriendRepository
         return affectedRows > 0; // Возвращаем true, если изменения были сохранены
     }
 
-    public async Task<bool> DeleteFriendFromListAsync(Guid appid)
+    public async Task<bool> DeleteFriendFromListAsync(Guid appid, string friendname)
     {
-        var friend = await _context.Set<FriendList>().FirstOrDefaultAsync(f => f.Appid == appid);
+        var friend = await _context.Set<FriendList>().FirstOrDefaultAsync(f => f.Appid == appid && f.FriendName == friendname);
     
         if (friend == null)
             return false; // Друг не найден

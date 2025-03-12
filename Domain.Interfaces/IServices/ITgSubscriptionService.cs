@@ -6,6 +6,6 @@ namespace Domain.Interfaces.IServices;
 public interface ITgSubscriptionService
 {
     
-    Task<TgComprehension> SubscribeAsync(RegisterTgDto dto);
+    Task<bool> SubscribeAsync(RegisterTgDto dto);
     
 }

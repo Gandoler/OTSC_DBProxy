@@ -7,6 +7,6 @@ public interface ITgBotService
 {
     Task<List<FriendList>> SelectForTodayBithrdayAsync();
     
-    Task<long> GetTgIdAsync(AppIdDto appId);
-    Task<Pozdrik> SelectPozdrikAsync(AppIdDto appId);
+    Task<long?> GetTgIdAsync(AppIdDto appId);
+    Task<string?> SelectPozdrStringAsync(PozdrikIdDto pozdrikId);
 }

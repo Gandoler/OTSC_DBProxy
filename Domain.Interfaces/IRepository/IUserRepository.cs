@@ -8,6 +8,6 @@ public interface IUserRepository
     Task<bool> UpdateAsync(User user);
     Task<bool> CreateAsync(User user);
     Task<bool> ForPswAndLoginCheckAsync(User user);
-    Task<bool> ExicstCheckByLoginAsync(User user);
+    Task<bool> ExicstCheckByLoginAsync(string login);
 
 }
