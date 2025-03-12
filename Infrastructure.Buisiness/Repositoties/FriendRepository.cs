@@ -1,15 +1,16 @@
 using Domain.Interfaces;
 using Domain.Models;
 using Entities.Templates;
+using Infrastructure.DATA;
 using Microsoft.EntityFrameworkCore;
 
 namespace UseCases.Repositoties;
 
 public class FriendRepository: IFriendRepository
 {
-    private readonly DbContext _context;
+    private readonly ApplicationContext _context;
 
-    public FriendRepository(DbContext context)
+    public FriendRepository(ApplicationContext context)
     {
         _context = context;
     }

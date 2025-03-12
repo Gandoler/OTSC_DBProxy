@@ -1,5 +1,6 @@
 using Domain.Interfaces;
 using Domain.Models;
+using Infrastructure.DATA;
 using Microsoft.EntityFrameworkCore;
 
 namespace UseCases.Repositoties;
@@ -7,9 +8,9 @@ namespace UseCases.Repositoties;
 public class TgComprRepository : ITgComprRepository
 {
     
-    private readonly DbContext _context;
+    private readonly ApplicationContext _context;
 
-    public TgComprRepository(DbContext context)
+    public TgComprRepository(ApplicationContext context)
     {
         _context = context;
     }

@@ -1,5 +1,6 @@
 using Domain.Interfaces;
 using Domain.Models;
+using Infrastructure.DATA;
 using Microsoft.EntityFrameworkCore;
 
 namespace UseCases.Repositoties;
@@ -7,9 +8,9 @@ namespace UseCases.Repositoties;
 public class UserRepository: IUserRepository
 {
     
-    private readonly DbContext _context;
+    private readonly ApplicationContext _context;
 
-    public UserRepository(DbContext context)
+    public UserRepository(ApplicationContext context)
     {
         _context = context;
     }

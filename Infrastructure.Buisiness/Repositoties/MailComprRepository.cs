@@ -1,14 +1,15 @@
 using Domain.Interfaces;
 using Domain.Models;
+using Infrastructure.DATA;
 using Microsoft.EntityFrameworkCore;
 
 namespace UseCases.Repositoties;
 
 public class MailComprRepository:IMailComprRepository
 {
-    private readonly DbContext _context;
+    private readonly ApplicationContext _context;
 
-    public MailComprRepository(DbContext context)
+    public MailComprRepository(ApplicationContext context)
     {
         _context = context;
     }

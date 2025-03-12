@@ -1,5 +1,6 @@
 using Domain.Interfaces;
 using Domain.Models;
+using Infrastructure.DATA;
 using Microsoft.EntityFrameworkCore;
 
 namespace UseCases;
@@ -7,9 +8,9 @@ namespace UseCases;
 public class PozdrikRepository: IPozdrikRepository
 {
     
-    private readonly DbContext _context;
+    private readonly ApplicationContext _context;
 
-    public PozdrikRepository(DbContext context)
+    public PozdrikRepository(ApplicationContext context)
     {
         _context = context;
     }
