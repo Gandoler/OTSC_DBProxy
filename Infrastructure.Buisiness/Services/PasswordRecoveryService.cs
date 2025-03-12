@@ -19,7 +19,7 @@ public class PasswordRecoveryService : IPasswordRecoveryService
     public async Task<AppIdDto> GetIdByMailAsync(string mail)
     {
         return new AppIdDto { AppId = await _mailComprRepository.GetIdByMailAsync(mail) };
-    }
+    }//
 
     public async Task<bool> ExicstCheckByLoginAsync(string login)
     {
