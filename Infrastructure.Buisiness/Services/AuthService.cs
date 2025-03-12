@@ -21,4 +21,6 @@ public class AuthService:IAuthService
         return await _userRepository.ForPswAndLoginCheckAsync(usr);
 
     }
+    
+    
 }

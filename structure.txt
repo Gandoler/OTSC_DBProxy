@@ -1,0 +1,299 @@
+.
+├── Domain.Core
+│   ├── Domain.Core.csproj
+│   ├── Models
+│   │   ├── FriendList.cs
+│   │   ├── MailComprehension.cs
+│   │   ├── Pozdrik.cs
+│   │   ├── TgComprehension.cs
+│   │   └── User.cs
+│   ├── bin
+│   │   └── Debug
+│   │       └── net9.0
+│   │           ├── Domain.Core.deps.json
+│   │           ├── Domain.Core.dll
+│   │           └── Domain.Core.pdb
+│   └── obj
+│       ├── Debug
+│       │   └── net9.0
+│       │       ├── Domain.Core.AssemblyInfo.cs
+│       │       ├── Domain.Core.AssemblyInfoInputs.cache
+│       │       ├── Domain.Core.GeneratedMSBuildEditorConfig.editorconfig
+│       │       ├── Domain.Core.GlobalUsings.g.cs
+│       │       ├── Domain.Core.assets.cache
+│       │       ├── Domain.Core.csproj.CoreCompileInputs.cache
+│       │       ├── Domain.Core.csproj.FileListAbsolute.txt
+│       │       ├── Domain.Core.dll
+│       │       ├── Domain.Core.pdb
+│       │       ├── Domain.Core.sourcelink.json
+│       │       ├── ref
+│       │       │   └── Domain.Core.dll
+│       │       └── refint
+│       │           └── Domain.Core.dll
+│       ├── Domain.Core.csproj.nuget.dgspec.json
+│       ├── Domain.Core.csproj.nuget.g.props
+│       ├── Domain.Core.csproj.nuget.g.targets
+│       ├── project.assets.json
+│       ├── project.nuget.cache
+│       ├── project.packagespec.json
+│       ├── rider.project.model.nuget.info
+│       └── rider.project.restore.info
+├── Domain.DTO
+│   ├── DTO
+│   │   ├── AddIntAndPozhDto.cs
+│   │   ├── AppIdDto.cs
+│   │   ├── ChangePasswordDto.cs
+│   │   ├── CheckExistDto.cs
+│   │   ├── DeleteFriendDto.cs
+│   │   ├── FriendDto.cs
+│   │   ├── GetPozdrikQueryDto.cs
+│   │   ├── LoginDto.cs
+│   │   ├── PozdrStringDTO.cs
+│   │   ├── PozdrikIdDto.cs
+│   │   ├── RegisterDto.cs
+│   │   └── RegisterTgDto.cs
+│   ├── Domain.DTO.csproj
+│   ├── bin
+│   │   └── Debug
+│   │       └── net9.0
+│   │           ├── Domain.DTO.deps.json
+│   │           ├── Domain.DTO.dll
+│   │           └── Domain.DTO.pdb
+│   └── obj
+│       ├── Debug
+│       │   └── net9.0
+│       │       ├── Domain.DTO.AssemblyInfo.cs
+│       │       ├── Domain.DTO.AssemblyInfoInputs.cache
+│       │       ├── Domain.DTO.GeneratedMSBuildEditorConfig.editorconfig
+│       │       ├── Domain.DTO.GlobalUsings.g.cs
+│       │       ├── Domain.DTO.assets.cache
+│       │       ├── Domain.DTO.csproj.CoreCompileInputs.cache
+│       │       ├── Domain.DTO.csproj.FileListAbsolute.txt
+│       │       ├── Domain.DTO.dll
+│       │       ├── Domain.DTO.pdb
+│       │       ├── Domain.DTO.sourcelink.json
+│       │       ├── ref
+│       │       │   └── Domain.DTO.dll
+│       │       └── refint
+│       │           └── Domain.DTO.dll
+│       ├── Domain.DTO.csproj.nuget.dgspec.json
+│       ├── Domain.DTO.csproj.nuget.g.props
+│       ├── Domain.DTO.csproj.nuget.g.targets
+│       ├── project.assets.json
+│       ├── project.nuget.cache
+│       ├── project.packagespec.json
+│       ├── rider.project.model.nuget.info
+│       └── rider.project.restore.info
+├── Domain.Interfaces
+│   ├── Domain.Interfaces.csproj
+│   ├── IRepository
+│   │   ├── IFriendRepository.cs
+│   │   ├── IMailComprRepository.cs
+│   │   ├── IPozdrikRepository.cs
+│   │   ├── ITGComprRepository.cs
+│   │   └── IUserRepository.cs
+│   ├── IServices
+│   │   ├── IAuthService.cs
+│   │   ├── IFriendService.cs
+│   │   ├── IMailBotService.cs
+│   │   ├── INeiroGenService.cs
+│   │   ├── IPasswordRecoveryService.cs
+│   │   ├── IRegitrService.cs
+│   │   ├── ITgBotService.cs
+│   │   └── ITgSubscriptionService.cs
+│   ├── bin
+│   │   └── Debug
+│   │       └── net9.0
+│   │           ├── Domain.Core.dll
+│   │           ├── Domain.Core.pdb
+│   │           ├── Domain.DTO.dll
+│   │           ├── Domain.DTO.pdb
+│   │           ├── Domain.Interfaces.deps.json
+│   │           ├── Domain.Interfaces.dll
+│   │           └── Domain.Interfaces.pdb
+│   └── obj
+│       ├── Debug
+│       │   └── net9.0
+│       │       ├── Domain.I.1A91B349.Up2Date
+│       │       ├── Domain.Interfaces.AssemblyInfo.cs
+│       │       ├── Domain.Interfaces.AssemblyInfoInputs.cache
+│       │       ├── Domain.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+│       │       ├── Domain.Interfaces.GlobalUsings.g.cs
+│       │       ├── Domain.Interfaces.assets.cache
+│       │       ├── Domain.Interfaces.csproj.AssemblyReference.cache
+│       │       ├── Domain.Interfaces.csproj.CoreCompileInputs.cache
+│       │       ├── Domain.Interfaces.csproj.FileListAbsolute.txt
+│       │       ├── Domain.Interfaces.dll
+│       │       ├── Domain.Interfaces.pdb
+│       │       ├── Domain.Interfaces.sourcelink.json
+│       │       ├── ref
+│       │       │   └── Domain.Interfaces.dll
+│       │       └── refint
+│       │           └── Domain.Interfaces.dll
+│       ├── Domain.Interfaces.csproj.nuget.dgspec.json
+│       ├── Domain.Interfaces.csproj.nuget.g.props
+│       ├── Domain.Interfaces.csproj.nuget.g.targets
+│       ├── project.assets.json
+│       ├── project.nuget.cache
+│       ├── project.packagespec.json
+│       ├── rider.project.model.nuget.info
+│       └── rider.project.restore.info
+├── Full Shema.png
+├── Full Shema.puml
+├── Infrastructure.Buisiness
+│   ├── Infrastructure.Buisiness.csproj
+│   ├── Repositoties
+│   │   ├── FriendRepository.cs
+│   │   ├── MailComprRepository.cs
+│   │   ├── PozdrikRepository.cs
+│   │   ├── TgComprRepository.cs
+│   │   └── UserRepository.cs
+│   ├── Services
+│   │   ├── AuthService.cs
+│   │   ├── FriendService.cs
+│   │   ├── MailBotService.cs
+│   │   ├── NeiroGenService.cs
+│   │   ├── PasswordRecoveryService.cs
+│   │   ├── RegitrService.cs
+│   │   ├── TgBotService.cs
+│   │   └── TgSubscriptionService.cs
+│   ├── bin
+│   │   └── Debug
+│   │       └── net9.0
+│   │           ├── Domain.Core.dll
+│   │           ├── Domain.Core.pdb
+│   │           ├── Domain.DTO.dll
+│   │           ├── Domain.DTO.pdb
+│   │           ├── Domain.Interfaces.dll
+│   │           ├── Domain.Interfaces.pdb
+│   │           ├── Infrastructure.Buisiness.deps.json
+│   │           ├── Infrastructure.Buisiness.dll
+│   │           ├── Infrastructure.Buisiness.pdb
+│   │           ├── Infrastructure.DATA.dll
+│   │           └── Infrastructure.DATA.pdb
+│   └── obj
+│       ├── Debug
+│       │   └── net9.0
+│       │       ├── Infrastr.394C5961.Up2Date
+│       │       ├── Infrastructure.Buisiness.AssemblyInfo.cs
+│       │       ├── Infrastructure.Buisiness.AssemblyInfoInputs.cache
+│       │       ├── Infrastructure.Buisiness.GeneratedMSBuildEditorConfig.editorconfig
+│       │       ├── Infrastructure.Buisiness.GlobalUsings.g.cs
+│       │       ├── Infrastructure.Buisiness.assets.cache
+│       │       ├── Infrastructure.Buisiness.csproj.AssemblyReference.cache
+│       │       ├── Infrastructure.Buisiness.csproj.CoreCompileInputs.cache
+│       │       ├── Infrastructure.Buisiness.csproj.FileListAbsolute.txt
+│       │       ├── Infrastructure.Buisiness.dll
+│       │       ├── Infrastructure.Buisiness.pdb
+│       │       ├── Infrastructure.Buisiness.sourcelink.json
+│       │       ├── ref
+│       │       │   └── Infrastructure.Buisiness.dll
+│       │       └── refint
+│       │           └── Infrastructure.Buisiness.dll
+│       ├── Infrastructure.Buisiness.csproj.nuget.dgspec.json
+│       ├── Infrastructure.Buisiness.csproj.nuget.g.props
+│       ├── Infrastructure.Buisiness.csproj.nuget.g.targets
+│       ├── project.assets.json
+│       ├── project.nuget.cache
+│       ├── project.packagespec.json
+│       ├── rider.project.model.nuget.info
+│       └── rider.project.restore.info
+├── Infrastructure.DATA
+│   ├── ApplicationContext.cs
+│   ├── Infrastructure.DATA.csproj
+│   ├── Migrations
+│   │   ├── 20250311072225_Initial.Designer.cs
+│   │   ├── 20250311072225_Initial.cs
+│   │   ├── 20250311073726_test.Designer.cs
+│   │   ├── 20250311073726_test.cs
+│   │   ├── 20250311073826_add comb key for friend list.Designer.cs
+│   │   ├── 20250311073826_add comb key for friend list.cs
+│   │   ├── 20250311080656_add connsetionstring.Designer.cs
+│   │   ├── 20250311080656_add connsetionstring.cs
+│   │   ├── 20250311101739_username not null.Designer.cs
+│   │   ├── 20250311101739_username not null.cs
+│   │   ├── 20250312084034_testjenek.Designer.cs
+│   │   ├── 20250312084034_testjenek.cs
+│   │   ├── 20250312091100_chilia20.Designer.cs
+│   │   ├── 20250312091100_chilia20.cs
+│   │   └── AppContextModelSnapshot.cs
+│   ├── appsettings.json
+│   ├── bin
+│   │   └── Debug
+│   │       └── net9.0
+│   │           ├── Domain.Core.dll
+│   │           ├── Domain.Core.pdb
+│   │           ├── Domain.DTO.dll
+│   │           ├── Domain.DTO.pdb
+│   │           ├── Domain.Interfaces.dll
+│   │           ├── Domain.Interfaces.pdb
+│   │           ├── Infrastructure.DATA.deps.json
+│   │           ├── Infrastructure.DATA.dll
+│   │           ├── Infrastructure.DATA.pdb
+│   │           └── Infrastructure.DATA.runtimeconfig.json
+│   └── obj
+│       ├── Debug
+│       │   └── net9.0
+│       │       ├── Infrastr.75EDBAF5.Up2Date
+│       │       ├── Infrastructure.DATA.AssemblyInfo.cs
+│       │       ├── Infrastructure.DATA.AssemblyInfoInputs.cache
+│       │       ├── Infrastructure.DATA.GeneratedMSBuildEditorConfig.editorconfig
+│       │       ├── Infrastructure.DATA.GlobalUsings.g.cs
+│       │       ├── Infrastructure.DATA.assets.cache
+│       │       ├── Infrastructure.DATA.csproj.AssemblyReference.cache
+│       │       ├── Infrastructure.DATA.csproj.CoreCompileInputs.cache
+│       │       ├── Infrastructure.DATA.csproj.FileListAbsolute.txt
+│       │       ├── Infrastructure.DATA.dll
+│       │       ├── Infrastructure.DATA.genruntimeconfig.cache
+│       │       ├── Infrastructure.DATA.pdb
+│       │       ├── Infrastructure.DATA.sourcelink.json
+│       │       ├── ref
+│       │       │   └── Infrastructure.DATA.dll
+│       │       └── refint
+│       │           └── Infrastructure.DATA.dll
+│       ├── Infrastructure.DATA.csproj.EntityFrameworkCore.targets
+│       ├── Infrastructure.DATA.csproj.nuget.dgspec.json
+│       ├── Infrastructure.DATA.csproj.nuget.g.props
+│       ├── Infrastructure.DATA.csproj.nuget.g.targets
+│       ├── project.assets.json
+│       ├── project.nuget.cache
+│       ├── project.packagespec.json
+│       ├── rider.project.model.nuget.info
+│       └── rider.project.restore.info
+├── OTSC_API.sln
+├── OTSC_API.sln.DotSettings.user
+├── ProxyAPILevel
+│   ├── Program.cs
+│   ├── Properties
+│   │   └── launchSettings.json
+│   ├── ProxyAPILeval.http
+│   ├── ProxyAPILevel.csproj
+│   ├── appsettings.Development.json
+│   ├── appsettings.json
+│   ├── bin
+│   │   └── Debug
+│   │       └── net9.0
+│   └── obj
+│       ├── Debug
+│       │   └── net9.0
+│       │       ├── ProxyAPILevel.AssemblyInfo.cs
+│       │       ├── ProxyAPILevel.AssemblyInfoInputs.cache
+│       │       ├── ProxyAPILevel.GeneratedMSBuildEditorConfig.editorconfig
+│       │       ├── ProxyAPILevel.GlobalUsings.g.cs
+│       │       ├── ProxyAPILevel.assets.cache
+│       │       ├── ProxyAPILevel.csproj.AssemblyReference.cache
+│       │       ├── ref
+│       │       └── refint
+│       ├── ProxyAPILevel.csproj.nuget.dgspec.json
+│       ├── ProxyAPILevel.csproj.nuget.g.props
+│       ├── ProxyAPILevel.csproj.nuget.g.targets
+│       ├── project.assets.json
+│       ├── project.nuget.cache
+│       ├── project.packagespec.json
+│       ├── rider.project.model.nuget.info
+│       └── rider.project.restore.info
+├── ProxyPlant.png
+├── ProxyPlant.puml
+└── structure.txt
+
+63 directories, 234 files
