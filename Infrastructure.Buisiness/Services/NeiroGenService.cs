@@ -17,10 +17,10 @@ public class NeiroGenService:INeiroGenService
         _friendRepository = friendRepository;
     }
     
-    public async Task<Pozdrik> SelectIntAndPozhAsync(PozdrikIdDto pozdrikId)
+    public async Task<AddIntAndPozhDto> SelectIntAndPozhAsync(PozdrikIdDto pozdrikId)
     {
         (string?, string?) pozdr = await _pozdrikRepository.SelectIntAndPozhAsync(pozdrikId._pozdrikId);
-        return new Pozdrik{Interest = pozdr.Item1, Pozhelanie = pozdr.Item2};
+        return new AddIntAndPozhDto{Interests = pozdr.Item1, Pozhelania = pozdr.Item2};
     }
 
     public async Task<bool> AddPozdrAsync(PozdrStringDTO pozdr)
