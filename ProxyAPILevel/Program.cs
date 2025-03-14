@@ -2,6 +2,7 @@ using Domain.Interfaces;
 using Domain.Interfaces.IServices;
 using Infrastructure.DATA;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using Swashbuckle.AspNetCore.Swagger;
 using UseCases;
 using UseCases.Repositoties;
@@ -25,8 +26,11 @@ builder.Services.AddScoped<ITgBotService, TgBotService>();
 builder.Services.AddScoped<IRegistrService, RegistrService>();
 builder.Services.AddScoped<ITgSubscriptionService, TgSubscriptionService>();
 
-
-    
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console() 
+    .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+builder.Host.UseSerilog();
 
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -42,6 +46,7 @@ builder.Services.AddControllers();
 var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseSerilogRequestLogging();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
