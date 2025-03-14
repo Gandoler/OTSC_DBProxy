@@ -42,6 +42,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.DTO", "Domain.DTO\Do
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NeiroGenService", "NeiroGenService", "{841F94DB-AF06-44FD-9FE6-AC010D39D1F7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessegeBrokerService", "MessegeBrokerService", "{37DCE6F4-8B03-453C-B68A-068D2F0B116D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
