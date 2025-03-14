@@ -6,7 +6,5 @@ public class FriendDto
     public string FriendUsername { get; set; } = null!;
     public string FriendName { get; set; } = null!;
     public DateOnly DateBirth { get; set; }
-    public string? Interest { get; set; }
-    public string? Pozhelanie { get; set; }
 
 }

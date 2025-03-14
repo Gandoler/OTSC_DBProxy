@@ -1,10 +1,12 @@
+using AutoMapper;
 using Domain.Interfaces;
 using Domain.Interfaces.IServices;
 using Infrastructure.DATA;
 using Microsoft.EntityFrameworkCore;
+
 using Serilog;
-using Swashbuckle.AspNetCore.Swagger;
 using UseCases;
+using UseCases.Profiles;
 using UseCases.Repositoties;
 using UseCases.Services;
 
@@ -25,6 +27,14 @@ builder.Services.AddScoped<IPasswordRecoveryService, PasswordRecoveryService>();
 builder.Services.AddScoped<ITgBotService, TgBotService>();
 builder.Services.AddScoped<IRegistrService, RegistrService>();
 builder.Services.AddScoped<ITgSubscriptionService, TgSubscriptionService>();
+
+
+var mapperConfig = new MapperConfiguration(cfg =>
+{
+    cfg.AddProfile(new FriendProfile()); // Добавляем твой профиль маппинга
+});
+var mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console() 

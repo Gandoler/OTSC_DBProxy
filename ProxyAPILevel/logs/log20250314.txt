@@ -58,3 +58,49 @@
 2025-03-14 14:41:00.986 +03:00 [INF] Hosting environment: Development
 2025-03-14 14:41:00.986 +03:00 [INF] Content root path: /Users/gl.krutoimail.ru/RiderProjects/OTSC_API/ProxyAPILevel
 2025-03-14 14:41:41.079 +03:00 [INF] Application is shutting down...
+2025-03-14 16:10:25.260 +03:00 [INF] Now listening on: http://localhost:5064
+2025-03-14 16:10:25.299 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-14 16:10:25.300 +03:00 [INF] Hosting environment: Development
+2025-03-14 16:10:25.300 +03:00 [INF] Content root path: /Users/gl.krutoimail.ru/RiderProjects/OTSC_DBProxy/ProxyAPILevel
+2025-03-14 16:10:26.467 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5064/ - null null
+2025-03-14 16:10:26.492 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-03-14 16:10:26.493 +03:00 [INF] HTTP GET / responded 404 in 2.3348 ms
+2025-03-14 16:10:26.501 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5064/ - 404 0 null 35.5141ms
+2025-03-14 16:10:26.506 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5064/, Response status code: 404
+2025-03-14 16:10:29.071 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5064/swagger/index.html - null null
+2025-03-14 16:10:29.129 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5064/swagger/index.html - 200 null text/html;charset=utf-8 58.9967ms
+2025-03-14 16:10:29.147 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5064/swagger/index.js - null null
+2025-03-14 16:10:29.155 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5064/swagger/index.js - 200 null application/javascript;charset=utf-8 7.653ms
+2025-03-14 16:10:29.228 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5064/swagger/v1/swagger.json - null null
+2025-03-14 16:10:29.287 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5064/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 59.8021ms
+2025-03-14 16:13:54.481 +03:00 [INF] Application is shutting down...
+2025-03-14 16:17:13.443 +03:00 [INF] Now listening on: http://localhost:5064
+2025-03-14 16:17:13.485 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-14 16:17:13.486 +03:00 [INF] Hosting environment: Development
+2025-03-14 16:17:13.486 +03:00 [INF] Content root path: /Users/gl.krutoimail.ru/RiderProjects/OTSC_DBProxy/ProxyAPILevel
+2025-03-14 16:17:15.305 +03:00 [INF] Application is shutting down...
+2025-03-14 16:17:53.485 +03:00 [INF] Now listening on: http://localhost:5064
+2025-03-14 16:17:53.528 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-14 16:17:53.529 +03:00 [INF] Hosting environment: Development
+2025-03-14 16:17:53.529 +03:00 [INF] Content root path: /Users/gl.krutoimail.ru/RiderProjects/OTSC_DBProxy/ProxyAPILevel
+2025-03-14 16:20:25.310 +03:00 [INF] Application is shutting down...
+2025-03-14 16:23:45.314 +03:00 [INF] Now listening on: http://localhost:5064
+2025-03-14 16:23:45.357 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-14 16:23:45.357 +03:00 [INF] Hosting environment: Development
+2025-03-14 16:23:45.357 +03:00 [INF] Content root path: /Users/gl.krutoimail.ru/RiderProjects/OTSC_DBProxy/ProxyAPILevel
+2025-03-14 16:23:46.403 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5064/ - null null
+2025-03-14 16:23:46.478 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-03-14 16:23:46.483 +03:00 [INF] HTTP GET / responded 404 in 9.9235 ms
+2025-03-14 16:23:46.497 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5064/ - 404 0 null 95.9964ms
+2025-03-14 16:23:46.520 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5064/, Response status code: 404
+2025-03-14 16:23:53.909 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5064/swagger/index.html - null null
+2025-03-14 16:23:53.971 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5064/swagger/index.html - 200 null text/html;charset=utf-8 63.5341ms
+2025-03-14 16:23:53.991 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5064/swagger/index.js - null null
+2025-03-14 16:23:53.993 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5064/swagger/index.js - 200 null application/javascript;charset=utf-8 2.3647ms
+2025-03-14 16:23:54.071 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5064/swagger/v1/swagger.json - null null
+2025-03-14 16:23:54.136 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5064/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 64.489ms
+2025-03-14 16:23:59.059 +03:00 [INF] Application is shutting down...
+2025-03-14 17:51:50.650 +03:00 [INF] Now listening on: http://localhost:5064
+2025-03-14 17:51:50.690 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-14 17:51:50.691 +03:00 [INF] Hosting environment: Development
+2025-03-14 17:51:50.691 +03:00 [INF] Content root path: /Users/gl.krutoimail.ru/RiderProjects/OTSC_DBProxy/ProxyAPILevel

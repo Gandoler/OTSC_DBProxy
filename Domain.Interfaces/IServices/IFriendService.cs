@@ -9,7 +9,7 @@ public interface IFriendService
     Task<bool> AddFriendInListAsync(FriendDto  friend);
     Task<bool> DeleteFriendFromListAsync(DeleteFriendDto friend);
     Task<bool> UpdateFriendInListAsync(FriendDto  friend);
-    Task<List<FriendList>> SelectByAppIdAsync( AppIdDto appid);
+    Task<List<FriendDto>> SelectByAppIdAsync( AppIdDto appid);
     Task<PozdrikIdDto> GetPozdrikIdAsync(GetPozdrikQueryDto queryDto);
   
     

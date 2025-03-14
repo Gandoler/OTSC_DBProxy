@@ -1,3 +1,4 @@
+using AutoMapper;
 using Domain.Interfaces;
 using Domain.Interfaces.IServices;
 using Domain.Models;
@@ -9,9 +10,11 @@ public class FriendService:IFriendService
 {
     private readonly IFriendRepository _friendRepository;
     private readonly IPozdrikRepository _pozdrikRepository;
+    private readonly IMapper _mapper;
 
-    public FriendService(IFriendRepository friendRepository, IPozdrikRepository pozdrikRepository)
+    public FriendService(IFriendRepository friendRepository, IPozdrikRepository pozdrikRepository, IMapper mapper)
     {
+        _mapper = mapper;
         _friendRepository = friendRepository;
         _pozdrikRepository = pozdrikRepository;
     }
@@ -46,9 +49,11 @@ public class FriendService:IFriendService
         return await _friendRepository.UpdateFriendInListAsync(friendList);
     }
 
-    public async Task<List<FriendList>> SelectByAppIdAsync(AppIdDto appid)
+    public async Task<List<FriendDto>> SelectByAppIdAsync(AppIdDto appid)
     {
-       return await _friendRepository.SelectByAppIdAsync(appid.AppId);
+        
+        var friends = await _friendRepository.SelectByAppIdAsync(appid.AppId);
+        return _mapper.Map<List<FriendDto>>(friends);
     }
 
     public async Task<PozdrikIdDto> GetPozdrikIdAsync(GetPozdrikQueryDto queryDto)
