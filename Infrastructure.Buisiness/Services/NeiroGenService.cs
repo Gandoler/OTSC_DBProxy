@@ -8,10 +8,13 @@ namespace UseCases.Services;
 public class NeiroGenService:INeiroGenService
 {
     private readonly IPozdrikRepository _pozdrikRepository;
+    private readonly IFriendRepository _friendRepository;
+    
 
-    public NeiroGenService(IPozdrikRepository pozdrikRepository)
+    public NeiroGenService(IPozdrikRepository pozdrikRepository, IFriendRepository friendRepository)
     {
         _pozdrikRepository = pozdrikRepository;
+        _friendRepository = friendRepository;
     }
     
     public async Task<Pozdrik> SelectIntAndPozhAsync(PozdrikIdDto pozdrikId)
@@ -23,5 +26,10 @@ public class NeiroGenService:INeiroGenService
     public async Task<bool> AddPozdrAsync(PozdrStringDTO pozdr)
     {
         return await _pozdrikRepository.AddPozdrAsync(pozdr._pozdrikId, pozdr._pozdr);
+    }
+
+    public async Task<string?> GetUserNameByPozdrikId(PozdrikIdDto pozdrikId)
+    {
+        return await _friendRepository.GetFrienNameByPozdrikId(pozdrikId._pozdrikId);
     }
 }

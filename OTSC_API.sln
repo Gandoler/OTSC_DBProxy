@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBProxyService", "DBProxyService", "{D77DCA1C-72C6-4E3C-B3DA-B37B75F23621}"
+	ProjectSection(SolutionItems) = preProject
+		ProxyDB.png = ProxyDB.png
+		ProxyDB.puml = ProxyDB.puml
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Core", "Domain.Core\Domain.Core.csproj", "{952A3CDC-5E3E-40DD-A126-8E22FF5EC7A3}"
 EndProject
@@ -23,6 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MANAGER", "MANAGER", "{EE10
 		Full Shema.png = Full Shema.png
 		Full Shema.puml = Full Shema.puml
 		ProxyDB.png = ProxyDB.png
+		ProxyDB.puml = ProxyDB.puml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FriendsCrudService", "FriendsCrudService", "{8A3E1091-4887-40B0-A322-5C584E0FD168}"
@@ -34,6 +39,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RegistrationService", "RegistrationService", "{74485C0A-85DF-48E5-A687-531669041C3E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.DTO", "Domain.DTO\Domain.DTO.csproj", "{EC07E970-FC03-4360-B64E-EF846942D22D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NeiroGenService", "NeiroGenService", "{841F94DB-AF06-44FD-9FE6-AC010D39D1F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

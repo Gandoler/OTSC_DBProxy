@@ -1,6 +1,5 @@
 using Domain.Interfaces;
 using Domain.Models;
-using Entities.Templates;
 using Infrastructure.DATA;
 using Microsoft.EntityFrameworkCore;
 
@@ -47,7 +46,7 @@ public class FriendRepository: IFriendRepository
             .ToListAsync();
     }
 
-    public async Task<int?> GetPozdrikIdAsync(string username, Guid appid)
+    public async Task<int?> GetPozdrikIdAsync(string? username, Guid appid)
     {
         return await _context.Set<FriendList>()
             .Where(f => f.FriendUsername == username && f.Appid == appid)
@@ -60,5 +59,13 @@ public class FriendRepository: IFriendRepository
         return await _context.Set<FriendList>()
             .Where(f =>f.DateBirth.DayOfYear == DateTime.Now.DayOfYear)
             .ToListAsync();
+    }
+
+    public async Task<string?> GetFrienNameByPozdrikId(int? pozdrikId)
+    {
+        return await _context.Set<FriendList>()
+            .Where(f => f.IdPozdr == pozdrikId)
+            .Select(f => f.FriendName)
+            .FirstOrDefaultAsync();
     }
 }

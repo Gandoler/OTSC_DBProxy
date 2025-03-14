@@ -8,4 +8,6 @@ public interface INeiroGenService
     Task<Pozdrik> SelectIntAndPozhAsync(PozdrikIdDto pozdrikId);
     
     Task<bool> AddPozdrAsync(PozdrStringDTO pozdr);
+    
+    Task<string?> GetUserNameByPozdrikId( PozdrikIdDto pozdrikId);
 }
