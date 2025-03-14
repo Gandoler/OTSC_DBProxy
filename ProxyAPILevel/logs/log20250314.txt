@@ -123,3 +123,4 @@
 2025-03-14 17:58:29.093 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5064/swagger/index.js - 200 null application/javascript;charset=utf-8 0.5321ms
 2025-03-14 17:58:29.170 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5064/swagger/v1/swagger.json - null null
 2025-03-14 17:58:29.231 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5064/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 60.39ms
+2025-03-14 17:59:33.178 +03:00 [INF] Application is shutting down...
