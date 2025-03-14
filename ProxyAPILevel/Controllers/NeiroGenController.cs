@@ -28,4 +28,17 @@ public class NeiroGenController : ControllerBase
         var result = await _neiroGenService.AddPozdrAsync(pozdrikDto);
         return result ? Ok(new { message = "Pozdrik added successfully" }) : BadRequest(new { message = "Failed to add pozdrik" });
     }
+    [HttpGet("pozdrik/name/{pozdrikId:int}")]
+    public async Task<IActionResult> GetNameByPozdrikId(int pozdrikId)
+    {
+        var name = await _neiroGenService.GetNameByPozdrikId(new PozdrikIdDto { _pozdrikId = pozdrikId });
+        return name != null ? Ok(name) : NotFound(new { message = "Name not found" });
+    }
+
+    [HttpGet("pozdrik/username/{pozdrikId:int}")]
+    public async Task<IActionResult> GetUserNameByPozdrikId(int pozdrikId)
+    {
+        var username = await _neiroGenService.GetUserNameByPozdrikId(new PozdrikIdDto { _pozdrikId = pozdrikId });
+        return username != null ? Ok(username) : NotFound(new { message = "Username not found" });
+    }
 }

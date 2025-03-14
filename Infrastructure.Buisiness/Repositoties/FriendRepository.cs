@@ -68,4 +68,12 @@ public class FriendRepository: IFriendRepository
             .Select(f => f.FriendName)
             .FirstOrDefaultAsync();
     }
+
+    public async Task<string?> GetFrienUserNameByPozdrikId(int? pozdrikId)
+    {
+        return await _context.Set<FriendList>()
+            .Where(f => f.IdPozdr == pozdrikId)
+            .Select(f => f.FriendUsername)
+            .FirstOrDefaultAsync();
+    }
 }

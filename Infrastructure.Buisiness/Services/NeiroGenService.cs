@@ -28,8 +28,14 @@ public class NeiroGenService:INeiroGenService
         return await _pozdrikRepository.AddPozdrAsync(pozdr._pozdrikId, pozdr._pozdr);
     }
 
-    public async Task<string?> GetUserNameByPozdrikId(PozdrikIdDto pozdrikId)
+    public async Task<string?> GetNameByPozdrikId(PozdrikIdDto pozdrikId)
     {
         return await _friendRepository.GetFrienNameByPozdrikId(pozdrikId._pozdrikId);
+    }
+
+    public async Task<string?> GetUserNameByPozdrikId(PozdrikIdDto pozdrikId)
+    {
+        return await _friendRepository.GetFrienUserNameByPozdrikId(pozdrikId._pozdrikId);
+        
     }
 }

@@ -9,5 +9,6 @@ public interface INeiroGenService
     
     Task<bool> AddPozdrAsync(PozdrStringDTO pozdr);
     
+    Task<string?> GetNameByPozdrikId( PozdrikIdDto pozdrikId);
     Task<string?> GetUserNameByPozdrikId( PozdrikIdDto pozdrikId);
 }

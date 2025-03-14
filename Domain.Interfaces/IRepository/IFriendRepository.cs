@@ -13,6 +13,7 @@ public interface IFriendRepository
     Task<List<FriendList>> SelectForTodayBithrdayAsync();
     
     Task<string?> GetFrienNameByPozdrikId(int? pozdrikId);
+    Task<string?> GetFrienUserNameByPozdrikId(int? pozdrikId);
     
     
 }
