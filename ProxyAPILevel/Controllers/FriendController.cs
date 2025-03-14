@@ -14,7 +14,7 @@ public class FriendController: ControllerBase
         _friendService = friendService;
     }
     
-    [HttpPost("add")]
+    [HttpPost("add")]//
     public async Task<IActionResult> AddFriend([FromBody] FriendDto friendDto)
     {
         var result = await _friendService.AddFriendInListAsync(friendDto);
