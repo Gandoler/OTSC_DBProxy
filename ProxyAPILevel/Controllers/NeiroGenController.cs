@@ -41,4 +41,10 @@ public class NeiroGenController : ControllerBase
         var username = await _neiroGenService.GetUserNameByPozdrikId(new PozdrikIdDto { _pozdrikId = pozdrikId });
         return username != null ? Ok(username) : NotFound(new { message = "Username not found" });
     }
+    [HttpGet("pozdrik/emptyornull")]
+    public async Task<IActionResult> GetEmptyOrNullPozdrstring()
+    {
+        var result = await _neiroGenService.SelectEmptyOrNullPozdrstringAsync();
+        return result.Any() ? Ok(result) : NotFound(new { message = "No empty or null pozdrstrings found" });
+    }
 }

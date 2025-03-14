@@ -38,4 +38,9 @@ public class NeiroGenService:INeiroGenService
         return await _friendRepository.GetFrienUserNameByPozdrikId(pozdrikId._pozdrikId);
         
     }
+
+    public async Task<List<int>> SelectEmptyOrNullPozdrstringAsync()
+    {
+        return await _pozdrikRepository.SelectEmptyOrNullPozdrstringAsync();
+    }
 }

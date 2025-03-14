@@ -51,4 +51,14 @@ public class PozdrikRepository: IPozdrikRepository
 
 
     }
+
+    public async Task<List<int>> SelectEmptyOrNullPozdrstringAsync()
+    {
+        return await _context.Set<Pozdrik>()
+            .Where(f => string.IsNullOrEmpty(f.Textpozdr))
+            .Select(f => f.IdPozdr)
+            .ToListAsync();
+            
+;
+    }
 }

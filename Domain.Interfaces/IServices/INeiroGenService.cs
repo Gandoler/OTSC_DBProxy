@@ -11,4 +11,5 @@ public interface INeiroGenService
     
     Task<string?> GetNameByPozdrikId( PozdrikIdDto pozdrikId);
     Task<string?> GetUserNameByPozdrikId( PozdrikIdDto pozdrikId);
+    Task<List<int>> SelectEmptyOrNullPozdrstringAsync();
 }
