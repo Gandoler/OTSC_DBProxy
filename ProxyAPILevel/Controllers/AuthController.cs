@@ -3,7 +3,7 @@ using Entities.Templates;
 using Microsoft.AspNetCore.Mvc;
 using UseCases.Services;
 
-namespace ProxyAPILeval;
+namespace ProxyAPILevel;
 [ApiController]
 [Route("api/Auth")]
 public class AuthController : ControllerBase

@@ -2,7 +2,7 @@ using Domain.Interfaces.IServices;
 using Entities.Templates;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ProxyAPILeval;
+namespace ProxyAPILevel;
 
 [ApiController]
 [Route("api/tgbot")]
