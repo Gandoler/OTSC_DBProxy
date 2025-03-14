@@ -16,14 +16,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APPLevel", "APPLevel", "{5BF3ADFD-C3D5-439D-B5C7-64C5694E3985}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MANAGER", "MANAGER", "{EE105F9A-E00D-4AA6-9992-CA23E6230256}"
-	ProjectSection(SolutionItems) = preProject
-		Full Shema.png = Full Shema.png
-		Full Shema.puml = Full Shema.puml
-		ProxyDB.png = ProxyDB.png
-		ProxyDB.puml = ProxyDB.puml
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.DTO", "Domain.DTO\Domain.DTO.csproj", "{EC07E970-FC03-4360-B64E-EF846942D22D}"
 EndProject
 Global
