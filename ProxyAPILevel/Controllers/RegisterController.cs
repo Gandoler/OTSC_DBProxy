@@ -1,3 +1,4 @@
+using Domain.DTO.DTO.MailComp;
 using Domain.Interfaces.IServices;
 using Entities.Templates;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +29,23 @@ public class RegisterController : ControllerBase
         var exists = await _registerService.ExicstCheckAsync(dto);
         if (exists) return Ok(new { message = "User already exists" });
         return BadRequest(new { message = "User already exists" });
+      
+    }
+    [HttpGet("UserId")] 
+    public async Task<IActionResult> GetUserIdByLogin([FromBody] CheckExistDto dto)
+    {
+        AppIdDto? appIdDto = await _registerService.GetAppId(dto);
+        if (appIdDto is null) return BadRequest(new { message = "User does not exist" });
+        return Ok(appIdDto);
+      
+    }
+    
+    [HttpPut("Mail")] 
+    public async Task<IActionResult> GetUserIdByLogin([FromBody] ADDMailDto dto)
+    {
+        bool add = await _registerService.AddMail(dto);
+        if (add) return Ok();
+        return BadRequest(new { message = "mail already exist exist" });
       
     }
 }

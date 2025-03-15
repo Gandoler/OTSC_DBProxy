@@ -35,7 +35,7 @@ public class RegistrService:IRegistrService
         return await _mailComprRepository.AddMailAsync(addMailDto.Appid, addMailDto.Email);
     }
 
-    public async Task<AppIdDto> GetAppId(CheckExistDto dto)
+    public async Task<AppIdDto?> GetAppId(CheckExistDto dto)
     {
         return new AppIdDto { AppId = await _userRepository.GetUserByLoginAsync(dto.Email) };
     }
