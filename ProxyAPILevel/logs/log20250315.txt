@@ -1,0 +1,35 @@
+2025-03-15 13:03:39.395 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-15 13:03:39.444 +03:00 [INF] Now listening on: http://localhost:5000
+2025-03-15 13:03:39.444 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-15 13:03:39.444 +03:00 [INF] Hosting environment: Development
+2025-03-15 13:03:39.444 +03:00 [INF] Content root path: /Users/gl.krutoimail.ru/RiderProjects/OTSC_DBProxy/ProxyAPILevel
+2025-03-15 13:04:15.320 +03:00 [INF] Application is shutting down...
+2025-03-15 13:04:18.548 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-15 13:04:18.595 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-15 13:04:18.595 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-15 13:04:18.595 +03:00 [INF] Hosting environment: Development
+2025-03-15 13:04:18.595 +03:00 [INF] Content root path: /Users/gl.krutoimail.ru/RiderProjects/OTSC_DBProxy/ProxyAPILevel
+2025-03-15 13:04:47.218 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger - null null
+2025-03-15 13:04:47.252 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger - 301 0 null 36.0427ms
+2025-03-15 13:04:47.264 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.html - null null
+2025-03-15 13:04:47.305 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.html - 200 null text/html;charset=utf-8 41.015ms
+2025-03-15 13:04:47.317 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui.css - null null
+2025-03-15 13:04:47.320 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-bundle.js - null null
+2025-03-15 13:04:47.320 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-standalone-preset.js - null null
+2025-03-15 13:04:47.321 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.js - null null
+2025-03-15 13:04:47.322 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.js - 200 null application/javascript;charset=utf-8 0.382ms
+2025-03-15 13:04:47.323 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.css - null null
+2025-03-15 13:04:47.328 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-03-15 13:04:47.329 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.css - 200 202 text/css 5.8117ms
+2025-03-15 13:04:47.338 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-03-15 13:04:47.340 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-03-15 13:04:47.344 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 24.2227ms
+2025-03-15 13:04:47.344 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui.css - 200 154948 text/css 26.5724ms
+2025-03-15 13:04:47.346 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-03-15 13:04:47.347 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-bundle.js - 200 1466324 text/javascript 27.547ms
+2025-03-15 13:04:47.431 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2025-03-15 13:04:47.431 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/favicon-32x32.png - null null
+2025-03-15 13:04:47.431 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-03-15 13:04:47.431 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/favicon-32x32.png - 200 628 image/png 0.7651ms
+2025-03-15 13:04:47.493 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 62.2205ms
+2025-03-15 13:26:28.437 +03:00 [INF] Application is shutting down...

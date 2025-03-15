@@ -40,28 +40,28 @@ public partial class ApplicationContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https: //go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
     {
+        // if (!optionsBuilder.IsConfigured)
+        // {
+        //     optionsBuilder.UseNpgsql(_connectionString);
+        // }
+#if DEBUG
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseNpgsql(_connectionString);
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            var connectionString = config.GetConnectionString("DefaultConnection");
+
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                throw new InvalidOperationException("Connection string 'DefaultConnection' is not set.");
+            }
+
+            optionsBuilder.UseNpgsql(connectionString);
         }
-// #if DEBUG
-//         if (!optionsBuilder.IsConfigured)
-//         {
-//             var config = new ConfigurationBuilder()
-//                 .SetBasePath(Directory.GetCurrentDirectory())
-//                 .AddJsonFile("appsettings.json")
-//                 .Build();
-//
-//             var connectionString = config.GetConnectionString("DefaultConnection");
-//
-//             if (string.IsNullOrEmpty(connectionString))
-//             {
-//                 throw new InvalidOperationException("Connection string 'DefaultConnection' is not set.");
-//             }
-//
-//             optionsBuilder.UseNpgsql(connectionString);
-//         }
-// #endif
+#endif
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -80,9 +80,8 @@ public partial class ApplicationContext : DbContext
             entity.Property(e => e.DateBirth).HasColumnName("date_birth");
             entity.Property(e => e.IdPozdr)
                 .HasColumnName("id_pozdr")
-                .UseIdentityAlwaysColumn()
-                .IsRequired();
-
+                .IsRequired(false); 
+            
             entity.HasOne(d => d.App)
                 .WithMany()
                 .HasForeignKey(d => d.Appid)
@@ -162,22 +161,13 @@ public partial class ApplicationContext : DbContext
         foreach (var entry in ChangeTracker.Entries<FriendList>())
         {
             if (entry.State == EntityState.Added)
-
             {
-                var pozdrik = new Pozdrik
-                {
-                    Interest = "",
-                    Pozhelanie = "",
-                    Textpozdr = ""
-                };
-                Pozdriks.Add(pozdrik);
-                SaveChanges(); // Сохранить, чтобы получить IdPozdr
-
-                entry.Entity.IdPozdr = pozdrik.IdPozdr;
+                entry.Entity.IdPozdr = null; 
             }
         }
         return base.SaveChanges();
     }
+
     
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

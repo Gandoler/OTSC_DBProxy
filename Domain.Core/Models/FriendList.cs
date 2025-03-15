@@ -12,8 +12,7 @@ public partial class FriendList
     public string FriendName { get; set; } = null!;
 
     public DateOnly DateBirth { get; set; }
-
-    public int? IdPozdr { get; set; }
+    public int? IdPozdr { get; set; } // Nullable int
 
     public virtual User App { get; set; } = null!;
 
