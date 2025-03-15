@@ -26,6 +26,8 @@ public class RegisterController : ControllerBase
     public async Task<IActionResult> CheckUserExists([FromBody] CheckExistDto dto)
     {
         var exists = await _registerService.ExicstCheckAsync(dto);
-        return Ok(new { exists });
+        if (exists) return Ok(new { message = "User already exists" });
+        return BadRequest(new { message = "User already exists" });
+      
     }
 }

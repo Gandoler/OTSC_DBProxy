@@ -1,3 +1,4 @@
+using Domain.DTO.DTO.MailComp;
 using Domain.Models;
 using Entities.Templates;
 
@@ -7,4 +8,5 @@ public interface IRegistrService
 {
     Task<bool> RegisterAsync(RegisterDto dto);
     Task<bool> ExicstCheckAsync(CheckExistDto dto);
+    Task<bool> AddMail(ADDMailDto addMailDto);
 }
