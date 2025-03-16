@@ -1,3 +1,5 @@
+using Domain.DTO.DTO.Friend;
+using Domain.DTO.DTO.Pozdr;
 using Domain.Interfaces.IServices;
 using Entities.Templates;
 using Microsoft.AspNetCore.Mvc;

@@ -1,4 +1,6 @@
 using AutoMapper;
+using Domain.DTO.DTO.Friend;
+using Domain.DTO.DTO.Pozdr;
 using Domain.Interfaces;
 using Domain.Interfaces.IServices;
 using Domain.Models;

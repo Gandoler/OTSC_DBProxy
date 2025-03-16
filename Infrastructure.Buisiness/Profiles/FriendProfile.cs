@@ -1,4 +1,5 @@
 using AutoMapper;
+using Domain.DTO.DTO.Friend;
 using Domain.Models;
 using Entities.Templates;
 

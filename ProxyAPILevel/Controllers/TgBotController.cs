@@ -1,3 +1,4 @@
+using Domain.DTO.DTO.Pozdr;
 using Domain.Interfaces.IServices;
 using Domain.Models;
 using Entities.Templates;
@@ -26,8 +27,8 @@ public class TgBotController : ControllerBase
     [HttpGet("tgid/{appId:guid}")]
     public async Task<IActionResult> GetTgId(Guid appId)
     {
-        var tgId = await _tgBotService.GetTgIdAsync(new AppIdDto { AppId = appId });
-        return tgId != null ? Ok(tgId) : NotFound(new { message = "Telegram ID not found" });
+        TgIdDto tgId = await _tgBotService.GetTgIdAsync(new AppIdDto { AppId = appId });
+        return tgId is not null ? Ok(tgId) : NotFound("Telegram ID not found");
     }
     [HttpGet("getCongrByPID/{pozdr:int}")]
     public async Task<IActionResult> GetTgId(PozdrikIdDto pozdr)
@@ -35,4 +36,6 @@ public class TgBotController : ControllerBase
         string? pozdrString = await _tgBotService.SelectPozdrStringAsync(pozdr);
         return pozdrString != null ? Ok(pozdrString) : NotFound(new { message = "Поздравление не найдено" });
     }
+    
+    
 }

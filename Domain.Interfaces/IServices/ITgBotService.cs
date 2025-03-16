@@ -1,3 +1,4 @@
+using Domain.DTO.DTO.Pozdr;
 using Domain.Models;
 using Entities.Templates;
 
@@ -9,4 +10,5 @@ public interface ITgBotService
     
     Task<TgIdDto> GetTgIdAsync(AppIdDto appId);
     Task<string?> SelectPozdrStringAsync(PozdrikIdDto pozdrikId);
+    
 }

@@ -1,4 +1,4 @@
-namespace Entities.Templates;
+namespace Domain.DTO.DTO.Friend;
 
 public class FriendDto
 {

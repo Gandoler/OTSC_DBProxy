@@ -51,4 +51,6 @@ public class UserRepository: IUserRepository
             .Select(f=>f.Appid)
             .FirstOrDefaultAsync();
     }
+
+   
 }

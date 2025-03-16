@@ -1,3 +1,4 @@
+using Domain.DTO.DTO.Pozdr;
 using Domain.Interfaces;
 using Domain.Interfaces.IServices;
 using Domain.Models;
@@ -34,4 +35,5 @@ public class TgBotService: ITgBotService
     {
         return await _pozdrikRepository.SelectPozdrikAsync(pozdrikId._pozdrikId);
     }
+   
 }

@@ -11,4 +11,5 @@ public interface IUserRepository
     Task<bool> ExicstCheckByLoginAsync(string login);
     Task<Guid> GetUserByLoginAsync(string login);
 
+
 }
