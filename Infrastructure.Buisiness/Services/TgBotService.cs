@@ -1,3 +1,4 @@
+using Domain.DTO.DTO.Friend;
 using Domain.DTO.DTO.Pozdr;
 using Domain.Interfaces;
 using Domain.Interfaces.IServices;
@@ -34,6 +35,12 @@ public class TgBotService: ITgBotService
     public async Task<string?> SelectPozdrStringAsync(PozdrikIdDto pozdrikId)
     {
         return await _pozdrikRepository.SelectPozdrikAsync(pozdrikId._pozdrikId);
+    }
+    
+    public async Task<PozdrikIdDto> GetPozdrikId(FriendDto friendDto)
+    {
+        return new PozdrikIdDto
+            { _pozdrikId = await _friendRepository.GetPozdrikIdAsync(friendDto.FriendUsername, friendDto.AppId) };
     }
    
 }
