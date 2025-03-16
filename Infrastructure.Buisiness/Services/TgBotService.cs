@@ -25,9 +25,9 @@ public class TgBotService: ITgBotService
         return await _friendRepository.SelectForTodayBithrdayAsync();
     }
 
-    public async Task<long?> GetTgIdAsync(AppIdDto appId)
+    public async Task<TgIdDto> GetTgIdAsync(AppIdDto appId)
     {
-        return await _tgComprRepository.GetTgId(appId.AppId);
+        return new TgIdDto { TgId = await _tgComprRepository.GetTgId(appId.AppId) };
     }
 
     public async Task<string?> SelectPozdrStringAsync(PozdrikIdDto pozdrikId)
