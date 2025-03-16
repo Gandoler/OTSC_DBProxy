@@ -1,4 +1,5 @@
 using Domain.Interfaces.IServices;
+using Domain.Models;
 using Entities.Templates;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,5 +28,11 @@ public class TgBotController : ControllerBase
     {
         var tgId = await _tgBotService.GetTgIdAsync(new AppIdDto { AppId = appId });
         return tgId != null ? Ok(tgId) : NotFound(new { message = "Telegram ID not found" });
+    }
+    [HttpGet("getCongrByPID/{pozdr:int}")]
+    public async Task<IActionResult> GetTgId(PozdrikIdDto pozdr)
+    {
+        string? pozdrString = await _tgBotService.SelectPozdrStringAsync(pozdr);
+        return pozdrString != null ? Ok(pozdrString) : NotFound(new { message = "Поздравление не найдено" });
     }
 }
