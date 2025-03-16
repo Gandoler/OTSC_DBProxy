@@ -2625,3 +2625,9 @@ LIMIT 1
 2025-03-15 16:58:19.834 +03:00 [INF] HTTP POST /api/register/exists responded 400 in 7.3168 ms
 2025-03-15 16:58:19.834 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/register/exists - 400 null application/json; charset=utf-8 8.317ms
 2025-03-15 16:58:51.477 +03:00 [INF] Application is shutting down...
+2025-03-15 17:18:03.069 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-15 17:18:03.119 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-15 17:18:03.119 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-15 17:18:03.119 +03:00 [INF] Hosting environment: Development
+2025-03-15 17:18:03.119 +03:00 [INF] Content root path: /Users/gl.krutoimail.ru/RiderProjects/OTSC_DBProxy/ProxyAPILevel
+2025-03-15 17:18:13.787 +03:00 [INF] Application is shutting down...
