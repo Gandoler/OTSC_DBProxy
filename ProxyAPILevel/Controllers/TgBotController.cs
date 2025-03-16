@@ -1,3 +1,4 @@
+using Domain.DTO.DTO.Friend;
 using Domain.DTO.DTO.Pozdr;
 using Domain.Interfaces.IServices;
 using Domain.Models;
@@ -37,5 +38,10 @@ public class TgBotController : ControllerBase
         return pozdrString != null ? Ok(pozdrString) : NotFound(new { message = "Поздравление не найдено" });
     }
     
-    
+    [HttpGet("getPozdrikId")]
+    public async Task<IActionResult> GetTgId([FromBody] FriendDto friend)
+    {
+        PozdrikIdDto id = await _tgBotService.GetPozdrikId(friend);
+        return id != null ? Ok(id) : NotFound(new { message = "Поздравление не найдено" });
+    }
 }
