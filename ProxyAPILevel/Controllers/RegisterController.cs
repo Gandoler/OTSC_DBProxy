@@ -34,6 +34,7 @@ public class RegisterController : ControllerBase
     [HttpGet("UserId")] 
     public async Task<IActionResult> GetUserIdByLogin([FromBody] CheckExistDto dto)
     {
+        // тут что бы не делать дубль для чек экзист вместо имейла имеется ввиду login
         AppIdDto? appIdDto = await _registerService.GetAppId(dto);
         if (appIdDto is null) return BadRequest(new { message = "User does not exist" });
         return Ok(appIdDto);
