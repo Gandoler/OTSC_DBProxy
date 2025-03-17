@@ -24,7 +24,7 @@ public class MailBotController : ControllerBase
     }
 
     [HttpGet("pozdrik/{pozdrikId:int}")]
-    public async Task<IActionResult> GetPozdrik(int pozdrikId)
+    public async Task<IActionResult> GetCongrStr(int pozdrikId)
     {
         var pozdrik = await _mailBotService.SelectPozdStringAsync(new PozdrikIdDto { _pozdrikId = pozdrikId });
         return pozdrik != null ? Ok(pozdrik) : NotFound(new { message = "Pozdrik not found" });
