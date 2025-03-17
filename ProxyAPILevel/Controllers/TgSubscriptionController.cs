@@ -15,7 +15,7 @@ public class TgSubscriptionController : ControllerBase
         _tgSubscriptionService = tgSubscriptionService;
     }
 
-    [HttpPost("subscribe")] 
+    [HttpPut("subscribe")] 
     public async Task<IActionResult> Subscribe([FromBody] RegisterTgDto dto)
     {
         var result = await _tgSubscriptionService.SubscribeAsync(dto);
