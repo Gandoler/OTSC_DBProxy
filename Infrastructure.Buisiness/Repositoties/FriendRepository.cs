@@ -83,4 +83,18 @@ public class FriendRepository: IFriendRepository
             .Select(f => f.FriendUsername)
             .FirstOrDefaultAsync();
     }
+
+    public async Task<bool> AddPozdrikIdToFriendAsync(int pozdrikId, string friendUsername, Guid appId)
+    {
+       FriendList? friend =await _context.Set<FriendList>()
+           .FirstOrDefaultAsync(f => f.FriendUsername == friendUsername && f.Appid == appId);
+       if (friend != null)
+       {
+           friend.IdPozdr = pozdrikId;
+           _context.Set<FriendList>().Update(friend);
+           int affectedRows = await _context.SaveChangesAsync();
+           return affectedRows > 0;
+       }
+       return false;
+    }
 }
