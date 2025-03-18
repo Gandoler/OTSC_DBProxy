@@ -20,6 +20,8 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 
+
+#region swagger swagerovich
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
@@ -34,7 +36,9 @@ builder.Services.AddSwaggerExamplesFromAssemblyOf<FriendUpdateExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<SetPozdrIdExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<GetPozdIdInTgExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<GetCongrStringExample>();
+builder.Services.AddSwaggerExamplesFromAssemblyOf<PozdrikstringExample>();
 
+#endregion
 
 
 builder.Services.AddScoped<IFriendService, FriendService>();
