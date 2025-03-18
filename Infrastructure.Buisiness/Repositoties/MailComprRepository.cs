@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace UseCases.Repositoties;
 
-public class MailComprRepository:IMailComprRepository
+public class MailComprRepository : IMailComprRepository
 {
     private readonly ApplicationContext _context;
 
@@ -13,13 +13,19 @@ public class MailComprRepository:IMailComprRepository
     {
         _context = context;
     }
-    
+
     public async Task<bool> AddMailAsync(Guid appid, string mail)
     {
-        MailComprehension mailComprehension = new MailComprehension { Appid = appid, Mail = mail };
+        if (await _context.Set<MailComprehension>().AnyAsync(x => x.Mail == mail))
+        {
+            return false; 
+        }
+
+
+        var mailComprehension = new MailComprehension { Appid = appid, Mail = mail };
         _context.Set<MailComprehension>().Add(mailComprehension);
         int affectedRows = await _context.SaveChangesAsync();
-        return affectedRows > 0; // Возвращаем true, если изменения были сохранены
+        return affectedRows > 0; 
     }
 
     public async Task<Guid> GetIdByMailAsync(string mail)
