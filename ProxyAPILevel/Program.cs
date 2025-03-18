@@ -3,8 +3,9 @@ using Domain.Interfaces;
 using Domain.Interfaces.IServices;
 using Infrastructure.DATA;
 using Microsoft.EntityFrameworkCore;
-
+using ProxyAPILeval.DTOExample;
 using Serilog;
+using Swashbuckle.AspNetCore.Filters;
 using UseCases;
 using UseCases.Profiles;
 using UseCases.Repositoties;
@@ -18,7 +19,12 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.EnableAnnotations();
+    c.ExampleFilters();
+});
+builder.Services.AddSwaggerExamplesFromAssemblyOf<LoginDtoExample>();
 builder.Services.AddScoped<IFriendService, FriendService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IMailBotService, MailBotService>(); 
