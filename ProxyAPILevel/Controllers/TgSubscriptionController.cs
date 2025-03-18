@@ -26,7 +26,10 @@ public class TgSubscriptionController : ControllerBase
     [HttpPut("subscribe")]
     [SwaggerOperation(
         Summary = "Подписка на Telegram-уведомления",
-        Description = "Позволяет пользователю подписаться на уведомления в Telegram, используя предоставленные данные."
+        Description = "Позволяет пользователю подписать свой Telegram, используя предоставленные данные." +
+                      "\n\nдля проверки SELECT * FROM tg_comprehensions" +
+                      "\n\n для удаления DELETE FROM tg_comprehensions\nWHERE appid = '550e8400-e29b-41d4-a716-446655440000'"
+        
     )]
     [SwaggerRequestExample(typeof(RegisterTgDto), typeof(RegisterTgDtoExample))]
     [SwaggerResponseExample(200, typeof(SuccessfulSubscriptionExample))]

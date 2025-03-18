@@ -25,7 +25,9 @@ public class AuthController : ControllerBase
     /// <param name="loginDto">Логин и пароль пользователя</param>
     /// <returns>Флаг существования пользователя</returns>
     [HttpPost("login")]
-    [SwaggerOperation(Summary = "Проверка существования пользователя", Description = "Отправьте логин и пароль для проверки существования пользователя.")]
+    [SwaggerOperation(Summary = "Проверка существования пользователя", 
+        Description = "Отправьте логин и пароль для проверки существования пользователя." +
+                      "\n\n SELECT * FROM users что бы посмотреть в бд")]
     [SwaggerRequestExample(typeof(LoginDto), typeof(LoginDtoExample))]
     [SwaggerResponse(200, "Пользователь найден или не найден", typeof(object))]
     public async Task<IActionResult> CheckUserExists([FromBody] LoginDto loginDto)

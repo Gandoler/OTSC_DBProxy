@@ -27,6 +27,9 @@ builder.Services.AddSwaggerGen(c =>
 });
 builder.Services.AddSwaggerExamplesFromAssemblyOf<LoginDtoExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<RegisterTgDtoExample>();
+builder.Services.AddSwaggerExamplesFromAssemblyOf<FriendDtoExample>();
+builder.Services.AddSwaggerExamplesFromAssemblyOf<DeleteFriendDtoExample>();
+builder.Services.AddSwaggerExamplesFromAssemblyOf<AddIntAndPozhDtoExample>();
 
 
 
