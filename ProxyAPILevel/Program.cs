@@ -19,12 +19,17 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
     c.ExampleFilters();
 });
 builder.Services.AddSwaggerExamplesFromAssemblyOf<LoginDtoExample>();
+builder.Services.AddSwaggerExamplesFromAssemblyOf<RegisterTgDtoExample>();
+
+
+
 builder.Services.AddScoped<IFriendService, FriendService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IMailBotService, MailBotService>(); 
