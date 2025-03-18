@@ -26,6 +26,11 @@ public class PasswordRecoveryService : IPasswordRecoveryService
         return await _userRepository.ExicstCheckByLoginAsync(login);
     }
 
+    public async Task<bool> ExistByMailAsync(string mail)
+    {
+        return await _mailComprRepository.ExistByMailAsync(mail);
+    }
+
     public async Task<bool> UpdateAsync(LoginDto loginDto)
     {
         User usr = new User{Login = loginDto.Login, Password = loginDto.Password};

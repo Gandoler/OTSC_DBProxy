@@ -43,4 +43,9 @@ public class MailComprRepository : IMailComprRepository
             .Select(f => f.Mail)
             .FirstOrDefaultAsync();
     }
+
+    public async Task<bool> ExistByMailAsync(string mail)
+    {
+        return await _context.MailComprehensions.AnyAsync(x => x.Mail == mail);
+    }
 }

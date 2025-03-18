@@ -9,5 +9,7 @@ public interface IPasswordRecoveryService
     
     Task<bool> ExicstCheckByLoginAsync(string login);
     
+    Task<bool> ExistByMailAsync(string mail);
+    
     Task<bool> UpdateAsync(LoginDto loginDto);
 }
