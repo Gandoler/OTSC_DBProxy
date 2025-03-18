@@ -95,8 +95,9 @@ public class FriendController : ControllerBase
     /// <summary>
     /// Добавляет интересы и пожелания по Id Поздрика.
     /// </summary>
-    [HttpPost("pozdrik/add")]
-    [SwaggerOperation(Summary = "Добавить интересы и пожелания", Description = "Добавляет интересы и пожелания по Id Поздрика.")]
+    [HttpPost("pozdrik/addIntAndWish")]
+    [SwaggerOperation(Summary = "Добавить интересы и пожелания", Description = "Добавляет интересы и пожелания по Id Поздрика." +
+                                                                               "\n\n SELECT * FROM pozdrik - посмотреть")]
     [SwaggerRequestExample(typeof(AddIntAndPozhDto), typeof(AddIntAndPozhDtoExample))]
     [SwaggerResponse(200, "Данные успешно добавлены")]
     [SwaggerResponse(400, "Ошибка при добавлении данных")]
