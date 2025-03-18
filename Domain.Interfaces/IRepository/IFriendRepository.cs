@@ -15,5 +15,7 @@ public interface IFriendRepository
     Task<string?> GetFrienNameByPozdrikId(int? pozdrikId);
     Task<string?> GetFrienUserNameByPozdrikId(int? pozdrikId);
     
+    Task<bool> AddPozdrikIdToFriendAsync(int pozdrikId, string friendUsername, Guid appId);
+    
     
 }
