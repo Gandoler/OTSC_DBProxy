@@ -15,14 +15,23 @@ public class PozdrikRepository: IPozdrikRepository
         _context = context;
     }
     
-    public async Task<bool> AddIntAndPozhAsync(int idPozdr, string? interests, string? pozhelania)
+   public async Task<bool> AddIntAndPozhAsync(int idPozdr, string? interests, string? pozhelania)
+   {
+       Pozdrik pozdrik;
+    var exists = await _context.Set<Pozdrik>().AnyAsync(p => p.IdPozdr == idPozdr);
+    if (exists)
     {
-        Pozdrik pozdrik = new Pozdrik{IdPozdr = idPozdr, Interest = interests,Pozhelanie = pozhelania};
-       _context.Set<Pozdrik>().Add(pozdrik);
-       int req =  await _context.SaveChangesAsync();
-       return req > 0;
-
+        pozdrik = new Pozdrik { IdPozdr = idPozdr, Interest = interests, Pozhelanie = pozhelania };
+        _context.Set<Pozdrik>().Update(pozdrik);
+        return await _context.SaveChangesAsync() > 0;
     }
+
+    pozdrik = new Pozdrik { IdPozdr = idPozdr, Interest = interests, Pozhelanie = pozhelania };
+    _context.Set<Pozdrik>().Add(pozdrik);
+    int req = await _context.SaveChangesAsync();
+    return req > 0;
+}
+
 
     public async Task<(string?, string?)> SelectIntAndPozhAsync(int? idPozdr)
     {

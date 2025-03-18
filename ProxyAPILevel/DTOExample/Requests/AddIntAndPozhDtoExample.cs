@@ -9,7 +9,7 @@ public class AddIntAndPozhDtoExample : IExamplesProvider<AddIntAndPozhDto>
     {
         return new AddIntAndPozhDto
         {
-            IdPozdr = 42,
+            IdPozdr = 1,
             Interests = "Программирование, Чтение книг",
             Pozhelania = "Счастья и успехов!"
         };
