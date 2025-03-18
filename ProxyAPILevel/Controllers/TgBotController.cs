@@ -51,7 +51,7 @@ public class TgBotController : ControllerBase
     /// <summary>
     /// Получает поздравление по ID Поздрика.
     /// </summary>
-    [HttpGet("getCongrByPID/{pozdr:int}")]
+    [HttpPost("getCongrByPID")]
     [SwaggerOperation(Summary = "Получить поздравление", Description = "Возвращает поздравление по ID Поздрика.")]
     [SwaggerRequestExample(typeof(FriendDto), typeof(GetCongrStringExample))]
     [SwaggerResponse(200, "Поздравление найдено", typeof(string))]

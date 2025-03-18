@@ -9,6 +9,6 @@ public class GetCongrStringExample : IExamplesProvider<PozdrikIdDto>
     {
         return new PozdrikIdDto
         {
-            _pozdrikId = 1
+            _pozdrikId = 6
         };
     }}
