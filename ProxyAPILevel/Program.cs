@@ -32,6 +32,8 @@ builder.Services.AddSwaggerExamplesFromAssemblyOf<DeleteFriendDtoExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<AddIntAndPozhDtoExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<FriendUpdateExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<SetPozdrIdExample>();
+builder.Services.AddSwaggerExamplesFromAssemblyOf<GetPozdIdInTgExample>();
+builder.Services.AddSwaggerExamplesFromAssemblyOf<GetCongrStringExample>();
 
 
 
