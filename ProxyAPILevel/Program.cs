@@ -37,7 +37,9 @@ builder.Services.AddSwaggerExamplesFromAssemblyOf<SetPozdrIdExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<GetPozdIdInTgExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<GetCongrStringExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<PozdrikstringExample>();
-
+builder.Services.AddSwaggerExamplesFromAssemblyOf<RegisterInAppExample>();
+builder.Services.AddSwaggerExamplesFromAssemblyOf<CheckExistByMailExample>();
+builder.Services.AddSwaggerExamplesFromAssemblyOf<ADDMaiExample>();
 #endregion
 
 

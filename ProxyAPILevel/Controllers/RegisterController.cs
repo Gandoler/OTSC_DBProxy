@@ -1,7 +1,11 @@
+using Domain.DTO.DTO.Friend;
 using Domain.DTO.DTO.MailComp;
 using Domain.Interfaces.IServices;
 using Entities.Templates;
 using Microsoft.AspNetCore.Mvc;
+using ProxyAPILeval.DTOExample;
+using Swashbuckle.AspNetCore.Annotations;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace ProxyAPILevel;
 
@@ -16,37 +20,62 @@ public class RegisterController : ControllerBase
         _registerService = registerService;
     }
 
+    /// <summary>
+    /// Регистрирует нового пользователя.
+    /// </summary>
     [HttpPost("create")] 
+    [SwaggerOperation(Summary = "Регистрация пользователя", Description = "Регистрирует нового пользователя с логином, паролем и email.")]
+    [SwaggerRequestExample(typeof(RegisterDto), typeof(RegisterInAppExample))]
+    [SwaggerResponse(200, "Пользователь успешно зарегистрирован")]
+    [SwaggerResponse(400, "Ошибка при регистрации")] 
     public async Task<IActionResult> RegisterUser([FromBody] RegisterDto dto)
     {
         var result = await _registerService.RegisterAsync(dto);
         return result ? Ok(new { message = "User registered successfully" }) : BadRequest(new { message = "Registration failed" });
     }
 
+    /// <summary>
+    /// Проверяет существование пользователя по email.
+    /// </summary>
     [HttpPost("exists")] 
+    [SwaggerOperation(Summary = "Проверка существования пользователя", Description = "Проверяет, существует ли пользователь с указанным email.")]
+    [SwaggerRequestExample(typeof(CheckExistDto), typeof(CheckExistByMailExample))]
+    [SwaggerResponse(200, "Пользователь существует")]
+    [SwaggerResponse(400, "Пользователь не существует")]
     public async Task<IActionResult> CheckUserExists([FromBody] CheckExistDto dto)
     {
         var exists = await _registerService.ExicstCheckAsync(dto);
-        if (exists) return Ok(new { message = "User already exists" });
-        return BadRequest(new { message = "User already exists" });
-      
+        return exists ? Ok(new { message = "User exists" }) : BadRequest(new { message = "User does not exist" });
     }
-    [HttpGet("UserId")] 
-    public async Task<IActionResult> GetUserIdByLogin([FromBody] CheckExistDto dto)
+
+    /// <summary>
+    /// Получает ID пользователя по логину.
+    /// </summary>
+    [HttpGet("UserId/{userlogin}")] 
+    [SwaggerOperation(Summary = "Получить ID пользователя", Description = "Возвращает AppId пользователя по логину." +
+                                                                          "\n\n(admin)-пример")]
+    
+    [SwaggerResponse(200, "AppId успешно найден", typeof(AppIdDto))]
+    [SwaggerResponse(400, "Пользователь не найден")]
+    public async Task<IActionResult> GetUserIdByLogin(string userlogin)
     {
-        // тут что бы не делать дубль для чек экзист вместо имейла имеется ввиду login
-        AppIdDto? appIdDto = await _registerService.GetAppId(dto);
+        AppIdDto? appIdDto = await _registerService.GetAppId(new CheckExistDto{Email = userlogin});
         if (appIdDto is null) return BadRequest(new { message = "User does not exist" });
         return Ok(appIdDto);
-      
     }
-    
+
+    /// <summary>
+    /// Добавляет почту пользователю.
+    /// </summary>
     [HttpPut("Mail")] 
-    public async Task<IActionResult> GetUserIdByLogin([FromBody] ADDMailDto dto)
+    [SwaggerOperation(Summary = "Добавить email", Description = "Добавляет email для существующего пользователя по AppId.")]
+    [SwaggerRequestExample(typeof(ADDMailDto), typeof(ADDMaiExample))]
+    [SwaggerResponse(200, "Email успешно добавлен")]
+    [SwaggerResponse(400, "Email уже существует")]
+    public async Task<IActionResult> AddMail([FromBody] ADDMailDto dto)
     {
         bool add = await _registerService.AddMail(dto);
-        if (add) return Ok();
-        return BadRequest(new { message = "mail already exist exist" });
-      
+        if (add) return Ok(new { message = "Email added successfully" });
+        return BadRequest(new { message = "Mail already exists" });
     }
 }
