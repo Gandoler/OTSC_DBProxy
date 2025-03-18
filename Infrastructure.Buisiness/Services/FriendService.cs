@@ -25,6 +25,7 @@ public class FriendService:IFriendService
     {
         FriendList friendList = new FriendList
         {
+            Appid = friend.AppId,
             FriendUsername = friend.FriendUsername,
             FriendName = friend.FriendName,
             DateBirth = friend.DateBirth,
@@ -43,6 +44,7 @@ public class FriendService:IFriendService
     {
         FriendList friendList = new FriendList
         {
+            Appid = friend.AppId,
             FriendUsername = friend.FriendUsername,
             FriendName = friend.FriendName,
             DateBirth = friend.DateBirth,

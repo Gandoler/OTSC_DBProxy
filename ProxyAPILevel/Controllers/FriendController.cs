@@ -24,7 +24,10 @@ public class FriendController : ControllerBase
     /// Добавляет друга в список.
     /// </summary>
     [HttpPost("add")]
-    [SwaggerOperation(Summary = "Добавить друга", Description = "Добавляет друга в список друзей по AppId.")]
+    [SwaggerOperation(Summary = "Добавить друга", Description = "Добавляет друга в список друзей по AppId." +
+                                                                "\n\nSELECT * FROM friend_list для просмотра" +
+                                                                "\n\n для делита DELETE  FROM friend_list\nWHERE appid = '550e8400-e29b-41d4-a716-446655440000' " +
+                                                                "and friend_username = 'best_friend123'")]
     [SwaggerRequestExample(typeof(FriendDto), typeof(FriendDtoExample))]
     [SwaggerResponse(200, "Друг успешно добавлен")]
     [SwaggerResponse(400, "Ошибка при добавлении друга")]
@@ -53,7 +56,7 @@ public class FriendController : ControllerBase
     /// </summary>
     [HttpPut("update")]
     [SwaggerOperation(Summary = "Обновить друга", Description = "Обновляет данные о друге.")]
-    [SwaggerRequestExample(typeof(FriendDto), typeof(FriendDtoExample))]
+    [SwaggerRequestExample(typeof(FriendDto), typeof(FriendUpdateExample))]
     [SwaggerResponse(200, "Данные успешно обновлены")]
     [SwaggerResponse(400, "Ошибка при обновлении данных")]
     public async Task<IActionResult> UpdateFriend([FromBody] FriendDto friendDto)
@@ -66,7 +69,8 @@ public class FriendController : ControllerBase
     /// Получает список друзей по AppId.
     /// </summary>
     [HttpGet("list/{appId:guid}")]
-    [SwaggerOperation(Summary = "Получить список друзей", Description = "Возвращает список друзей по AppId.")]
+    [SwaggerOperation(Summary = "Получить список друзей", Description = "Возвращает список друзей по AppId." +
+                                                                        "\\n\\n(пример: 550e8400-e29b-41d4-a716-446655440000)]")]
     [SwaggerResponse(200, "Список друзей успешно получен")]
     public async Task<IActionResult> GetFriendsByAppId(Guid appId)
     {
@@ -78,7 +82,9 @@ public class FriendController : ControllerBase
     /// Получает Id Поздрика по имени пользователя и AppId.
     /// </summary>
     [HttpGet("pozdrik/{username}/{appId:guid}")]
-    [SwaggerOperation(Summary = "Получить Id Поздрика", Description = "Возвращает Id Поздрика по имени пользователя и AppId.")]
+    [SwaggerOperation(Summary = "Получить Id Поздрика", Description = "Возвращает Id Поздрика по юзернейму пользователя и AppId." +
+                                                                      "/n/n (пример: 550e8400-e29b-41d4-a716-446655440000)" +
+                                                                      "\n\n(best_friend123)")]
     [SwaggerResponse(200, "Id Поздрика успешно получен")]
     public async Task<IActionResult> GetPozdrikId(string username, Guid appId)
     {

@@ -30,7 +30,7 @@ builder.Services.AddSwaggerExamplesFromAssemblyOf<RegisterTgDtoExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<FriendDtoExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<DeleteFriendDtoExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<AddIntAndPozhDtoExample>();
-
+builder.Services.AddSwaggerExamplesFromAssemblyOf<FriendUpdateExample>();
 
 
 builder.Services.AddScoped<IFriendService, FriendService>();

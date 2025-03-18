@@ -15,14 +15,21 @@ public class FriendRepository: IFriendRepository
     }
     public async Task<bool> AddFriendInListAsync(FriendList friendList)
     {
+        var userExists = await _context.Set<FriendList>().Where(f =>f.FriendUsername==friendList.FriendUsername && f.Appid == friendList.Appid).AnyAsync();
+        if (userExists)
+        {
+            Console.WriteLine($"Firend with Appid {friendList.Appid} and username {friendList.FriendName} already exist.");
+           return false;
+        }
+
         _context.Set<FriendList>().Add(friendList);
         int affectedRows = await _context.SaveChangesAsync();
-        return affectedRows > 0; // Возвращаем true, если изменения были сохранены
+        return affectedRows > 0;
     }
 
-    public async Task<bool> DeleteFriendFromListAsync(Guid appid, string friendname)
+    public async Task<bool> DeleteFriendFromListAsync(Guid appid, string friendUsername)
     {
-        var friend = await _context.Set<FriendList>().FirstOrDefaultAsync(f => f.Appid == appid && f.FriendName == friendname);
+        var friend = await _context.Set<FriendList>().FirstOrDefaultAsync(f => f.Appid == appid && f.FriendUsername == friendUsername);
     
         if (friend == null)
             return false; // Друг не найден
