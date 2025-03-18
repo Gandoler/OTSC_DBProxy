@@ -13,6 +13,7 @@ public interface IFriendService
     Task<bool> UpdateFriendInListAsync(FriendDto  friend);
     Task<List<FriendDto>> SelectByAppIdAsync( AppIdDto appid);
     Task<PozdrikIdDto> GetPozdrikIdAsync(GetPozdrikQueryDto queryDto);
+    Task<bool> AddPozdrikIdToFriendAsync(AddPozdrIdDto pozdrId);
   
     
     

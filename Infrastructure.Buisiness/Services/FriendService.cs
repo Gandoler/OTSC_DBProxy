@@ -66,6 +66,11 @@ public class FriendService:IFriendService
             { _pozdrikId = await _friendRepository.GetPozdrikIdAsync(queryDto.Username, queryDto.Appid) };
     }
 
+    public async Task<bool> AddPozdrikIdToFriendAsync(AddPozdrIdDto pozdrId)
+    {
+        return await _friendRepository.AddPozdrikIdToFriendAsync(pozdrId.PozdrikId, pozdrId.FriendUsername, pozdrId.AppId);
+    }
+
     public async Task<bool> AddIntAndPozhAsync(AddIntAndPozhDto intAndPozh)
     {
       return await _pozdrikRepository.AddIntAndPozhAsync(intAndPozh.IdPozdr, intAndPozh.Interests, intAndPozh.Pozhelania);

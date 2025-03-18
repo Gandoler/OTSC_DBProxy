@@ -117,4 +117,20 @@ public class FriendController : ControllerBase
         var result = await _friendService.SelectIntAndPozhAsync(new PozdrikIdDto { _pozdrikId = pozdrikId });
         return Ok(result);
     }
+    
+    
+    /// <summary>
+    /// Добавить запись с поздравнием.
+    /// </summary>    
+    [HttpPost("SetpozdrId")]
+    [SwaggerOperation(Summary = "Добавить id поздрик", Description = "Добавляет Id Поздрика." +
+                                                                     "SELECT * FROM pozdrik")]
+    [SwaggerRequestExample(typeof(AddPozdrIdDto), typeof(SetPozdrIdExample))]
+    [SwaggerResponse(200, "Интересы и пожелания успешно добавлены")]
+    [SwaggerResponse(400, "Ошибка при добавлении интересов и пожеланий")]
+    public async Task<IActionResult> AddIntAndPozh([FromBody] AddPozdrIdDto dto )
+    {
+        var result = await _friendService.AddPozdrikIdToFriendAsync(dto);
+        return result ? Ok(new { message = "поздравление успешно привязано" }) : BadRequest(new { message = "Ошибка при привязке таблицы поздравления" });
+    }
 }
