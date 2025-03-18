@@ -96,9 +96,12 @@ public partial class ApplicationContext : DbContext
 
         modelBuilder.Entity<MailComprehension>(entity =>
         {
+           
             entity
-                .HasNoKey()
-                .ToTable("mail_comprehensions");
+                .HasKey(e => new { e.Appid, e.Mail })
+                .HasName("mail_comprehensions_pkey");
+
+            entity.ToTable("mail_comprehensions");
 
             entity.HasIndex(e => e.Mail, "mail_comprehensions_mail_key").IsUnique();
 
@@ -125,8 +128,10 @@ public partial class ApplicationContext : DbContext
         modelBuilder.Entity<TgComprehension>(entity =>
         {
             entity
-                .HasNoKey()
-                .ToTable("tg_comprehensions");
+                .HasKey(e => new { e.Appid, e.TgId })
+                .HasName("tg_comprehensions_pkey"); // Задаем составной первичный ключ
+
+            entity.ToTable("tg_comprehensions");
 
             entity.HasIndex(e => e.TgId, "tg_comprehensions_tg_id_key").IsUnique();
 

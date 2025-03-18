@@ -60,11 +60,11 @@ namespace Infrastructure.Migrations
                         .HasColumnName("appid");
 
                     b.Property<string>("Mail")
-                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("mail");
 
-                    b.HasIndex("Appid");
+                    b.HasKey("Appid", "Mail")
+                        .HasName("mail_comprehensions_pkey");
 
                     b.HasIndex(new[] { "Mail" }, "mail_comprehensions_mail_key")
                         .IsUnique();
@@ -105,11 +105,12 @@ namespace Infrastructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("appid");
 
-                    b.Property<long?>("TgId")
+                    b.Property<long>("TgId")
                         .HasColumnType("bigint")
                         .HasColumnName("tg_id");
 
-                    b.HasIndex("Appid");
+                    b.HasKey("Appid", "TgId")
+                        .HasName("tg_comprehensions_pkey");
 
                     b.HasIndex(new[] { "TgId" }, "tg_comprehensions_tg_id_key")
                         .IsUnique();
