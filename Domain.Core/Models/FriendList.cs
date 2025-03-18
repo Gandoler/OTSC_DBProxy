@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Domain.Models;
 
 namespace Domain.Models;
 
@@ -7,12 +6,13 @@ public partial class FriendList
 {
     public Guid Appid { get; set; }
 
-    public string? FriendUsername { get; set; }
+    public string FriendUsername { get; set; } = null!;
 
     public string FriendName { get; set; } = null!;
 
     public DateOnly DateBirth { get; set; }
-    public int? IdPozdr { get; set; } // Nullable int
+
+    public int? IdPozdr { get; set; }
 
     public virtual User App { get; set; } = null!;
 

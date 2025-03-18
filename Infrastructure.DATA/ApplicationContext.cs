@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Domain.Models;
+﻿using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.Json;
 
 namespace Infrastructure.DATA;
 
@@ -64,7 +61,7 @@ public partial class ApplicationContext : DbContext
 #endif
     }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+   protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<FriendList>(entity =>
         {
@@ -72,23 +69,21 @@ public partial class ApplicationContext : DbContext
 
             entity.ToTable("friend_list");
 
+            entity.HasIndex(e => e.IdPozdr, "IX_friend_list_id_pozdr");
+
             entity.Property(e => e.Appid).HasColumnName("appid");
             entity.Property(e => e.FriendUsername)
-                .HasColumnName("friend_username")
-                .IsRequired();
-            entity.Property(e => e.FriendName).HasColumnName("friend_name");
+                .HasDefaultValueSql("''::text")
+                .HasColumnName("friend_username");
             entity.Property(e => e.DateBirth).HasColumnName("date_birth");
-            entity.Property(e => e.IdPozdr)
-                .HasColumnName("id_pozdr")
-                .IsRequired(false); 
-            
-            entity.HasOne(d => d.App)
-                .WithMany()
+            entity.Property(e => e.FriendName).HasColumnName("friend_name");
+            entity.Property(e => e.IdPozdr).HasColumnName("id_pozdr");
+
+            entity.HasOne(d => d.App).WithMany(p => p.FriendLists)
                 .HasForeignKey(d => d.Appid)
                 .HasConstraintName("friend_list_appid_fkey");
 
-            entity.HasOne(d => d.IdPozdrNavigation)
-                .WithMany()
+            entity.HasOne(d => d.IdPozdrNavigation).WithMany(p => p.FriendLists)
                 .HasForeignKey(d => d.IdPozdr)
                 .OnDelete(DeleteBehavior.SetNull)
                 .HasConstraintName("friend_list_id_pozdr_fkey");
@@ -96,10 +91,7 @@ public partial class ApplicationContext : DbContext
 
         modelBuilder.Entity<MailComprehension>(entity =>
         {
-           
-            entity
-                .HasKey(e => new { e.Appid, e.Mail })
-                .HasName("mail_comprehensions_pkey");
+            entity.HasKey(e => new { e.Appid, e.Mail }).HasName("mail_comprehensions_pkey");
 
             entity.ToTable("mail_comprehensions");
 
@@ -108,7 +100,7 @@ public partial class ApplicationContext : DbContext
             entity.Property(e => e.Appid).HasColumnName("appid");
             entity.Property(e => e.Mail).HasColumnName("mail");
 
-            entity.HasOne(d => d.App).WithMany()
+            entity.HasOne(d => d.App).WithMany(p => p.MailComprehensions)
                 .HasForeignKey(d => d.Appid)
                 .HasConstraintName("mail_comprehensions_appid_fkey");
         });
@@ -127,18 +119,18 @@ public partial class ApplicationContext : DbContext
 
         modelBuilder.Entity<TgComprehension>(entity =>
         {
-            entity
-                .HasKey(e => new { e.Appid, e.TgId })
-                .HasName("tg_comprehensions_pkey"); // Задаем составной первичный ключ
+            entity.HasKey(e => new { e.Appid, e.TgId }).HasName("tg_comprehensions_pkey");
 
             entity.ToTable("tg_comprehensions");
 
             entity.HasIndex(e => e.TgId, "tg_comprehensions_tg_id_key").IsUnique();
 
             entity.Property(e => e.Appid).HasColumnName("appid");
-            entity.Property(e => e.TgId).HasColumnName("tg_id");
+            entity.Property(e => e.TgId)
+                .HasDefaultValue(0L)
+                .HasColumnName("tg_id");
 
-            entity.HasOne(d => d.App).WithMany()
+            entity.HasOne(d => d.App).WithMany(p => p.TgComprehensions)
                 .HasForeignKey(d => d.Appid)
                 .HasConstraintName("tg_comprehensions_appid_fkey");
         });
@@ -161,18 +153,5 @@ public partial class ApplicationContext : DbContext
         OnModelCreatingPartial(modelBuilder);
     }
 
-    public override int SaveChanges()
-    {
-        foreach (var entry in ChangeTracker.Entries<FriendList>())
-        {
-            if (entry.State == EntityState.Added)
-            {
-                entry.Entity.IdPozdr = null; 
-            }
-        }
-        return base.SaveChanges();
-    }
-
-    
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

@@ -12,4 +12,6 @@ public partial class Pozdrik
     public string? Pozhelanie { get; set; }
 
     public string? Textpozdr { get; set; }
+
+    public virtual ICollection<FriendList> FriendLists { get; set; } = new List<FriendList>();
 }
