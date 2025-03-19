@@ -45,7 +45,7 @@ public class UserRepository: IUserRepository
     public async Task<bool> ExicstCheckByLoginAsync(string login)
     {
         User? us = await _context.Set<User>().Where(f=>f.Login==login).FirstOrDefaultAsync();
-        if (us == null) return true;
+        if (us != null) return true;
         return false;
     }
 
