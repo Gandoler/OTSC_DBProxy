@@ -42,7 +42,7 @@ public class RegisterController : ControllerBase
     
     [SwaggerResponse(200, "Пользователь существует")]
     [SwaggerResponse(400, "Пользователь не существует")]
-    public async Task<IActionResult> CheckUserExists([FromBody] string login)
+    public async Task<IActionResult> CheckUserExists( string login)
     {
         var exists = await _registerService.ExicstCheckAsync(new CheckExistDto(){Email = login});//ха-ха-ха
         return exists ? Ok(new { message = "User exists" }) : BadRequest(new { message = "User does not exist" });
