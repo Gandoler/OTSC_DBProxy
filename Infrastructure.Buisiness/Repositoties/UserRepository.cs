@@ -30,10 +30,17 @@ public class UserRepository: IUserRepository
 
     public async Task<bool> CreateAsync(User user)
     {
+        bool exists = await _context.Set<User>().AnyAsync(u => u.Login == user.Login);
+        if (exists)
+        {
+            return false;
+        }
+
         _context.Set<User>().Add(user);
         int res = await _context.SaveChangesAsync();
         return res > 0;
     }
+
 
     public async Task<bool> ForPswAndLoginCheckAsync(User user)
     {
