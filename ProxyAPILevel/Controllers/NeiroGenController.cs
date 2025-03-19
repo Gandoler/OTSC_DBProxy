@@ -50,7 +50,8 @@ public class NeiroGenController : ControllerBase
     /// Получает имя по ID Поздрика.
     /// </summary>
     [HttpGet("pozdrik/name/{pozdrikId:int}")]
-    [SwaggerOperation(Summary = "Получить имя Поздрика", Description = "Возвращает имя, связанное с данным Поздриком.")]
+    [SwaggerOperation(Summary = "Получить имя Поздрика", Description = "Возвращает имя, связанное с данным Поздриком." +
+                                                                       "\n\n 6- пример")]
     [SwaggerResponse(200, "Имя успешно найдено", typeof(string))]
     [SwaggerResponse(404, "Имя не найдено")]
     public async Task<IActionResult> GetNameByPozdrikId(int pozdrikId)
