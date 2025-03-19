@@ -68,9 +68,9 @@ public class MailBotController : ControllerBase
     [SwaggerRequestExample(typeof(FriendDto), typeof(GetPozdIdInTgExample))]
     [SwaggerResponse(200, "Id Поздрика найден", typeof(PozdrikIdDto))]
     [SwaggerResponse(404, "Поздравление не найдено")]
-    public async Task<IActionResult> GetPozdrikId([FromBody] FriendDto friend)
+    public async Task<IActionResult> GetPozdrikIdForMail([FromBody] FriendDto friend)
     {
         PozdrikIdDto id = await _mailBotService.GetPozdrikId(friend);
-        return id != null ? Ok(id) : NotFound(new { message = "Поздравление не найдено" });
+        return id._pozdrikId != null ? Ok(id) : NotFound(new { message = "Поздравление не найдено" });
     }
 }
