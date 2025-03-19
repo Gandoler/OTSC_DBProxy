@@ -22,15 +22,15 @@ public class PasswordRecoveryController : ControllerBase
         return Ok(result);
     }
 
-    [HttpPost("check-mail")]
+    [HttpGet("check-mail/{email}")]
     public async Task<IActionResult> CheckMail(string mail)
     {
         var result = await _passwordRecoveryService.ExistByMailAsync(mail);
         return Ok(result);
     }
 
-    [HttpPost("exists")] 
-    public async Task<IActionResult> CheckUserExists([FromBody] string login)
+    [HttpGet("exists/{login}")] 
+    public async Task<IActionResult> CheckUserExists( string login)
     {
         var exists = await _passwordRecoveryService.ExicstCheckByLoginAsync(login);
         return Ok(new { exists });
