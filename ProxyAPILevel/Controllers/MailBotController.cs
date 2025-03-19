@@ -1,8 +1,11 @@
+using Domain.DTO.DTO.Friend;
 using Domain.DTO.DTO.Pozdr;
 using Domain.Interfaces.IServices;
 using Entities.Templates;
 using Microsoft.AspNetCore.Mvc;
+using ProxyAPILeval.DTOExample;
 using Swashbuckle.AspNetCore.Annotations;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace ProxyAPILevel;
 
@@ -32,7 +35,7 @@ public class MailBotController : ControllerBase
     /// <summary>
     /// Получает строку поздравления по ID.
     /// </summary>
-    [HttpGet("pozdrik/{pozdrikId:int}")]
+    [HttpGet("GetCongrString/{pozdrikId:int}")]
     [SwaggerOperation(Summary = "Получить поздравление", Description = "Возвращает поздравительную строку по указанному ID Поздрика.")]
     [SwaggerResponse(200, "Поздравление успешно найдено")]
     [SwaggerResponse(404, "Поздравление не найдено")]
@@ -54,5 +57,20 @@ public class MailBotController : ControllerBase
     {
         var email = await _mailBotService.GetEmailAsync(new AppIdDto { AppId = appId });
         return email != null ? Ok(email) : NotFound(new { message = "Email not found" });
+    }
+    
+    
+    /// <summary>
+    /// Получает Id Поздрика по данным друга.
+    /// </summary>
+    [HttpPost("getPozdrikId")]
+    [SwaggerOperation(Summary = "Получить Id Поздрика", Description = "Возвращает Id Поздрика по данным друга.")]
+    [SwaggerRequestExample(typeof(FriendDto), typeof(GetPozdIdInTgExample))]
+    [SwaggerResponse(200, "Id Поздрика найден", typeof(PozdrikIdDto))]
+    [SwaggerResponse(404, "Поздравление не найдено")]
+    public async Task<IActionResult> GetPozdrikId([FromBody] FriendDto friend)
+    {
+        PozdrikIdDto id = await _mailBotService.GetPozdrikId(friend);
+        return id != null ? Ok(id) : NotFound(new { message = "Поздравление не найдено" });
     }
 }

@@ -1,3 +1,4 @@
+using Domain.DTO.DTO.Friend;
 using Domain.DTO.DTO.Pozdr;
 using Domain.Models;
 using Entities.Templates;
@@ -11,4 +12,5 @@ public interface IMailBotService
     Task<string?> SelectPozdStringAsync(PozdrikIdDto pozdrikId);
     
     Task<string?> GetEmailAsync(AppIdDto appId);
+    Task<PozdrikIdDto> GetPozdrikId(FriendDto friendDto);
 }

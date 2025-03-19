@@ -1,3 +1,4 @@
+using Domain.DTO.DTO.Friend;
 using Domain.DTO.DTO.Pozdr;
 using Domain.Interfaces;
 using Domain.Interfaces.IServices;
@@ -34,5 +35,10 @@ public class MailBotService: IMailBotService
     public Task<string?> GetEmailAsync(AppIdDto appId)
     {
         return _mailComprRepository.GetMailByIdAsync(appId.AppId);
+    }
+    public async Task<PozdrikIdDto> GetPozdrikId(FriendDto friendDto)
+    {
+        return new PozdrikIdDto
+            { _pozdrikId = await _friendRepository.GetPozdrikIdAsync(friendDto.FriendUsername, friendDto.AppId) };
     }
 }
