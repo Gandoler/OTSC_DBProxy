@@ -4,6 +4,7 @@ using Domain.Interfaces.IServices;
 using Infrastructure.DATA;
 using Microsoft.EntityFrameworkCore;
 using ProxyAPILeval.DTOExample;
+using ProxyAPILeval.DTOExample.ForgotPassword;
 using Serilog;
 using Swashbuckle.AspNetCore.Filters;
 using UseCases;
@@ -40,6 +41,7 @@ builder.Services.AddSwaggerExamplesFromAssemblyOf<PozdrikstringExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<RegisterInAppExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<CheckExistByMailExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<ADDMaiExample>();
+builder.Services.AddSwaggerExamplesFromAssemblyOf<ChangePasswordExample>();
 #endregion
 
 

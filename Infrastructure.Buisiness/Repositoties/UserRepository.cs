@@ -17,8 +17,13 @@ public class UserRepository: IUserRepository
     
     public async Task<bool> UpdateAsync(User user)
     {
-
-        _context.Set<User>().Update(user);
+        var existingUser = await _context.Set<User>().Where(f=> f.Login== user.Login).FirstOrDefaultAsync();
+        if (existingUser == null)
+        {
+            return false; // Пользователь не найден
+        }
+        existingUser.Password = user.Password;
+        _context.Set<User>().Update(existingUser);
         int res = await _context.SaveChangesAsync();
         return res > 0;
     }
