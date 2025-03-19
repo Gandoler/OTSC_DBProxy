@@ -37,14 +37,14 @@ public class RegisterController : ControllerBase
     /// <summary>
     /// Проверяет существование пользователя по email.
     /// </summary>
-    [HttpPost("exists")] 
+    [HttpGet("exists/{login}")] 
     [SwaggerOperation(Summary = "Проверка существования пользователя", Description = "Проверяет, существует ли пользователь с указанным email.")]
-    [SwaggerRequestExample(typeof(CheckExistDto), typeof(CheckExistByMailExample))]
+    
     [SwaggerResponse(200, "Пользователь существует")]
     [SwaggerResponse(400, "Пользователь не существует")]
-    public async Task<IActionResult> CheckUserExists([FromBody] CheckExistDto dto)
+    public async Task<IActionResult> CheckUserExists([FromBody] string login)
     {
-        var exists = await _registerService.ExicstCheckAsync(dto);
+        var exists = await _registerService.ExicstCheckAsync(new CheckExistDto(){Email = login});//ха-ха-ха
         return exists ? Ok(new { message = "User exists" }) : BadRequest(new { message = "User does not exist" });
     }
 
