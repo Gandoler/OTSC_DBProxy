@@ -9,4 +9,5 @@ public interface IPozdrikRepository
     Task<string?> SelectPozdrikAsync(int? idPozdr);
     Task<bool> AddPozdrAsync(int idPozdr, string? pozdrtext);
     Task<List<int>> SelectEmptyOrNullPozdrstringAsync();
+    Task<int> CreatePozdrikAsync(string? interests, string? pozhelania);
 }

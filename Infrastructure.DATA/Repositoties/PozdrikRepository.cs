@@ -32,7 +32,13 @@ public class PozdrikRepository: IPozdrikRepository
     return req > 0;
 }
 
-
+   public async Task<int> CreatePozdrikAsync(string? interests, string? pozhelania)
+   {
+       var pozdrik = new Pozdrik { Interest = interests, Pozhelanie = pozhelania};
+       _context.Set<Pozdrik>().Add(pozdrik);
+       await _context.SaveChangesAsync();
+       return pozdrik.IdPozdr;
+   }
     public async Task<(string?, string?)> SelectIntAndPozhAsync(int? idPozdr)
     {
         Pozdrik? pozd =  await _context.Set<Pozdrik>().Where(f=>f.IdPozdr == idPozdr).FirstOrDefaultAsync();

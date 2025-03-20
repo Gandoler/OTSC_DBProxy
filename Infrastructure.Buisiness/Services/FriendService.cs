@@ -81,4 +81,9 @@ public class FriendService:IFriendService
         (string?, string?) pozdr = await _pozdrikRepository.SelectIntAndPozhAsync(pozdrik._pozdrikId);
         return new AddIntAndPozhDto{ Interests = pozdr.Item1, Pozhelania = pozdr.Item2};
     }
+
+    public async Task<PozdrikIdDto> CreatePozdrikAsync(string? interests, string? pozhelania)
+    {
+        return new PozdrikIdDto { _pozdrikId = await _pozdrikRepository.CreatePozdrikAsync(interests, pozhelania) };
+    }
 }

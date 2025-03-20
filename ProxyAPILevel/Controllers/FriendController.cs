@@ -101,7 +101,7 @@ public class FriendController : ControllerBase
     [SwaggerRequestExample(typeof(AddIntAndPozhDto), typeof(AddIntAndPozhDtoExample))]
     [SwaggerResponse(200, "Данные успешно добавлены")]
     [SwaggerResponse(400, "Ошибка при добавлении данных")]
-    public async Task<IActionResult> AddIntAndPozh([FromBody] AddIntAndPozhDto intAndPozhDto)
+    public async Task<IActionResult> SetPozdrikIdTOFrined([FromBody] AddIntAndPozhDto intAndPozhDto)
     {
         var result = await _friendService.AddIntAndPozhAsync(intAndPozhDto);
         return result ? Ok(new { message = "Data added successfully" }) : BadRequest(new { message = "Failed to add data" });
@@ -129,9 +129,24 @@ public class FriendController : ControllerBase
     [SwaggerRequestExample(typeof(AddPozdrIdDto), typeof(SetPozdrIdExample))]
     [SwaggerResponse(200, "Интересы и пожелания успешно добавлены")]
     [SwaggerResponse(400, "Ошибка при добавлении интересов и пожеланий")]
-    public async Task<IActionResult> AddIntAndPozh([FromBody] AddPozdrIdDto dto )
+    public async Task<IActionResult> SetPozdrikIdTOFrined([FromBody] AddPozdrIdDto dto )
     {
         var result = await _friendService.AddPozdrikIdToFriendAsync(dto);
         return result ? Ok(new { message = "поздравление успешно привязано" }) : BadRequest(new { message = "Ошибка при привязке таблицы поздравления" });
+    }
+    
+    /// <summary>
+    /// Создает новую запись Поздрика.
+    /// </summary>
+    [HttpPost("pozdrik/create")]
+    [SwaggerOperation(Summary = "Создать Поздрик", Description = "Создает новую запись Поздрика с интересами и пожеланиями.")]
+    [SwaggerResponse(200, "Поздрик успешно создан", typeof(int))]
+    [SwaggerResponse(400, "Ошибка при создании Поздрика")]
+    public async Task<IActionResult> CreatePozdrik([FromBody] AddIntAndPozhDto dto)
+    {
+        PozdrikIdDto pozdrikId = await _friendService.CreatePozdrikAsync(dto.Interests, dto.Pozhelania) ;
+        return pozdrikId._pozdrikId!=null
+            ? Ok(new { message = "Поздрик успешно создан", pozdrikId })
+            : BadRequest(new { message = "Ошибка при создании Поздрика" });
     }
 }
