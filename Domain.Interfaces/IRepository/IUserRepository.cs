@@ -10,6 +10,6 @@ public interface IUserRepository
     Task<bool> ForPswAndLoginCheckAsync(User user);
     Task<bool> ExicstCheckByLoginAsync(string login);
     Task<Guid> GetUserByLoginAsync(string login);
-
+    Task<string?> GetUserByIdAsync(Guid id);
 
 }

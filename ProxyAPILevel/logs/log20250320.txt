@@ -1,0 +1,125 @@
+2025-03-20 01:06:49.898 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-20 01:06:49.942 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-20 01:06:49.943 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-20 01:06:49.943 +03:00 [INF] Hosting environment: Development
+2025-03-20 01:06:49.944 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxys\ProxyAPILevel
+2025-03-20 01:08:06.635 +03:00 [INF] Application is shutting down...
+2025-03-20 01:10:52.458 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-20 01:10:52.489 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-20 01:10:52.490 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-20 01:10:52.490 +03:00 [INF] Hosting environment: Development
+2025-03-20 01:10:52.491 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxys\ProxyAPILevel
+2025-03-20 01:11:28.952 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 115
+2025-03-20 01:11:28.983 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-03-20 01:11:28.985 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-03-20 01:11:28.996 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-03-20 01:11:29.368 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-03-20 01:11:30.531 +03:00 [INF] Executed DbCommand (75ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-03-20 01:11:30.717 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-03-20 01:11:30.729 +03:00 [INF] Executed action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1357.474ms.
+2025-03-20 01:11:30.738 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-20 01:11:30.749 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 1748.6942ms
+2025-03-20 01:11:30.750 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-03-20 01:11:30.753 +03:00 [INF] HTTP POST /api/Friends/add responded 200 in 1769.1900 ms
+2025-03-20 01:11:30.764 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 200 null application/json; charset=utf-8 1812.6843ms
+2025-03-20 01:12:09.007 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5010/api/Friends/delete/ - null null
+2025-03-20 01:12:09.011 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.DeleteFriend (ProxyAPILevel)'
+2025-03-20 01:12:09.014 +03:00 [INF] Route matched with {action = "DeleteFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteFriend(Entities.Templates.DeleteFriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-03-20 01:12:09.025 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-03-20 01:12:09.039 +03:00 [INF] Executed action ProxyAPILevel.FriendController.DeleteFriend (ProxyAPILevel) in 23.9172ms
+2025-03-20 01:12:09.040 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.DeleteFriend (ProxyAPILevel)'
+2025-03-20 01:12:09.041 +03:00 [INF] HTTP DELETE /api/Friends/delete/ responded 415 in 30.0619 ms
+2025-03-20 01:12:09.042 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5010/api/Friends/delete/ - 415 null application/problem+json; charset=utf-8 34.7637ms
+2025-03-20 01:12:10.252 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5010/api/Friends/delete/ - null null
+2025-03-20 01:12:10.255 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.DeleteFriend (ProxyAPILevel)'
+2025-03-20 01:12:10.255 +03:00 [INF] Route matched with {action = "DeleteFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteFriend(Entities.Templates.DeleteFriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-03-20 01:12:10.259 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-03-20 01:12:10.260 +03:00 [INF] Executed action ProxyAPILevel.FriendController.DeleteFriend (ProxyAPILevel) in 3.8539ms
+2025-03-20 01:12:10.261 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.DeleteFriend (ProxyAPILevel)'
+2025-03-20 01:12:10.261 +03:00 [INF] HTTP DELETE /api/Friends/delete/ responded 415 in 6.9380 ms
+2025-03-20 01:12:10.262 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5010/api/Friends/delete/ - 415 null application/problem+json; charset=utf-8 10.404ms
+2025-03-20 01:12:11.567 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5010/api/Friends/delete/ - null null
+2025-03-20 01:12:11.568 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.DeleteFriend (ProxyAPILevel)'
+2025-03-20 01:12:11.569 +03:00 [INF] Route matched with {action = "DeleteFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteFriend(Entities.Templates.DeleteFriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-03-20 01:12:11.571 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-03-20 01:12:11.571 +03:00 [INF] Executed action ProxyAPILevel.FriendController.DeleteFriend (ProxyAPILevel) in 1.4197ms
+2025-03-20 01:12:11.572 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.DeleteFriend (ProxyAPILevel)'
+2025-03-20 01:12:11.573 +03:00 [INF] HTTP DELETE /api/Friends/delete/ responded 415 in 4.5530 ms
+2025-03-20 01:12:11.574 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5010/api/Friends/delete/ - 415 null application/problem+json; charset=utf-8 7.379ms
+2025-03-20 01:12:16.907 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5010/api/Friends/delete/ - null null
+2025-03-20 01:12:16.909 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.DeleteFriend (ProxyAPILevel)'
+2025-03-20 01:12:16.910 +03:00 [INF] Route matched with {action = "DeleteFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteFriend(Entities.Templates.DeleteFriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-03-20 01:12:16.911 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-03-20 01:12:16.912 +03:00 [INF] Executed action ProxyAPILevel.FriendController.DeleteFriend (ProxyAPILevel) in 1.2088ms
+2025-03-20 01:12:16.912 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.DeleteFriend (ProxyAPILevel)'
+2025-03-20 01:12:16.913 +03:00 [INF] HTTP DELETE /api/Friends/delete/ responded 415 in 4.2189 ms
+2025-03-20 01:12:16.914 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5010/api/Friends/delete/ - 415 null application/problem+json; charset=utf-8 6.8183ms
+2025-03-20 01:12:45.874 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5010/api/Friends/update - application/json; charset=utf-8 114
+2025-03-20 01:12:45.875 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.UpdateFriend (ProxyAPILevel)'
+2025-03-20 01:12:45.878 +03:00 [INF] Route matched with {action = "UpdateFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-03-20 01:12:45.880 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.UpdateFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-03-20 01:12:46.196 +03:00 [INF] Executed DbCommand (276ms) [Parameters=[@p3='?' (DbType = Guid), @p4='?', @p0='?' (DbType = Date), @p1='?', @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE friend_list SET date_birth = @p0, friend_name = @p1, id_pozdr = @p2
+WHERE appid = @p3 AND friend_username = @p4;
+2025-03-20 01:12:46.198 +03:00 [INF] Executed action method ProxyAPILevel.FriendController.UpdateFriend (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 317.0281ms.
+2025-03-20 01:12:46.199 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-20 01:12:46.199 +03:00 [INF] Executed action ProxyAPILevel.FriendController.UpdateFriend (ProxyAPILevel) in 320.3885ms
+2025-03-20 01:12:46.200 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.UpdateFriend (ProxyAPILevel)'
+2025-03-20 01:12:46.201 +03:00 [INF] HTTP PUT /api/Friends/update responded 200 in 325.3480 ms
+2025-03-20 01:12:46.202 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5010/api/Friends/update - 200 null application/json; charset=utf-8 327.9299ms
+2025-03-20 01:12:47.457 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5010/api/Friends/update - application/json; charset=utf-8 114
+2025-03-20 01:12:47.459 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.UpdateFriend (ProxyAPILevel)'
+2025-03-20 01:12:47.459 +03:00 [INF] Route matched with {action = "UpdateFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-03-20 01:12:47.461 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.UpdateFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-03-20 01:12:47.494 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[@p3='?' (DbType = Guid), @p4='?', @p0='?' (DbType = Date), @p1='?', @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE friend_list SET date_birth = @p0, friend_name = @p1, id_pozdr = @p2
+WHERE appid = @p3 AND friend_username = @p4;
+2025-03-20 01:12:47.495 +03:00 [INF] Executed action method ProxyAPILevel.FriendController.UpdateFriend (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 33.97ms.
+2025-03-20 01:12:47.496 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-20 01:12:47.497 +03:00 [INF] Executed action ProxyAPILevel.FriendController.UpdateFriend (ProxyAPILevel) in 36.9208ms
+2025-03-20 01:12:47.498 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.UpdateFriend (ProxyAPILevel)'
+2025-03-20 01:12:47.499 +03:00 [INF] HTTP PUT /api/Friends/update responded 200 in 39.7733 ms
+2025-03-20 01:12:47.500 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5010/api/Friends/update - 200 null application/json; charset=utf-8 42.3856ms
+2025-03-20 01:13:07.943 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/Friends/list/9f5b4887-b170-4d11-b0a5-93cc285bd2bb - null null
+2025-03-20 01:13:07.947 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.GetFriendsByAppId (ProxyAPILevel)'
+2025-03-20 01:13:07.949 +03:00 [INF] Route matched with {action = "GetFriendsByAppId", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFriendsByAppId(System.Guid) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-03-20 01:13:07.951 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.GetFriendsByAppId (ProxyAPILevel) - Validation state: "Valid"
+2025-03-20 01:13:08.029 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__appid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT f.appid, f.friend_username, f.date_birth, f.friend_name, f.id_pozdr
+FROM friend_list AS f
+WHERE f.appid = @__appid_0
+2025-03-20 01:13:08.049 +03:00 [INF] Executed action method ProxyAPILevel.FriendController.GetFriendsByAppId (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 97.8626ms.
+2025-03-20 01:13:08.050 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Domain.DTO.DTO.Friend.FriendDto, Domain.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-20 01:13:08.054 +03:00 [INF] Executed action ProxyAPILevel.FriendController.GetFriendsByAppId (ProxyAPILevel) in 104.1096ms
+2025-03-20 01:13:08.055 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.GetFriendsByAppId (ProxyAPILevel)'
+2025-03-20 01:13:08.056 +03:00 [INF] HTTP GET /api/Friends/list/9f5b4887-b170-4d11-b0a5-93cc285bd2bb responded 200 in 109.0152 ms
+2025-03-20 01:13:08.057 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/Friends/list/9f5b4887-b170-4d11-b0a5-93cc285bd2bb - 200 null application/json; charset=utf-8 114.2831ms
+2025-03-20 01:14:14.028 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 114
+2025-03-20 01:14:14.030 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-03-20 01:14:14.030 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-03-20 01:14:14.032 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-03-20 01:14:14.071 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-03-20 01:14:14.097 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-03-20 01:14:14.098 +03:00 [INF] Executed action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 66.2962ms.
+2025-03-20 01:14:14.099 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-20 01:14:14.100 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 69.0421ms
+2025-03-20 01:14:14.101 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-03-20 01:14:14.101 +03:00 [INF] HTTP POST /api/Friends/add responded 200 in 71.8093 ms
+2025-03-20 01:14:14.102 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 200 null application/json; charset=utf-8 74.3019ms
+2025-03-20 01:14:14.105 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/Friends/api/pozdrik/zzz/550e8400-e29b-41d4-a716-446655440000 - null null
+2025-03-20 01:14:14.107 +03:00 [INF] HTTP GET /Friends/api/pozdrik/zzz/550e8400-e29b-41d4-a716-446655440000 responded 404 in 0.0507 ms
+2025-03-20 01:14:14.108 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/Friends/api/pozdrik/zzz/550e8400-e29b-41d4-a716-446655440000 - 404 0 null 3.06ms
+2025-03-20 01:14:14.110 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5010/Friends/api/pozdrik/zzz/550e8400-e29b-41d4-a716-446655440000, Response status code: 404
+2025-03-20 01:15:09.362 +03:00 [INF] Application is shutting down...

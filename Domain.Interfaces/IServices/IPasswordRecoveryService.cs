@@ -12,4 +12,5 @@ public interface IPasswordRecoveryService
     Task<bool> ExistByMailAsync(string mail);
     
     Task<bool> UpdateAsync(LoginDto loginDto);
+    Task<string?> GetLoginByMailAsync(string mail);
 }
