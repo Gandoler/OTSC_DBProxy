@@ -65,7 +65,7 @@ public class FriendService:IFriendService
         return new PozdrikIdDto
             { _pozdrikId = await _friendRepository.GetPozdrikIdAsync(queryDto.Username, queryDto.Appid) };
     }
-
+    //nado
     public async Task<bool> AddPozdrikIdToFriendAsync(AddPozdrIdDto pozdrId)
     {
         return await _friendRepository.AddPozdrikIdToFriendAsync(pozdrId.PozdrikId, pozdrId.FriendUsername, pozdrId.AppId);
@@ -81,9 +81,26 @@ public class FriendService:IFriendService
         (string?, string?) pozdr = await _pozdrikRepository.SelectIntAndPozhAsync(pozdrik._pozdrikId);
         return new AddIntAndPozhDto{ Interests = pozdr.Item1, Pozhelania = pozdr.Item2};
     }
-
+    //nado
     public async Task<PozdrikIdDto> CreatePozdrikAsync(string? interests, string? pozhelania)
     {
         return new PozdrikIdDto { _pozdrikId = await _pozdrikRepository.CreatePozdrikAsync(interests, pozhelania) };
+    }
+
+    public async Task<bool> AddFriendAndWishAsync(FriendDto friendDto, AddIntAndPozhDto pozhDto)
+    {
+        FriendList friendList = new FriendList
+        {
+            Appid = friendDto.AppId,
+            FriendUsername = friendDto.FriendUsername,
+            FriendName = friendDto.FriendName,
+            DateBirth = friendDto.DateBirth,
+        };
+        bool res1=await _friendRepository.AddFriendInListAsync(friendList);
+        int res2= await _pozdrikRepository.CreatePozdrikAsync(pozhDto.Interests, pozhDto.Pozhelania);
+        bool res3 = await _friendRepository.AddPozdrikIdToFriendAsync(res2,friendDto.FriendUsername,friendDto.AppId);
+        if (res1 && res3) return true;
+        return false;
+        
     }
 }

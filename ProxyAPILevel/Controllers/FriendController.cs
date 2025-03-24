@@ -19,7 +19,7 @@ public class FriendController : ControllerBase
     {
         _friendService = friendService;
     }
-
+    //надо
     /// <summary>
     /// Добавляет друга в список.
     /// </summary>
@@ -119,9 +119,9 @@ public class FriendController : ControllerBase
         return Ok(result);
     }
     
-    
+    //надо
     /// <summary>
-    /// Добавить запись с поздравнием.
+    /// Добавить запись с поздравнием.  
     /// </summary>    
     [HttpPost("SetpozdrId")]
     [SwaggerOperation(Summary = "Добавить id поздрик", Description = "Добавляет Id Поздрика." +
@@ -129,12 +129,17 @@ public class FriendController : ControllerBase
     [SwaggerRequestExample(typeof(AddPozdrIdDto), typeof(SetPozdrIdExample))]
     [SwaggerResponse(200, "Интересы и пожелания успешно добавлены")]
     [SwaggerResponse(400, "Ошибка при добавлении интересов и пожеланий")]
-    public async Task<IActionResult> SetPozdrikIdTOFrined([FromBody] AddPozdrIdDto dto )
+    public async Task<IActionResult> SetPozdrikIdTOFriend([FromBody] AddPozdrIdDto dto )
     {
         var result = await _friendService.AddPozdrikIdToFriendAsync(dto);
+        if (dto.PozdrikId == 0)
+        {
+            throw new Exception("pozdrId is invalid");
+        }
+
         return result ? Ok(new { message = "поздравление успешно привязано" }) : BadRequest(new { message = "Ошибка при привязке таблицы поздравления" });
     }
-    
+    //надо
     /// <summary>
     /// Создает новую запись Поздрика.
     /// </summary>
@@ -145,8 +150,19 @@ public class FriendController : ControllerBase
     public async Task<IActionResult> CreatePozdrik([FromBody] AddIntAndPozhDto dto)
     {
         PozdrikIdDto pozdrikId = await _friendService.CreatePozdrikAsync(dto.Interests, dto.Pozhelania) ;
+        if (pozdrikId._pozdrikId == null)
+        {
+            return BadRequest(new { message = "Ошибка при создании Поздрика: ID не получен" });
+        }
         return pozdrikId._pozdrikId!=null
             ? Ok(new { message = "Поздрик успешно создан", pozdrikId })
             : BadRequest(new { message = "Ошибка при создании Поздрика" });
     }
+
+    [HttpPost("pozdrik/addWithWish")]
+    public async Task<IActionResult> AddIntAndWish([FromBody] AddFriendWithWishDTO dto)
+    {
+        var result=await _friendService.AddFriendAndWishAsync(dto.Friend, dto.Pozh);
+        return result ? Ok(new { message = "Friend added successfully" }) : BadRequest(new { message = "Failed to add friend" });
+    }   
 }

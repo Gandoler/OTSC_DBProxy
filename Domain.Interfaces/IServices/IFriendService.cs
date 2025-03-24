@@ -21,4 +21,8 @@ public interface IFriendService
     Task<bool> AddIntAndPozhAsync(AddIntAndPozhDto intAndPozh);
     Task<AddIntAndPozhDto> SelectIntAndPozhAsync(PozdrikIdDto pozdrik);
     Task<PozdrikIdDto> CreatePozdrikAsync(string? interests, string? pozhelania);
+    
+    
+    //общ
+    Task<bool> AddFriendAndWishAsync(FriendDto friendDto, AddIntAndPozhDto pozhDto);
 }
