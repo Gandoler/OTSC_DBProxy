@@ -1,0 +1,95 @@
+2025-03-23 00:08:49.665 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-23 00:08:49.703 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-23 00:08:49.704 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-23 00:08:49.704 +03:00 [INF] Hosting environment: Development
+2025-03-23 00:08:49.705 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel
+2025-03-23 00:10:46.249 +03:00 [INF] Application is shutting down...
+2025-03-23 00:19:26.039 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-23 00:19:26.071 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-23 00:19:26.072 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-23 00:19:26.072 +03:00 [INF] Hosting environment: Development
+2025-03-23 00:19:26.073 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel
+2025-03-23 00:23:52.964 +03:00 [INF] Application is shutting down...
+2025-03-23 00:27:23.909 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-23 00:27:23.941 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-23 00:27:23.942 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-23 00:27:23.942 +03:00 [INF] Hosting environment: Development
+2025-03-23 00:27:23.943 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel
+2025-03-23 00:27:25.912 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/ - null null
+2025-03-23 00:27:25.950 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-03-23 00:27:25.952 +03:00 [INF] HTTP GET / responded 404 in 2.4944 ms
+2025-03-23 00:27:25.961 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/ - 404 0 null 49.6717ms
+2025-03-23 00:27:25.967 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5010/, Response status code: 404
+2025-03-23 00:27:28.398 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger - null null
+2025-03-23 00:27:28.405 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger - 301 0 null 7.5644ms
+2025-03-23 00:27:28.408 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.html - null null
+2025-03-23 00:27:28.456 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.html - 200 null text/html;charset=utf-8 48.5607ms
+2025-03-23 00:27:28.461 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui.css - null null
+2025-03-23 00:27:28.462 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.css - null null
+2025-03-23 00:27:28.462 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-bundle.js - null null
+2025-03-23 00:27:28.472 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-03-23 00:27:28.473 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.css - 200 202 text/css 11.1768ms
+2025-03-23 00:27:28.477 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-03-23 00:27:28.479 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui.css - 200 154948 text/css 17.8835ms
+2025-03-23 00:27:28.486 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-03-23 00:27:28.487 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-bundle.js - 200 1466324 text/javascript 24.4054ms
+2025-03-23 00:27:28.539 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.js - null null
+2025-03-23 00:27:28.539 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-standalone-preset.js - null null
+2025-03-23 00:27:28.541 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.js - 200 null application/javascript;charset=utf-8 2.329ms
+2025-03-23 00:27:28.544 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-03-23 00:27:28.545 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 6.3522ms
+2025-03-23 00:27:28.672 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2025-03-23 00:27:28.810 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 137.6259ms
+2025-03-23 00:27:36.715 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Auth/login - application/json 49
+2025-03-23 00:27:36.718 +03:00 [INF] Executing endpoint 'ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel)'
+2025-03-23 00:27:36.733 +03:00 [INF] Route matched with {action = "CheckUserExists", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckUserExists(Entities.Templates.LoginDto) on controller ProxyAPILevel.AuthController (ProxyAPILevel).
+2025-03-23 00:27:37.068 +03:00 [INF] Executing action method ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel) - Validation state: "Valid"
+2025-03-23 00:27:38.230 +03:00 [INF] Executed DbCommand (74ms) [Parameters=[@__user_Password_0='?', @__user_Login_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.appid, u.login, u.password
+FROM users AS u
+WHERE u.password = @__user_Password_0 AND u.login = @__user_Login_1
+LIMIT 1
+2025-03-23 00:27:38.296 +03:00 [INF] Executed action method ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1224.6482ms.
+2025-03-23 00:27:38.300 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-23 00:27:38.306 +03:00 [INF] Executed action ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel) in 1568.939ms
+2025-03-23 00:27:38.307 +03:00 [INF] Executed endpoint 'ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel)'
+2025-03-23 00:27:38.309 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 1591.0099 ms
+2025-03-23 00:27:38.316 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Auth/login - 200 null application/json; charset=utf-8 1601.3073ms
+2025-03-23 00:29:23.995 +03:00 [INF] Application is shutting down...
+2025-03-23 00:29:27.375 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-23 00:29:27.408 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-23 00:29:27.408 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-23 00:29:27.409 +03:00 [INF] Hosting environment: Development
+2025-03-23 00:29:27.409 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel
+2025-03-23 00:29:35.398 +03:00 [INF] Application is shutting down...
+2025-03-23 00:30:55.643 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-23 00:30:55.674 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-23 00:30:55.674 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-23 00:30:55.675 +03:00 [INF] Hosting environment: Development
+2025-03-23 00:30:55.675 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel
+2025-03-23 00:34:12.717 +03:00 [INF] Application is shutting down...
+2025-03-23 19:37:25.145 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-23 19:37:25.184 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-23 19:37:25.185 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-23 19:37:25.186 +03:00 [INF] Hosting environment: Development
+2025-03-23 19:37:25.186 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel
+2025-03-23 19:37:45.934 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.html - null null
+2025-03-23 19:37:46.009 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.html - 200 null text/html;charset=utf-8 76.2363ms
+2025-03-23 19:37:46.025 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.css - null null
+2025-03-23 19:37:46.025 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.js - null null
+2025-03-23 19:37:46.025 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-standalone-preset.js - null null
+2025-03-23 19:37:46.025 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui.css - null null
+2025-03-23 19:37:46.025 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-bundle.js - null null
+2025-03-23 19:37:46.029 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.js - 200 null application/javascript;charset=utf-8 4.162ms
+2025-03-23 19:37:46.034 +03:00 [INF] The file /swagger-ui.css was not modified
+2025-03-23 19:37:46.035 +03:00 [INF] The file /index.css was not modified
+2025-03-23 19:37:46.035 +03:00 [INF] The file /swagger-ui-bundle.js was not modified
+2025-03-23 19:37:46.035 +03:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2025-03-23 19:37:46.036 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui.css - 304 null text/css 11.1054ms
+2025-03-23 19:37:46.036 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.css - 304 null text/css 11.3792ms
+2025-03-23 19:37:46.036 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-bundle.js - 304 null text/javascript 11.8909ms
+2025-03-23 19:37:46.037 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-standalone-preset.js - 304 null text/javascript 12.5096ms
+2025-03-23 19:37:46.265 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2025-03-23 19:37:46.422 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 156.8082ms
+2025-03-23 20:37:19.936 +03:00 [WRN] As of ""2025-03-23T17:37:19.5003011+00:00"", the heartbeat has been running for ""00:27:56.9322179"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.
+2025-03-23 20:37:40.596 +03:00 [INF] Application is shutting down...
