@@ -32,6 +32,19 @@ public class PasswordRecoveryController : ControllerBase
         var result = await _passwordRecoveryService.GetIdByMailAsync(email);
         return Ok(result);
     }
+    
+    /// <summary>
+    /// Получить login пользователя по email.
+    /// </summary>
+    [HttpGet("getlogin/{email}")]
+    [SwaggerOperation(Summary = "Получить login по email", Description = "Возвращает login пользователя по его email.")]
+    [SwaggerResponse(200, "login успешно получен")]
+    [SwaggerResponse(404, "Пользователь не найден")]
+    public async Task<IActionResult> GetLoginByMail(string email)
+    {
+        var result = await _passwordRecoveryService.GetLoginByMailAsync(email);
+        return Ok(result);
+    }
 
     /// <summary>
     /// Проверить существование почты.
@@ -72,7 +85,5 @@ public class PasswordRecoveryController : ControllerBase
         var result = await _passwordRecoveryService.UpdateAsync(loginDto);
         return result ? Ok(new { message = "Password updated successfully" }) : BadRequest(new { message = "Update failed" });
     }
-
-
 }
 

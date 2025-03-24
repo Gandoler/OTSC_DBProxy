@@ -1,0 +1,168 @@
+2025-03-21 12:50:16.541 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-21 12:50:16.582 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-21 12:50:16.583 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-21 12:50:16.583 +03:00 [INF] Hosting environment: Development
+2025-03-21 12:50:16.584 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxys\ProxyAPILevel
+2025-03-21 12:55:17.140 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/auth/login - application/json; charset=utf-8 null
+2025-03-21 12:55:17.172 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-03-21 12:55:17.174 +03:00 [INF] Executing endpoint 'ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel)'
+2025-03-21 12:55:17.186 +03:00 [INF] Route matched with {action = "CheckUserExists", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckUserExists(Entities.Templates.LoginDto) on controller ProxyAPILevel.AuthController (ProxyAPILevel).
+2025-03-21 12:55:17.540 +03:00 [INF] Executing action method ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel) - Validation state: "Valid"
+2025-03-21 12:55:18.710 +03:00 [INF] Executed DbCommand (79ms) [Parameters=[@__user_Password_0='?', @__user_Login_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.appid, u.login, u.password
+FROM users AS u
+WHERE u.password = @__user_Password_0 AND u.login = @__user_Login_1
+LIMIT 1
+2025-03-21 12:55:18.775 +03:00 [INF] Executed action method ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1231.2779ms.
+2025-03-21 12:55:18.783 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-21 12:55:18.794 +03:00 [INF] Executed action ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel) in 1604.9973ms
+2025-03-21 12:55:18.796 +03:00 [INF] Executed endpoint 'ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel)'
+2025-03-21 12:55:18.798 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 1625.9302 ms
+2025-03-21 12:55:18.813 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/auth/login - 200 null application/json; charset=utf-8 1670.3383ms
+2025-03-21 12:58:51.321 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/auth/login - application/json; charset=utf-8 null
+2025-03-21 12:58:51.324 +03:00 [INF] Executing endpoint 'ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel)'
+2025-03-21 12:58:51.325 +03:00 [INF] Route matched with {action = "CheckUserExists", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckUserExists(Entities.Templates.LoginDto) on controller ProxyAPILevel.AuthController (ProxyAPILevel).
+2025-03-21 12:58:51.327 +03:00 [INF] Executing action method ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel) - Validation state: "Valid"
+2025-03-21 12:58:51.391 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@__user_Password_0='?', @__user_Login_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.appid, u.login, u.password
+FROM users AS u
+WHERE u.password = @__user_Password_0 AND u.login = @__user_Login_1
+LIMIT 1
+2025-03-21 12:58:51.393 +03:00 [INF] Executed action method ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 65.0439ms.
+2025-03-21 12:58:51.394 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-21 12:58:51.395 +03:00 [INF] Executed action ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel) in 69.6531ms
+2025-03-21 12:58:51.396 +03:00 [INF] Executed endpoint 'ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel)'
+2025-03-21 12:58:51.397 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 72.8788 ms
+2025-03-21 12:58:51.398 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/auth/login - 200 null application/json; charset=utf-8 77.6154ms
+2025-03-21 13:02:11.921 +03:00 [INF] Application is shutting down...
+2025-03-21 15:20:03.623 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-21 15:20:03.662 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-21 15:20:03.663 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-21 15:20:03.664 +03:00 [INF] Hosting environment: Development
+2025-03-21 15:20:03.664 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxys\ProxyAPILevel
+2025-03-21 15:20:04.691 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/ - null null
+2025-03-21 15:20:04.728 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-03-21 15:20:04.730 +03:00 [INF] HTTP GET / responded 404 in 2.5473 ms
+2025-03-21 15:20:04.741 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/ - 404 0 null 50.8096ms
+2025-03-21 15:20:04.748 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5010/, Response status code: 404
+2025-03-21 15:20:09.017 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger - null null
+2025-03-21 15:20:09.024 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger - 301 0 null 7.3845ms
+2025-03-21 15:20:09.026 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.html - null null
+2025-03-21 15:20:09.070 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.html - 200 null text/html;charset=utf-8 44.3539ms
+2025-03-21 15:20:09.200 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui.css - null null
+2025-03-21 15:20:09.216 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-03-21 15:20:09.218 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui.css - 200 154948 text/css 18.3673ms
+2025-03-21 15:20:09.232 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.css - null null
+2025-03-21 15:20:09.232 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-bundle.js - null null
+2025-03-21 15:20:09.232 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-standalone-preset.js - null null
+2025-03-21 15:20:09.232 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.js - null null
+2025-03-21 15:20:09.234 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-03-21 15:20:09.238 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.js - 200 null application/javascript;charset=utf-8 6.0006ms
+2025-03-21 15:20:09.238 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.css - 200 202 text/css 6.6736ms
+2025-03-21 15:20:09.245 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-03-21 15:20:09.246 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 14.1423ms
+2025-03-21 15:20:09.250 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-03-21 15:20:09.251 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/swagger-ui-bundle.js - 200 1466324 text/javascript 19.3701ms
+2025-03-21 15:20:09.466 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2025-03-21 15:20:09.602 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 135.951ms
+2025-03-21 15:21:24.573 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/passwordrecovery/getlogin/example@example.com - null null
+2025-03-21 15:21:24.576 +03:00 [INF] Executing endpoint 'ProxyAPILevel.PasswordRecoveryController.GetLoginByMail (ProxyAPILevel)'
+2025-03-21 15:21:24.593 +03:00 [INF] Route matched with {action = "GetLoginByMail", controller = "PasswordRecovery"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLoginByMail(System.String) on controller ProxyAPILevel.PasswordRecoveryController (ProxyAPILevel).
+2025-03-21 15:21:24.948 +03:00 [INF] Executing action method ProxyAPILevel.PasswordRecoveryController.GetLoginByMail (ProxyAPILevel) - Validation state: "Valid"
+2025-03-21 15:21:26.091 +03:00 [INF] Executed DbCommand (72ms) [Parameters=[@__mail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT m.appid
+FROM mail_comprehensions AS m
+WHERE m.mail = @__mail_0
+LIMIT 1
+2025-03-21 15:21:26.148 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.login
+FROM users AS u
+WHERE u.appid = @__id_0
+LIMIT 1
+2025-03-21 15:21:26.155 +03:00 [INF] Executed action method ProxyAPILevel.PasswordRecoveryController.GetLoginByMail (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1203.1476ms.
+2025-03-21 15:21:26.159 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-03-21 15:21:26.164 +03:00 [INF] Executed action ProxyAPILevel.PasswordRecoveryController.GetLoginByMail (ProxyAPILevel) in 1566.728ms
+2025-03-21 15:21:26.166 +03:00 [INF] Executed endpoint 'ProxyAPILevel.PasswordRecoveryController.GetLoginByMail (ProxyAPILevel)'
+2025-03-21 15:21:26.167 +03:00 [INF] HTTP GET /api/passwordrecovery/getlogin/example@example.com responded 200 in 1591.5161 ms
+2025-03-21 15:21:26.177 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/passwordrecovery/getlogin/example@example.com - 200 null text/plain; charset=utf-8 1604.0493ms
+2025-03-21 15:21:50.545 +03:00 [INF] Application is shutting down...
+2025-03-21 15:27:32.628 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-21 15:27:32.661 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-21 15:27:32.661 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-21 15:27:32.662 +03:00 [INF] Hosting environment: Development
+2025-03-21 15:27:32.662 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxys\ProxyAPILevel
+2025-03-21 15:27:32.751 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.html - null null
+2025-03-21 15:27:32.824 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.html - 200 null text/html;charset=utf-8 73.3961ms
+2025-03-21 15:27:32.839 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/index.js - null null
+2025-03-21 15:27:32.843 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/index.js - 200 null application/javascript;charset=utf-8 4.2869ms
+2025-03-21 15:27:33.020 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2025-03-21 15:27:33.021 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/favicon-32x32.png - null null
+2025-03-21 15:27:33.032 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-03-21 15:27:33.033 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/favicon-32x32.png - 200 628 image/png 11.24ms
+2025-03-21 15:27:33.192 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 171.7637ms
+2025-03-21 15:27:55.553 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/register/create - application/json 86
+2025-03-21 15:27:55.557 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-03-21 15:27:55.559 +03:00 [INF] Executing endpoint 'ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel)'
+2025-03-21 15:27:55.570 +03:00 [INF] Route matched with {action = "RegisterUser", controller = "Register"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RegisterUser(Entities.Templates.RegisterDto) on controller ProxyAPILevel.RegisterController (ProxyAPILevel).
+2025-03-21 15:27:55.673 +03:00 [INF] Executing action method ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel) - Validation state: "Valid"
+2025-03-21 15:27:56.762 +03:00 [INF] Executed DbCommand (71ms) [Parameters=[@__user_Login_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM users AS u
+    WHERE u.login = @__user_Login_0)
+2025-03-21 15:27:56.933 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (login, password)
+VALUES (@p0, @p1)
+RETURNING appid;
+2025-03-21 15:27:56.957 +03:00 [INF] Executed action method ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1280.0216ms.
+2025-03-21 15:27:56.962 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-21 15:27:56.966 +03:00 [INF] Executed action ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel) in 1392.4884ms
+2025-03-21 15:27:56.968 +03:00 [INF] Executed endpoint 'ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel)'
+2025-03-21 15:27:56.971 +03:00 [INF] HTTP POST /api/register/create responded 200 in 1413.2028 ms
+2025-03-21 15:27:56.981 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/register/create - 200 null application/json; charset=utf-8 1428.3234ms
+2025-03-21 15:28:55.605 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5010/api/register/Mail - application/json 87
+2025-03-21 15:28:55.608 +03:00 [INF] Executing endpoint 'ProxyAPILevel.RegisterController.AddMail (ProxyAPILevel)'
+2025-03-21 15:28:55.613 +03:00 [INF] Route matched with {action = "AddMail", controller = "Register"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddMail(Domain.DTO.DTO.MailComp.ADDMailDto) on controller ProxyAPILevel.RegisterController (ProxyAPILevel).
+2025-03-21 15:28:55.618 +03:00 [INF] Executing action method ProxyAPILevel.RegisterController.AddMail (ProxyAPILevel) - Validation state: "Valid"
+2025-03-21 15:28:55.690 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[@__mail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM mail_comprehensions AS m
+    WHERE m.mail = @__mail_0)
+2025-03-21 15:28:55.734 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO mail_comprehensions (appid, mail)
+VALUES (@p0, @p1);
+2025-03-21 15:28:55.737 +03:00 [INF] Executed action method ProxyAPILevel.RegisterController.AddMail (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 117.5663ms.
+2025-03-21 15:28:55.738 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-21 15:28:55.738 +03:00 [INF] Executed action ProxyAPILevel.RegisterController.AddMail (ProxyAPILevel) in 124.3704ms
+2025-03-21 15:28:55.739 +03:00 [INF] Executed endpoint 'ProxyAPILevel.RegisterController.AddMail (ProxyAPILevel)'
+2025-03-21 15:28:55.740 +03:00 [INF] HTTP PUT /api/register/Mail responded 200 in 131.4331 ms
+2025-03-21 15:28:55.741 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5010/api/register/Mail - 200 null application/json; charset=utf-8 135.9666ms
+2025-03-21 15:29:15.427 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/passwordrecovery/check-mail - application/json; charset=utf-8 null
+2025-03-21 15:29:15.429 +03:00 [INF] HTTP POST /api/passwordrecovery/check-mail responded 404 in 0.0414 ms
+2025-03-21 15:29:15.430 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/passwordrecovery/check-mail - 404 0 null 2.7032ms
+2025-03-21 15:29:15.432 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5010/api/passwordrecovery/check-mail, Response status code: 404
+2025-03-21 15:29:32.567 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/passwordrecovery/check-mail - application/json; charset=utf-8 null
+2025-03-21 15:29:32.569 +03:00 [INF] HTTP POST /api/passwordrecovery/check-mail responded 404 in 0.0146 ms
+2025-03-21 15:29:32.570 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/passwordrecovery/check-mail - 404 0 null 3.4724ms
+2025-03-21 15:29:32.572 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5010/api/passwordrecovery/check-mail, Response status code: 404
+2025-03-21 15:29:33.906 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/passwordrecovery/check-mail - application/json; charset=utf-8 null
+2025-03-21 15:29:33.908 +03:00 [INF] HTTP POST /api/passwordrecovery/check-mail responded 404 in 0.0108 ms
+2025-03-21 15:29:33.909 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/passwordrecovery/check-mail - 404 0 null 2.4978ms
+2025-03-21 15:29:33.910 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5010/api/passwordrecovery/check-mail, Response status code: 404
+2025-03-21 15:29:35.364 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/passwordrecovery/check-mail - application/json; charset=utf-8 null
+2025-03-21 15:29:35.366 +03:00 [INF] HTTP POST /api/passwordrecovery/check-mail responded 404 in 0.0160 ms
+2025-03-21 15:29:35.367 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/passwordrecovery/check-mail - 404 0 null 2.8547ms
+2025-03-21 15:29:35.369 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5010/api/passwordrecovery/check-mail, Response status code: 404
+2025-03-21 15:29:40.991 +03:00 [INF] Application is shutting down...
+2025-03-21 15:29:56.009 +03:00 [WRN] Overriding address(es) 'http://localhost:5064'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-03-21 15:29:56.040 +03:00 [INF] Now listening on: http://localhost:5010
+2025-03-21 15:29:56.040 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-21 15:29:56.041 +03:00 [INF] Hosting environment: Development
+2025-03-21 15:29:56.041 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxys\ProxyAPILevel
+2025-03-21 15:30:16.314 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/passwordrecovery/check-mail - application/json; charset=utf-8 null
+2025-03-21 15:30:16.347 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-03-21 15:30:16.349 +03:00 [INF] HTTP POST /api/passwordrecovery/check-mail responded 404 in 2.2663 ms
+2025-03-21 15:30:16.358 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/passwordrecovery/check-mail - 404 0 null 44.4026ms
+2025-03-21 15:30:16.364 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5010/api/passwordrecovery/check-mail, Response status code: 404
+2025-03-21 16:01:29.635 +03:00 [INF] Application is shutting down...

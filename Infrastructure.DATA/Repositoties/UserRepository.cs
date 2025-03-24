@@ -17,14 +17,14 @@ public class UserRepository: IUserRepository
     
     public async Task<bool> UpdateAsync(User user)
     {
-        var existingUser = await _context.Set<User>().Where(f=> f.Login== user.Login).FirstOrDefaultAsync();
+        var existingUser = await _context.Set<User>().Where(f=> f.Login == user.Login).FirstOrDefaultAsync();
         if (existingUser == null)
         {
             return false; // Пользователь не найден
         }
         existingUser.Password = user.Password;
         _context.Set<User>().Update(existingUser);
-        int res = await _context.SaveChangesAsync();
+        int res = await _context.SaveChangesAsync();            
         return res > 0;
     }
 
@@ -62,6 +62,12 @@ public class UserRepository: IUserRepository
             Where(f => f.Login == login)
             .Select(f=>f.Appid)
             .FirstOrDefaultAsync();
+    }
+
+    public async Task<string?> GetUserByIdAsync(Guid id)
+    {
+        return await _context.Set<User>().Where(f=>f.Appid==id).
+            Select(f=>f.Login).FirstOrDefaultAsync();
     }
 
    

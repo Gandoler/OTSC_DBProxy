@@ -35,7 +35,7 @@ public class MailComprRepository : IMailComprRepository
             .Select(f => f.Appid)
             .FirstOrDefaultAsync();
     }
-
+    
     public async Task<string?> GetMailByIdAsync(Guid appid)
     {
         return await _context.Set<MailComprehension>()
