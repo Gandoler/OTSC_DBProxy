@@ -90,7 +90,7 @@ builder.Services.AddScoped<IMailComprRepository, MailComprRepository>();
 
 
 Log.Information($"DB_PORT: {Environment.GetEnvironmentVariable("DB_PORT")}");
-
+Log.Information(connectionString);
 
 builder.Services.AddControllers();
 

@@ -1,27 +1,28 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
-USER $APP_UID
+﻿# Используем образ ASP.NET для выполнения
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 WORKDIR /app
 EXPOSE 8081
 
+# Используем SDK для сборки
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["APPLevel/ProxyAPILevel/ProxyAPILevel.csproj", "ProxyAPILevel/"]
-COPY ["Infrastructure/Infrastructure.Buisiness/Infrastructure.Buisiness.csproj", "Infrastructure.Buisiness/"]
-COPY ["Domain/Domain.Core/Domain.Core.csproj", "Domain.Core/"]
-COPY ["Domain/Domain.Interfaces/Domain.Interfaces.csproj", "Domain.Interfaces/"]
-COPY ["Domain/Domain.DTO/Domain.DTO.csproj", "Domain.DTO/"]
-COPY ["Infrastructure/Infrastructure.DATA/Infrastructure.DATA.csproj", "Infrastructure.DATA/"]
-RUN dotnet restore "APPLevel/ProxyAPILevel/ProxyAPILevel.csproj"
-COPY . .
-WORKDIR "/src"
-RUN dotnet build "APPLevel/ProxyAPILevel.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "APPLevel/ProxyAPILevel.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+# Устанавливаем git и клонируем репозиторий
+RUN apt-get update && apt-get install -y git \
+    && git clone https://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@github.com/Gandoler/OTSC_DBProxy.git myrepo
 
+# Переходим в каталог с проектом
+WORKDIR /src/myrepo/ProxyAPILevel
+
+# Восстанавливаем зависимости и собираем проект
+RUN dotnet restore ProxyAPILevel.csproj
+RUN dotnet publish ProxyAPILevel.csproj -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+# Финальный образ с минимальным размером
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/publish .
+
+# Запускаем приложение
 ENTRYPOINT ["dotnet", "ProxyAPILevel.dll"]
