@@ -13,8 +13,21 @@ using UseCases.Repositoties;
 using UseCases.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var dbHost = Environment.GetEnvironmentVariable("DB_HOST") ?? "localhost";
+var dbPort = Environment.GetEnvironmentVariable("DB_PORT") ?? "5432";
+var dbName = Environment.GetEnvironmentVariable("DB_NAME") ?? "app";
+var dbUser = Environment.GetEnvironmentVariable("DB_USER") ?? "postgres";
+var dbPassword = Environment.GetEnvironmentVariable("DB_PASSWORD") ?? "password";
+
+var connectionString = $"Host={dbHost};Port={dbPort};Database={dbName};Username={dbUser};Password={dbPassword}";
+
 builder.Services.AddDbContext<ApplicationContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(connectionString));
+
+///тут настройки для дефолтного запуска без докера
+// builder.Services.AddDbContext<ApplicationContext>(options =>
+//     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -75,6 +88,8 @@ builder.Services.AddScoped<IPozdrikRepository, PozdrikRepository>();
 builder.Services.AddScoped<ITgComprRepository, TgComprRepository>();
 builder.Services.AddScoped<IMailComprRepository, MailComprRepository>();
 
+
+Log.Information($"DB_PORT: {Environment.GetEnvironmentVariable("DB_PORT")}");
 
 
 builder.Services.AddControllers();
