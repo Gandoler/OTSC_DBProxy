@@ -21,7 +21,7 @@ if (builder.Environment.IsDevelopment())
     // тут настройки для дефолтного запуска без докера
     builder.WebHost.ConfigureKestrel(options =>
     {
-        options.ListenAnyIP(5010);  // Указываем порт 5000
+        options.ListenAnyIP(5010);  
     });
  builder.Services.AddDbContext<ApplicationContext>(options => 
      options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
