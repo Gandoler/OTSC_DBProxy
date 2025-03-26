@@ -69,7 +69,7 @@ builder.Services.AddScoped<ITgSubscriptionService, TgSubscriptionService>();
 
 
 var mapperConfig = new MapperConfiguration(cfg =>
-{
+{//
     cfg.AddProfile(new FriendProfile()); 
 });
 var mapper = mapperConfig.CreateMapper();
