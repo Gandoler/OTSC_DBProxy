@@ -10,7 +10,7 @@ WORKDIR /src
 
 # Устанавливаем git и клонируем репозиторий
 RUN apt-get update && apt-get install -y git \
-    && git clone https://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@github.com/Gandoler/OTSC_DBProxy.git myrepo
+    && git clone https://<TOKEN>@github.com/Gandoler/OTSC_DBProxy.git myrepo
 
 # Переходим в каталог с проектом
 WORKDIR /src/myrepo/ProxyAPILevel
