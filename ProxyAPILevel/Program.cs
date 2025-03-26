@@ -97,8 +97,15 @@ builder.Services.AddControllers();
 var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
-app.UseSerilogRequestLogging();
+app.MapControllers();
 
+app.UseSerilogRequestLogging();
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+    app.MapControllers();
+}
 app.MapOpenApi();
 app.MapControllers();
 app.UseHttpsRedirection();
