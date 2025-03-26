@@ -14,20 +14,31 @@ using UseCases.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var dbHost = Environment.GetEnvironmentVariable("DB_HOST") ?? "localhost";
-var dbPort = Environment.GetEnvironmentVariable("DB_PORT") ?? "5432";
-var dbName = Environment.GetEnvironmentVariable("DB_NAME") ?? "app";
-var dbUser = Environment.GetEnvironmentVariable("DB_USER") ?? "postgres";
-var dbPassword = Environment.GetEnvironmentVariable("DB_PASSWORD") ?? "password";
+string connectionString = String.Empty;
 
-var connectionString = $"Host={dbHost};Port={dbPort};Database={dbName};Username={dbUser};Password={dbPassword}";
+if (builder.Environment.IsDevelopment())
+{
+    // тут настройки для дефолтного запуска без докера
+    builder.WebHost.ConfigureKestrel(options =>
+    {
+        options.ListenAnyIP(5010);  // Указываем порт 5000
+    });
+ builder.Services.AddDbContext<ApplicationContext>(options => 
+     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+}
+else
+{
+    var dbHost = Environment.GetEnvironmentVariable("DB_HOST") ?? "localhost";
+    var dbPort = Environment.GetEnvironmentVariable("DB_PORT") ?? "5432";
+    var dbName = Environment.GetEnvironmentVariable("DB_NAME") ?? "app";
+    var dbUser = Environment.GetEnvironmentVariable("DB_USER") ?? "postgres";
+    var dbPassword = Environment.GetEnvironmentVariable("DB_PASSWORD") ?? "password";
 
-builder.Services.AddDbContext<ApplicationContext>(options =>
-    options.UseNpgsql(connectionString));
+    connectionString = $"Host={dbHost};Port={dbPort};Database={dbName};Username={dbUser};Password={dbPassword}";
 
-///тут настройки для дефолтного запуска без докера
-// builder.Services.AddDbContext<ApplicationContext>(options =>
-//     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    builder.Services.AddDbContext<ApplicationContext>(options =>
+        options.UseNpgsql(connectionString));
+}
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -89,7 +100,6 @@ builder.Services.AddScoped<ITgComprRepository, TgComprRepository>();
 builder.Services.AddScoped<IMailComprRepository, MailComprRepository>();
 
 
-Log.Information($"DB_PORT: {Environment.GetEnvironmentVariable("DB_PORT")}");
 Log.Information(connectionString);
 
 builder.Services.AddControllers();
