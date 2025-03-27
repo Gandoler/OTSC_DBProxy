@@ -1,5 +1,8 @@
 # OTSC
 
+![telegram-cloud-photo-size-2-5416022763656834188-y](https://github.com/user-attachments/assets/042c7915-a270-4d72-8e37-561cc6109158)
+
+
 ```
         ,---------------------.   ,-------.                                                     
         |Desktop or Web Client|   |Gateway|                                                     
