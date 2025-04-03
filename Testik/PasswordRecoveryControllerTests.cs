@@ -3,6 +3,7 @@ using Entities.Templates;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using ProxyAPILevel;
+using Serilog;
 
 namespace Testik;
 
@@ -53,6 +54,68 @@ public class PasswordRecoveryControllerTests
         var okRes = Assert.IsType<OkObjectResult>(result);
         Assert.Null(okRes.Value);
     }
+
+    [Fact]
+    public async Task GetLoginByMail_MustReturnAppIdDto()
+    {
+        var email="trokhin87@gmail.com";
+        string? login = "zhenek";
+        _mock.Setup(s=>s.GetLoginByMailAsync(email)).ReturnsAsync(login);
+        
+        var result= await _controller.GetLoginByMail(email);
+        
+        var okRes= Assert.IsType<OkObjectResult>(result);
+        Assert.Equal(login, okRes.Value);
+    }
+
+    [Fact]
+    public async Task CheckExistMail_MustReturnTrue()
+    {
+        var email = "trokhin87@gmail.com";
+        _mock.Setup(s=>s.ExistByMailAsync(email)).ReturnsAsync(true);
+        
+        var result=await _controller.CheckMail(email);
+        
+        var okRes= Assert.IsType<OkObjectResult>(result);
+        Assert.Equal(true, okRes.Value);
+    }
+    [Fact]
+    public async Task CheckExistLogin_MustReturnTrue()
+    {
+        var email = "trokhin87";
+        _mock.Setup(s=>s.ExicstCheckByLoginAsync(email)).ReturnsAsync(true);
+        
+        var result=await _controller.CheckUserExists(email);
+        
+        var okRes= Assert.IsType<OkObjectResult>(result);
+    }
+
+    [Fact]
+    public async Task UpdatePassword_MustReturnTrue()
+    {
+        // Arrange
+        var loginDto = new LoginDto()
+        {
+            Login = "trokhin87",
+            Password = "1234"
+        };
     
+        // Настраиваем mock сервиса возвращать true (успешное обновление)
+        _mock.Setup(s => s.UpdateAsync(loginDto)).ReturnsAsync(true);
+
+        // Act
+        var result = await _controller.UpdateUser(loginDto);
+
+        // Assert
+        // 1. Проверяем что результат типа OkObjectResult (200 OK)
+        var okResult = Assert.IsType<OkObjectResult>(result);
     
+        // 2. Проверяем структуру ответа
+        var response = okResult.Value as dynamic;
+        Assert.NotNull(response);
+    
+        // 3. Проверяем сообщение об успехе
+        Assert.Equal("Password updated successfully", response.message.ToString());
+    }
+
 }
