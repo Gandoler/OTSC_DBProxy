@@ -20,6 +20,8 @@
       &lt;TestId&gt;xUnit::E319DC98-328C-4721-B831-D1ED0AA8E5DA::net9.0::NeiroGenControllerTests.GetNameByPozdrikId_ShouldReturnNotFound_WhenNameDoesNotExist&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;xUnit::E319DC98-328C-4721-B831-D1ED0AA8E5DA::net9.0::NeiroGenControllerTests.GetUserNameByPozdrikId_ShouldReturnOk_WhenUsernameExists&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;xUnit::E319DC98-328C-4721-B831-D1ED0AA8E5DA::net9.0::NeiroGenControllerTests.GetUserNameByPozdrikId_ShouldReturnNotFound_WhenUsernameDoesNotExist&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::E319DC98-328C-4721-B831-D1ED0AA8E5DA::net9.0::Testik.PasswordRecoveryControllerTests.GetIdByEmail_MustReturnAppIdDto&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::E319DC98-328C-4721-B831-D1ED0AA8E5DA::net9.0::Testik.PasswordRecoveryControllerTests.GetIdByEmail_MustReturnFalse&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
