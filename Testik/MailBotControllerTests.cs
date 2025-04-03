@@ -4,6 +4,7 @@ using Domain.DTO.DTO.Friend;
 using Domain.DTO.DTO.Pozdr;
 using Domain.Interfaces.IServices;
 using Domain.Models;
+using Entities.Templates;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using ProxyAPILevel;
@@ -91,7 +92,50 @@ public class MailBotControllerTests
         var returnedTodayBirthdays = Assert.IsType<List<FriendList>>(okResult.Value);
         Assert.Single(returnedTodayBirthdays);
         Assert.Equal(friendList.FriendUsername, returnedTodayBirthdays.First().FriendUsername);
-        
-        
+    }
+
+    [Fact]
+    public async Task GetCongrStringByIdPozdrik_ShouldReturnAllGood()
+    {
+        //Arrange
+        var pozdrID = 1;
+        var expectedPozdrik = "Happy bday";
+        _mockService.Setup(s=>s.SelectPozdStringAsync(It.IsAny<PozdrikIdDto>())).ReturnsAsync(expectedPozdrik);
+        //Act
+        var result=await _controller.GetCongrStr(pozdrID);
+        //Assert
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        Assert.Equal(expectedPozdrik, okResult.Value);
+    }
+    [Fact]
+    public async Task GetCongrStr_ShouldReturnNotFound_WhenPozdrikDoesNotExist()
+    {
+        // Arrange
+        var pozdrikId = 999;
+        _mockService.Setup(s => s.SelectPozdStringAsync(It.IsAny<PozdrikIdDto>()))
+            .ReturnsAsync((string)null); // Возвращаем null, если поздравление не найдено
+
+        // Act
+        var result = await _controller.GetCongrStr(pozdrikId);
+
+        // Assert
+        Assert.IsType<NotFoundObjectResult>(result);
+    }
+    [Fact]
+    public async Task GetEmail_ShouldReturnOk_WhenEmailExists()
+    {
+        // Arrange
+        var appId = Guid.NewGuid();
+        var expectedEmail = "example@example.com";
+
+        _mockService.Setup(s => s.GetEmailAsync(It.IsAny<AppIdDto>()))
+            .ReturnsAsync(expectedEmail);
+
+        // Act
+        var result = await _controller.GetEmail(appId);
+
+        // Assert
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        Assert.Equal(expectedEmail, okResult.Value);
     }
 }
