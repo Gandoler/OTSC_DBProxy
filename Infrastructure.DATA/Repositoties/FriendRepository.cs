@@ -13,6 +13,7 @@ public class FriendRepository: IFriendRepository
     {
         _context = context;
     }
+    //протестил
     public async Task<bool> AddFriendInListAsync(FriendList friendList)
     {
         var userExists = await _context.Set<FriendList>().Where(f =>f.FriendUsername==friendList.FriendUsername && f.Appid == friendList.Appid).AnyAsync();
@@ -26,7 +27,7 @@ public class FriendRepository: IFriendRepository
         int affectedRows = await _context.SaveChangesAsync();
         return affectedRows > 0;
     }
-
+    //протестил
     public async Task<bool> DeleteFriendFromListAsync(Guid appid, string friendUsername)
     {
         var friend = await _context.Set<FriendList>().FirstOrDefaultAsync(f => f.Appid == appid && f.FriendUsername == friendUsername);
@@ -39,14 +40,14 @@ public class FriendRepository: IFriendRepository
     
         return affectedRows > 0;
     }
-
+    //протестил
     public async Task<bool> UpdateFriendInListAsync(FriendList friendList)
     {
         _context.Set<FriendList>().Update(friendList);
         int affectedRows = await _context.SaveChangesAsync();
         return affectedRows > 0;
     }
-
+    //протестил
     public async Task<List<FriendList>> SelectByAppIdAsync(Guid appid)
     {
         return await _context.Set<FriendList>().Where(f =>f.Appid == appid)
