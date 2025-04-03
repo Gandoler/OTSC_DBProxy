@@ -73,6 +73,7 @@ public class NeiroGenController : ControllerBase
         return username != null ? Ok(username) : NotFound(new { message = "Username not found" });
     }
 
+    /*
     /// <summary>
     /// Получает Поздрики с пустыми или нулевыми строками.
     /// </summary>
@@ -84,5 +85,5 @@ public class NeiroGenController : ControllerBase
     {
         var result = await _neiroGenService.SelectEmptyOrNullPozdrstringAsync();
         return result.Any() ? Ok(result) : NotFound(new { message = "No empty or null pozdrstrings found" });
-    }
+    }*/
 }
