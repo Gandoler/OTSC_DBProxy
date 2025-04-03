@@ -39,7 +39,7 @@ public class TgComprRepository : ITgComprRepository
     {
         return await _context.Set<TgComprehension>()
             .Where(f => f.Appid == appId)
-            .Select(f => f.TgId)
+            .Select(f => (long?)f.TgId)
             .FirstOrDefaultAsync();
     }
 }
