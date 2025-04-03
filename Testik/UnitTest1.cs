@@ -41,7 +41,7 @@ public class AuthControllerTests
         // Arrange
         var loginDto = new LoginDto { Login = "unknownuser", Password = "password123" };
         _authServiceMock.Setup(s => s.ExicstCheckAsync(loginDto)).ReturnsAsync(false);
-        
+        //
         // Act
         var result = await _authController.CheckUserExists(loginDto) as OkObjectResult;
         
