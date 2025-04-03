@@ -59,7 +59,7 @@ public class MailBotController : ControllerBase
         return email != null ? Ok(email) : NotFound(new { message = "Email not found" });
     }
     
-    
+    //tested
     /// <summary>
     /// Получает Id Поздрика по данным друга.
     /// </summary>
