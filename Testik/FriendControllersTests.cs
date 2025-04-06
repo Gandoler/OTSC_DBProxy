@@ -27,7 +27,7 @@ public class FriendControllerTests
         var friendDto = new FriendDto { AppId = Guid.NewGuid(), FriendUsername = "test_friend" };
         _friendServiceMock.Setup(s => s.AddFriendInListAsync(friendDto)).ReturnsAsync(true);
 
-        var result = await _friendController.AddFriend(friendDto) as OkObjectResult;
+        var result = await _friendController.AddFriend(friendDto).ConfigureAwait(false) as OkObjectResult;
 
         Assert.NotNull(result);
         Assert.Equal(200, result.StatusCode);
@@ -39,7 +39,7 @@ public class FriendControllerTests
         var deleteFriendDto = new DeleteFriendDto { AppId = Guid.NewGuid(), FriendUsername = "test_friend" };
         _friendServiceMock.Setup(s => s.DeleteFriendFromListAsync(deleteFriendDto)).ReturnsAsync(true);
 
-        var result = await _friendController.DeleteFriend(deleteFriendDto) as OkObjectResult;
+        var result = await _friendController.DeleteFriend(deleteFriendDto).ConfigureAwait(false) as OkObjectResult;
 
         Assert.NotNull(result);
         Assert.Equal(200, result.StatusCode);
@@ -52,7 +52,7 @@ public class FriendControllerTests
         var expectedFriends = new List<FriendDto> { new FriendDto { AppId = appId, FriendUsername = "test_friend" } };
         _friendServiceMock.Setup(s => s.SelectByAppIdAsync(It.IsAny<AppIdDto>())).ReturnsAsync(expectedFriends);
 
-        var result = await _friendController.GetFriendsByAppId(appId) as OkObjectResult;
+        var result = await _friendController.GetFriendsByAppId(appId).ConfigureAwait(false) as OkObjectResult;
 
         Assert.NotNull(result);
         Assert.Equal(200, result.StatusCode);

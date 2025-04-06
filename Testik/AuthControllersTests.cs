@@ -25,10 +25,10 @@ public class AuthControllerTests
         // Arrange
         var loginDto = new LoginDto { Login = "user1", Password = "password1" };
         _authServiceMock.Setup(s => s.ExicstCheckAsync(loginDto)).ReturnsAsync(true);
-        
+
         // Act
-        var result = await _authController.CheckUserExists(loginDto) as OkObjectResult;
-        
+        var result = await _authController.CheckUserExists(loginDto).ConfigureAwait(false) as OkObjectResult;
+
         // Assert
         Assert.NotNull(result);
         Assert.Equal(200, result.StatusCode);
@@ -43,8 +43,8 @@ public class AuthControllerTests
         _authServiceMock.Setup(s => s.ExicstCheckAsync(loginDto)).ReturnsAsync(false);
         //
         // Act
-        var result = await _authController.CheckUserExists(loginDto) as OkObjectResult;
-        
+        var result = await _authController.CheckUserExists(loginDto).ConfigureAwait(false) as OkObjectResult;
+
         // Assert
         Assert.NotNull(result);
         Assert.Equal(200, result.StatusCode);

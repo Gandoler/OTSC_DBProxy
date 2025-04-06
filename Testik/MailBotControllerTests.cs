@@ -37,14 +37,14 @@ public class MailBotControllerTests
         _mockService.Setup(s => s.GetPozdrikId(friendDto)).ReturnsAsync(pozdrikIdDto);
 
         // Act
-        var result = await _controller.GetPozdrikIdForMail(friendDto);
+        var result = await _controller.GetPozdrikIdForMail(friendDto).ConfigureAwait(false);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
         var returnedPozdrikId = Assert.IsType<PozdrikIdDto>(okResult.Value);
         Assert.Equal(pozdrikIdDto._pozdrikId, returnedPozdrikId._pozdrikId);
     }
-    
+
     [Fact]
     public async Task GetPozdrikIdForMail_ShouldReturnNotFound_WhenPozdrikIdNotFound()
     {
@@ -61,7 +61,7 @@ public class MailBotControllerTests
         _mockService.Setup(s => s.GetPozdrikId(friendDto)).ReturnsAsync(pozdrikIdDto);
 
         // Act
-        var result = await _controller.GetPozdrikIdForMail(friendDto);
+        var result = await _controller.GetPozdrikIdForMail(friendDto).ConfigureAwait(false);
 
         // Assert
         Assert.IsType<NotFoundObjectResult>(result);
@@ -85,8 +85,8 @@ public class MailBotControllerTests
         var friends = new List<FriendList> { friendList }; // Добавляем друга в список
         _mockService.Setup(s => s.SelectForTodayBithrday()).ReturnsAsync(friends);
         //Act
-        var res=await _controller.GetTodayBirthdays();
-        
+        var res = await _controller.GetTodayBirthdays().ConfigureAwait(false);
+
         //Assert
         var okResult = Assert.IsType<OkObjectResult>(res);
         var returnedTodayBirthdays = Assert.IsType<List<FriendList>>(okResult.Value);
@@ -100,9 +100,9 @@ public class MailBotControllerTests
         //Arrange
         var pozdrID = 1;
         var expectedPozdrik = "Happy bday";
-        _mockService.Setup(s=>s.SelectPozdStringAsync(It.IsAny<PozdrikIdDto>())).ReturnsAsync(expectedPozdrik);
+        _mockService.Setup(s => s.SelectPozdStringAsync(It.IsAny<PozdrikIdDto>())).ReturnsAsync(expectedPozdrik);
         //Act
-        var result=await _controller.GetCongrStr(pozdrID);
+        var result = await _controller.GetCongrStr(pozdrID).ConfigureAwait(false);
         //Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
         Assert.Equal(expectedPozdrik, okResult.Value);
@@ -116,7 +116,7 @@ public class MailBotControllerTests
             .ReturnsAsync((string)null); // Возвращаем null, если поздравление не найдено
 
         // Act
-        var result = await _controller.GetCongrStr(pozdrikId);
+        var result = await _controller.GetCongrStr(pozdrikId).ConfigureAwait(false);
 
         // Assert
         Assert.IsType<NotFoundObjectResult>(result);
@@ -132,7 +132,7 @@ public class MailBotControllerTests
             .ReturnsAsync(expectedEmail);
 
         // Act
-        var result = await _controller.GetEmail(appId);
+        var result = await _controller.GetEmail(appId).ConfigureAwait(false);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);

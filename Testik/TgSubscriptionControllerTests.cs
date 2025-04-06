@@ -27,11 +27,11 @@ public class TgSubscriptionControllerTests
         _mockService.Setup(s => s.SubscribeAsync(dto)).ReturnsAsync(true);
 
         // Act
-        var result = await _controller.Subscribe(dto);
+        var result = await _controller.Subscribe(dto).ConfigureAwait(false);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
-        
+
     }
 
     [Fact]
@@ -42,10 +42,10 @@ public class TgSubscriptionControllerTests
         _mockService.Setup(s => s.SubscribeAsync(dto)).ReturnsAsync(false);
 
         // Act
-        var result = await _controller.Subscribe(dto);
+        var result = await _controller.Subscribe(dto).ConfigureAwait(false);
 
         // Assert
         var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
-       
+
     }
 }

@@ -26,16 +26,16 @@ public class PasswordRecoveryControllerTests
         {
             AppId = Guid.NewGuid()
         };
-        _mock.Setup(s=>s.GetIdByMailAsync(email)).ReturnsAsync(appIdDto);
-        
+        _mock.Setup(s => s.GetIdByMailAsync(email)).ReturnsAsync(appIdDto);
+
         //Act
 
-        var result= await _controller.GetIdByEmail(email);
+        var result = await _controller.GetIdByEmail(email).ConfigureAwait(false);
         //Assert
-        var okRes= Assert.IsType<OkObjectResult>(result);
+        var okRes = Assert.IsType<OkObjectResult>(result);
         Assert.Equal(appIdDto, okRes.Value);
     }
-    
+
     [Fact]
     public async Task GetIdByEmail_MustReturnFalse()
     {
@@ -45,11 +45,11 @@ public class PasswordRecoveryControllerTests
         {
             AppId = Guid.NewGuid()
         };
-        _mock.Setup(s=>s.GetIdByMailAsync(email)).ReturnsAsync((AppIdDto?)null);
-        
+        _mock.Setup(s => s.GetIdByMailAsync(email)).ReturnsAsync((AppIdDto?)null);
+
         //Act
 
-        var result= await _controller.GetIdByEmail(email);
+        var result = await _controller.GetIdByEmail(email).ConfigureAwait(false);
         //Assert
         var okRes = Assert.IsType<OkObjectResult>(result);
         Assert.Null(okRes.Value);
@@ -58,13 +58,13 @@ public class PasswordRecoveryControllerTests
     [Fact]
     public async Task GetLoginByMail_MustReturnAppIdDto()
     {
-        var email="trokhin87@gmail.com";
+        var email = "trokhin87@gmail.com";
         string? login = "zhenek";
-        _mock.Setup(s=>s.GetLoginByMailAsync(email)).ReturnsAsync(login);
-        
-        var result= await _controller.GetLoginByMail(email);
-        
-        var okRes= Assert.IsType<OkObjectResult>(result);
+        _mock.Setup(s => s.GetLoginByMailAsync(email)).ReturnsAsync(login);
+
+        var result = await _controller.GetLoginByMail(email).ConfigureAwait(false);
+
+        var okRes = Assert.IsType<OkObjectResult>(result);
         Assert.Equal(login, okRes.Value);
     }
 
@@ -72,22 +72,22 @@ public class PasswordRecoveryControllerTests
     public async Task CheckExistMail_MustReturnTrue()
     {
         var email = "trokhin87@gmail.com";
-        _mock.Setup(s=>s.ExistByMailAsync(email)).ReturnsAsync(true);
-        
-        var result=await _controller.CheckMail(email);
-        
-        var okRes= Assert.IsType<OkObjectResult>(result);
+        _mock.Setup(s => s.ExistByMailAsync(email)).ReturnsAsync(true);
+
+        var result = await _controller.CheckMail(email).ConfigureAwait(false);
+
+        var okRes = Assert.IsType<OkObjectResult>(result);
         Assert.Equal(true, okRes.Value);
     }
     [Fact]
     public async Task CheckExistLogin_MustReturnTrue()
     {
         var email = "trokhin87";
-        _mock.Setup(s=>s.ExicstCheckByLoginAsync(email)).ReturnsAsync(true);
-        
-        var result=await _controller.CheckUserExists(email);
-        
-        var okRes= Assert.IsType<OkObjectResult>(result);
+        _mock.Setup(s => s.ExicstCheckByLoginAsync(email)).ReturnsAsync(true);
+
+        var result = await _controller.CheckUserExists(email).ConfigureAwait(false);
+
+        var okRes = Assert.IsType<OkObjectResult>(result);
     }
 
     [Fact]
@@ -99,15 +99,15 @@ public class PasswordRecoveryControllerTests
             Login = "trokhin87",
             Password = "1234"
         };
-    
+
         // Настраиваем mock сервиса возвращать true (успешное обновление)
         _mock.Setup(s => s.UpdateAsync(loginDto)).ReturnsAsync(true);
 
         // Act
-        var result = await _controller.UpdateUser(loginDto);
+        var result = await _controller.UpdateUser(loginDto).ConfigureAwait(false);
 
         var okResult = Assert.IsType<OkObjectResult>(result);
-    
+
     }
 
 }

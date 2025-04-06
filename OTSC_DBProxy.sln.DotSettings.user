@@ -6,7 +6,7 @@
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AMethodBase_002ECoreCLR_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fa97de4a8569891284b8e6d88ea9fef8d92abcadf1aa85ae14a847d4507bf8_003FMethodBase_002ECoreCLR_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AObject_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003F68b06b8592b1287fd78f3ee68566d6a38d6e2f45b9a9e6ebd4d0e9972f7c29_003FObject_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AType_002ECoreCLR_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003F7e333a9f3297ba553cccfd3b7c3f1f96125b23d09f883e4d6e66d531559a4c_003FType_002ECoreCLR_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6369a32d_002Dd173_002D4993_002Dafcf_002D7008fec9ef04/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;Tests&amp;gt;\&amp;lt;Testik&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6369a32d_002Dd173_002D4993_002Dafcf_002D7008fec9ef04/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;Tests&amp;gt;\&amp;lt;Testik&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Or&gt;&#xD;
     &lt;Project Location="C:\Users\trokh\RiderProjects\OTSC_DBProxy\TestRepos" Presentation="&amp;lt;Tests&amp;gt;\&amp;lt;TestRepos&amp;gt;" /&gt;&#xD;
     &lt;ProjectFile&gt;E319DC98-328C-4721-B831-D1ED0AA8E5DA/f:MailBotControllerTests.cs&lt;/ProjectFile&gt;&#xD;
@@ -24,9 +24,13 @@
       &lt;TestId&gt;xUnit::E319DC98-328C-4721-B831-D1ED0AA8E5DA::net9.0::Testik.PasswordRecoveryControllerTests.GetIdByEmail_MustReturnFalse&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;xUnit::E319DC98-328C-4721-B831-D1ED0AA8E5DA::net9.0::Testik.PasswordRecoveryControllerTests.GetLoginByMail_MustReturnAppIdDto&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;xUnit::E319DC98-328C-4721-B831-D1ED0AA8E5DA::net9.0::TgBotControllerTests.GetPozdrikId_WhenPozdrikIdDoesNotExist_ReturnsNotFound&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::E319DC98-328C-4721-B831-D1ED0AA8E5DA::net9.0::TgSubscriptionControllerTests.Subscribe_WhenSubscriptionIsSuccessful_ReturnsOk&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
     &lt;ProjectFile&gt;E319DC98-328C-4721-B831-D1ED0AA8E5DA/f:PasswordRecoveryControllerTests.cs&lt;/ProjectFile&gt;&#xD;
     &lt;ProjectFile&gt;E319DC98-328C-4721-B831-D1ED0AA8E5DA/f:RegisterControllerTests.cs&lt;/ProjectFile&gt;&#xD;
     &lt;ProjectFile&gt;E319DC98-328C-4721-B831-D1ED0AA8E5DA/f:TgBotControllerTests.cs&lt;/ProjectFile&gt;&#xD;
   &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c66fe0d4_002Dbaf8_002D42c6_002Db8ae_002D3e235da4d05f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Subscribe_WhenSubscriptionFails_ReturnsBadRequest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;ProjectFile&gt;E319DC98-328C-4721-B831-D1ED0AA8E5DA/f:TgSubscriptionControllerTests.cs&lt;/ProjectFile&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

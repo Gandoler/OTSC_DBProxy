@@ -36,7 +36,7 @@ public class NeiroGenControllerTests
                     .ReturnsAsync(addIntAndPozh);
 
         // Act
-        var result = await _controller.GetIntAndPozh(pozdrikId);
+        var result = await _controller.GetIntAndPozh(pozdrikId).ConfigureAwait(false);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
@@ -53,7 +53,7 @@ public class NeiroGenControllerTests
             .ReturnsAsync(true);
 
         // Act
-        var result = await _controller.AddPozdrik(pozdrikDto);
+        var result = await _controller.AddPozdrik(pozdrikDto).ConfigureAwait(false);
 
         // Assert
         Assert.IsType<OkObjectResult>(result);
@@ -69,7 +69,7 @@ public class NeiroGenControllerTests
                     .ReturnsAsync(false);
 
         // Act
-        var result = await _controller.AddPozdrik(pozdrikDto);
+        var result = await _controller.AddPozdrik(pozdrikDto).ConfigureAwait(false);
 
         // Assert
         Assert.IsType<BadRequestObjectResult>(result);
@@ -86,7 +86,7 @@ public class NeiroGenControllerTests
                     .ReturnsAsync(name);
 
         // Act
-        var result = await _controller.GetNameByPozdrikId(pozdrikId);
+        var result = await _controller.GetNameByPozdrikId(pozdrikId).ConfigureAwait(false);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
@@ -103,7 +103,7 @@ public class NeiroGenControllerTests
                     .ReturnsAsync((string)null);
 
         // Act
-        var result = await _controller.GetNameByPozdrikId(pozdrikId);
+        var result = await _controller.GetNameByPozdrikId(pozdrikId).ConfigureAwait(false);
 
         // Assert
         Assert.IsType<NotFoundObjectResult>(result);
@@ -120,7 +120,7 @@ public class NeiroGenControllerTests
                     .ReturnsAsync(username);
 
         // Act
-        var result = await _controller.GetUserNameByPozdrikId(pozdrikId);
+        var result = await _controller.GetUserNameByPozdrikId(pozdrikId).ConfigureAwait(false);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
@@ -137,11 +137,11 @@ public class NeiroGenControllerTests
                     .ReturnsAsync((string)null);
 
         // Act
-        var result = await _controller.GetUserNameByPozdrikId(pozdrikId);
+        var result = await _controller.GetUserNameByPozdrikId(pozdrikId).ConfigureAwait(false);
 
         // Assert
         Assert.IsType<NotFoundObjectResult>(result);
-        
+
     }
 
 }

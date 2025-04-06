@@ -40,8 +40,8 @@ public class TgBotControllerTests
         var friends = new List<FriendList> { friendList }; // Добавляем друга в список
         _mockService.Setup(s => s.SelectForTodayBithrdayAsync()).ReturnsAsync(friends);
         //Act
-        var res=await _controller.GetTodayBirthdays();
-        
+        var res = await _controller.GetTodayBirthdays().ConfigureAwait(false);
+
         //Assert
         var okResult = Assert.IsType<OkObjectResult>(res);
         var returnedTodayBirthdays = Assert.IsType<List<FriendList>>(okResult.Value);
@@ -58,7 +58,7 @@ public class TgBotControllerTests
         _mockService.Setup(s => s.GetTgIdAsync(It.IsAny<AppIdDto>())).ReturnsAsync(tgIdDto);
 
         // Act
-        var result = await _controller.GetTgId(appId);
+        var result = await _controller.GetTgId(appId).ConfigureAwait(false);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
@@ -74,7 +74,7 @@ public class TgBotControllerTests
         _mockService.Setup(s => s.GetTgIdAsync(It.IsAny<AppIdDto>())).ReturnsAsync((TgIdDto)null);
 
         // Act
-        var result = await _controller.GetTgId(appId);
+        var result = await _controller.GetTgId(appId).ConfigureAwait(false);
 
         // Assert
         var notFoundResult = Assert.IsType<NotFoundObjectResult>(result);
@@ -90,7 +90,7 @@ public class TgBotControllerTests
         _mockService.Setup(s => s.SelectPozdrStringAsync(pozdrikIdDto)).ReturnsAsync(expectedPozdrik);
 
         // Act
-        var result = await _controller.GetPozdrikById(pozdrikIdDto);
+        var result = await _controller.GetPozdrikById(pozdrikIdDto).ConfigureAwait(false);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
@@ -106,7 +106,7 @@ public class TgBotControllerTests
         _mockService.Setup(s => s.SelectPozdrStringAsync(pozdrikIdDto)).ReturnsAsync((string)null);
 
         // Act
-        var result = await _controller.GetPozdrikById(pozdrikIdDto);
+        var result = await _controller.GetPozdrikById(pozdrikIdDto).ConfigureAwait(false);
 
         // Assert
         var notFoundResult = Assert.IsType<NotFoundObjectResult>(result);
@@ -116,12 +116,12 @@ public class TgBotControllerTests
     public async Task GetPozdrikId_WhenPozdrikIdExists_ReturnsOk()
     {
         // Arrange
-        var friend = new FriendDto { AppId = Guid.NewGuid(), FriendName="Алексей", FriendUsername = "Алексей",DateBirth = DateOnly.FromDateTime(DateTime.Now)};
+        var friend = new FriendDto { AppId = Guid.NewGuid(), FriendName = "Алексей", FriendUsername = "Алексей", DateBirth = DateOnly.FromDateTime(DateTime.Now) };
         var pozdrikIdDto = new PozdrikIdDto { _pozdrikId = 1 };
         _mockService.Setup(s => s.GetPozdrikId(friend)).ReturnsAsync(pozdrikIdDto);
 
         // Act
-        var result = await _controller.GetPozdrikId(friend);
+        var result = await _controller.GetPozdrikId(friend).ConfigureAwait(false);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
@@ -133,14 +133,14 @@ public class TgBotControllerTests
     public async Task GetPozdrikId_WhenPozdrikIdDoesNotExist_ReturnsNotFound()
     {
         // Arrange
-        var friend = new FriendDto { AppId = Guid.NewGuid(), FriendName="Алексей", FriendUsername = "Алексей",DateBirth = DateOnly.FromDateTime(DateTime.Now)};
+        var friend = new FriendDto { AppId = Guid.NewGuid(), FriendName = "Алексей", FriendUsername = "Алексей", DateBirth = DateOnly.FromDateTime(DateTime.Now) };
         _mockService.Setup(s => s.GetPozdrikId(friend)).ReturnsAsync((PozdrikIdDto)null);
 
         // Act
-        var result = await _controller.GetPozdrikId(friend);
+        var result = await _controller.GetPozdrikId(friend).ConfigureAwait(false);
 
         // Assert
         var notFoundResult = Assert.IsType<NotFoundObjectResult>(result);
-     
+
     }
 }
