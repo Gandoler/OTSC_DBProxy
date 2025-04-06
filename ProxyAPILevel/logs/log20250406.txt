@@ -1,0 +1,1557 @@
+2025-04-06 00:32:12.804 +03:00 [INF] 
+2025-04-06 00:32:12.946 +03:00 [WRN] Overriding address(es) 'http://localhost:8080'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-04-06 00:32:12.960 +03:00 [INF] Now listening on: http://[::]:5010
+2025-04-06 00:32:12.961 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-06 00:32:12.962 +03:00 [INF] Hosting environment: Development
+2025-04-06 00:32:12.962 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel
+2025-04-06 00:33:15.614 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 146
+2025-04-06 00:33:15.647 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-04-06 00:33:15.649 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 00:33:15.660 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-04-06 00:33:15.811 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 00:33:17.004 +03:00 [INF] Executed DbCommand (74ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-04-06 00:33:17.184 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-04-06 00:33:17.197 +03:00 [INF] Executed action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1381.8381ms.
+2025-04-06 00:33:17.206 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 00:33:17.220 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 1555.2576ms
+2025-04-06 00:33:17.221 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 00:33:17.226 +03:00 [INF] HTTP POST /api/Friends/add responded 200 in 1577.8908 ms
+2025-04-06 00:33:17.239 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 200 null application/json; charset=utf-8 1626.0138ms
+2025-04-06 00:33:27.464 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 138
+2025-04-06 00:33:27.468 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 00:33:27.469 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-04-06 00:33:27.478 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 00:33:27.543 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-04-06 00:33:27.571 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-04-06 00:33:27.573 +03:00 [INF] Executed action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 94.2319ms.
+2025-04-06 00:33:27.575 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 00:33:27.576 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 105.6528ms
+2025-04-06 00:33:27.577 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 00:33:27.578 +03:00 [INF] HTTP POST /api/Friends/add responded 200 in 109.8052 ms
+2025-04-06 00:33:27.580 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 200 null application/json; charset=utf-8 115.731ms
+2025-04-06 01:07:56.630 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 127
+2025-04-06 01:07:56.633 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 01:07:56.634 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-04-06 01:07:56.638 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 01:07:56.864 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-04-06 01:07:56.893 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-04-06 01:07:56.895 +03:00 [INF] Executed action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 255.9771ms.
+2025-04-06 01:07:56.896 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 01:07:56.898 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 262.539ms
+2025-04-06 01:07:56.899 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 01:07:56.899 +03:00 [INF] HTTP POST /api/Friends/add responded 200 in 266.6235 ms
+2025-04-06 01:07:56.901 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 200 null application/json; charset=utf-8 271.0558ms
+2025-04-06 01:10:50.339 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 129
+2025-04-06 01:10:50.341 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 01:10:50.341 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-04-06 01:10:50.343 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 01:10:50.381 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-04-06 01:10:50.408 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-04-06 01:10:50.410 +03:00 [INF] Executed action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 65.4816ms.
+2025-04-06 01:10:50.411 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 01:10:50.412 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 69.2493ms
+2025-04-06 01:10:50.413 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 01:10:50.414 +03:00 [INF] HTTP POST /api/Friends/add responded 200 in 73.5088 ms
+2025-04-06 01:10:50.415 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 200 null application/json; charset=utf-8 76.9411ms
+2025-04-06 01:11:54.516 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 131
+2025-04-06 01:11:54.518 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 01:11:54.519 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-04-06 01:11:54.521 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 01:11:54.553 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-04-06 01:11:54.584 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-04-06 01:11:54.586 +03:00 [INF] Executed action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 64.0682ms.
+2025-04-06 01:11:54.587 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 01:11:54.588 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 68.0068ms
+2025-04-06 01:11:54.589 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 01:11:54.590 +03:00 [INF] HTTP POST /api/Friends/add responded 200 in 71.9833 ms
+2025-04-06 01:11:54.591 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 200 null application/json; charset=utf-8 75.4854ms
+2025-04-06 01:15:14.244 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 133
+2025-04-06 01:15:14.246 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 01:15:14.246 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-04-06 01:15:14.248 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 01:15:14.453 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-04-06 01:15:14.480 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-04-06 01:15:14.483 +03:00 [INF] Executed action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 233.5538ms.
+2025-04-06 01:15:14.484 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 01:15:14.485 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 237.4827ms
+2025-04-06 01:15:14.486 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 01:15:14.487 +03:00 [INF] HTTP POST /api/Friends/add responded 200 in 241.4494 ms
+2025-04-06 01:15:14.488 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 200 null application/json; charset=utf-8 244.8036ms
+2025-04-06 01:19:55.900 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Auth/login - application/json; charset=utf-8 null
+2025-04-06 01:19:55.903 +03:00 [INF] Executing endpoint 'ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel)'
+2025-04-06 01:19:55.907 +03:00 [INF] Route matched with {action = "CheckUserExists", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckUserExists(Entities.Templates.LoginDto) on controller ProxyAPILevel.AuthController (ProxyAPILevel).
+2025-04-06 01:19:55.915 +03:00 [INF] Executing action method ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 01:19:55.977 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__user_Password_0='?', @__user_Login_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.appid, u.login, u.password
+FROM users AS u
+WHERE u.password = @__user_Password_0 AND u.login = @__user_Login_1
+LIMIT 1
+2025-04-06 01:19:55.994 +03:00 [INF] Executed action method ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 78.6317ms.
+2025-04-06 01:19:55.996 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 01:19:55.999 +03:00 [INF] Executed action ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel) in 89.5223ms
+2025-04-06 01:19:56.000 +03:00 [INF] Executed endpoint 'ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel)'
+2025-04-06 01:19:56.000 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 97.8337 ms
+2025-04-06 01:19:56.002 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Auth/login - 200 null application/json; charset=utf-8 101.8967ms
+2025-04-06 01:19:58.404 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Auth/login - application/json; charset=utf-8 null
+2025-04-06 01:19:58.407 +03:00 [INF] Executing endpoint 'ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel)'
+2025-04-06 01:19:58.407 +03:00 [INF] Route matched with {action = "CheckUserExists", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckUserExists(Entities.Templates.LoginDto) on controller ProxyAPILevel.AuthController (ProxyAPILevel).
+2025-04-06 01:19:58.410 +03:00 [INF] Executing action method ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 01:19:58.436 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[@__user_Password_0='?', @__user_Login_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.appid, u.login, u.password
+FROM users AS u
+WHERE u.password = @__user_Password_0 AND u.login = @__user_Login_1
+LIMIT 1
+2025-04-06 01:19:58.438 +03:00 [INF] Executed action method ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 27.5524ms.
+2025-04-06 01:19:58.439 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 01:19:58.441 +03:00 [INF] Executed action ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel) in 32.0245ms
+2025-04-06 01:19:58.442 +03:00 [INF] Executed endpoint 'ProxyAPILevel.AuthController.CheckUserExists (ProxyAPILevel)'
+2025-04-06 01:19:58.442 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 35.8094 ms
+2025-04-06 01:19:58.444 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Auth/login - 200 null application/json; charset=utf-8 39.5053ms
+2025-04-06 01:33:34.674 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/mailbot/birthdays/today - null null
+2025-04-06 01:33:34.679 +03:00 [INF] Executing endpoint 'ProxyAPILevel.MailBotController.GetTodayBirthdays (ProxyAPILevel)'
+2025-04-06 01:33:34.683 +03:00 [INF] Route matched with {action = "GetTodayBirthdays", controller = "MailBot"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodayBirthdays() on controller ProxyAPILevel.MailBotController (ProxyAPILevel).
+2025-04-06 01:33:34.685 +03:00 [INF] Executing action method ProxyAPILevel.MailBotController.GetTodayBirthdays (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 01:33:35.924 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT f.appid, f.friend_username, f.date_birth, f.friend_name, f.id_pozdr
+FROM friend_list AS f
+WHERE date_part('doy', f.date_birth)::int = date_part('doy', now()::timestamp)::int
+2025-04-06 01:33:35.929 +03:00 [INF] Executed action method ProxyAPILevel.MailBotController.GetTodayBirthdays (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1243.3876ms.
+2025-04-06 01:33:35.930 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Domain.Models.FriendList, Domain.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-04-06 01:33:35.944 +03:00 [INF] Executed action ProxyAPILevel.MailBotController.GetTodayBirthdays (ProxyAPILevel) in 1259.2894ms
+2025-04-06 01:33:35.945 +03:00 [INF] Executed endpoint 'ProxyAPILevel.MailBotController.GetTodayBirthdays (ProxyAPILevel)'
+2025-04-06 01:33:35.946 +03:00 [INF] HTTP GET /api/mailbot/birthdays/today responded 200 in 1266.1829 ms
+2025-04-06 01:33:35.947 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/mailbot/birthdays/today - 200 null application/json; charset=utf-8 1272.3246ms
+2025-04-06 01:40:29.362 +03:00 [INF] Application is shutting down...
+2025-04-06 15:39:20.958 +03:00 [INF] 
+2025-04-06 15:39:21.148 +03:00 [WRN] Overriding address(es) 'http://localhost:8080'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-04-06 15:39:21.162 +03:00 [INF] Now listening on: http://[::]:5010
+2025-04-06 15:39:21.162 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-06 15:39:21.163 +03:00 [INF] Hosting environment: Development
+2025-04-06 15:39:21.164 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel
+2025-04-06 15:39:50.164 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/register/exists/penus - null null
+2025-04-06 15:39:50.200 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-04-06 15:39:50.202 +03:00 [INF] Executing endpoint 'ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel)'
+2025-04-06 15:39:50.217 +03:00 [INF] Route matched with {action = "CheckUserExists", controller = "Register"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckUserExists(System.String) on controller ProxyAPILevel.RegisterController (ProxyAPILevel).
+2025-04-06 15:39:50.580 +03:00 [INF] Executing action method ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 15:39:51.776 +03:00 [INF] Executed DbCommand (73ms) [Parameters=[@__login_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.appid, u.login, u.password
+FROM users AS u
+WHERE u.login = @__login_0
+LIMIT 1
+2025-04-06 15:39:51.799 +03:00 [INF] Executed action method ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 1214.8821ms.
+2025-04-06 15:39:51.807 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 15:39:51.822 +03:00 [INF] Executed action ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel) in 1600.3058ms
+2025-04-06 15:39:51.823 +03:00 [INF] Executed endpoint 'ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel)'
+2025-04-06 15:39:51.827 +03:00 [INF] HTTP GET /api/register/exists/penus responded 400 in 1626.3041 ms
+2025-04-06 15:39:51.840 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/register/exists/penus - 400 null application/json; charset=utf-8 1676.7452ms
+2025-04-06 15:39:51.847 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/register/create - application/json; charset=utf-8 null
+2025-04-06 15:39:51.851 +03:00 [INF] Executing endpoint 'ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel)'
+2025-04-06 15:39:51.855 +03:00 [INF] Route matched with {action = "RegisterUser", controller = "Register"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RegisterUser(Entities.Templates.RegisterDto) on controller ProxyAPILevel.RegisterController (ProxyAPILevel).
+2025-04-06 15:39:51.868 +03:00 [INF] Executing action method ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 15:39:51.938 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[@__user_Login_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM users AS u
+    WHERE u.login = @__user_Login_0)
+2025-04-06 15:39:52.096 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (login, password)
+VALUES (@p0, @p1)
+RETURNING appid;
+2025-04-06 15:39:52.116 +03:00 [INF] Executed action method ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 247.1069ms.
+2025-04-06 15:39:52.118 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 15:39:52.119 +03:00 [INF] Executed action ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel) in 262.6545ms
+2025-04-06 15:39:52.120 +03:00 [INF] Executed endpoint 'ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel)'
+2025-04-06 15:39:52.121 +03:00 [INF] HTTP POST /api/register/create responded 200 in 269.8114 ms
+2025-04-06 15:39:52.123 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/register/create - 200 null application/json; charset=utf-8 276.3402ms
+2025-04-06 15:51:29.786 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 121
+2025-04-06 15:51:29.789 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 15:51:29.793 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-04-06 15:51:29.807 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 15:51:30.027 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-04-06 15:51:30.092 +03:00 [ERR] Failed executing DbCommand (33ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-04-06 15:51:30.112 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructure.DATA.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-04-06 15:51:30.123 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 329.1701ms
+2025-04-06 15:51:30.125 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 15:51:30.125 +03:00 [ERR] HTTP POST /api/Friends/add responded 500 in 336.3691 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at UseCases.Repositoties.FriendRepository.AddFriendInListAsync(FriendList friendList) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.DATA\Repositoties\FriendRepository.cs:line 27
+   at UseCases.Services.FriendService.AddFriendInListAsync(FriendDto friend) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.Buisiness\Services\FriendService.cs:line 34
+   at ProxyAPILevel.FriendController.AddFriend(FriendDto friendDto) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel\Controllers\FriendController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-04-06 15:51:30.159 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at UseCases.Repositoties.FriendRepository.AddFriendInListAsync(FriendList friendList) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.DATA\Repositoties\FriendRepository.cs:line 27
+   at UseCases.Services.FriendService.AddFriendInListAsync(FriendDto friend) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.Buisiness\Services\FriendService.cs:line 34
+   at ProxyAPILevel.FriendController.AddFriend(FriendDto friendDto) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel\Controllers\FriendController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-04-06 15:51:30.178 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 500 null text/plain; charset=utf-8 392.2122ms
+2025-04-06 15:51:38.790 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 122
+2025-04-06 15:51:38.792 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 15:51:38.793 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-04-06 15:51:38.796 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 15:51:38.823 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-04-06 15:51:38.850 +03:00 [ERR] Failed executing DbCommand (23ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-04-06 15:51:38.853 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructure.DATA.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-04-06 15:51:38.861 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 66.721ms
+2025-04-06 15:51:38.862 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 15:51:38.863 +03:00 [ERR] HTTP POST /api/Friends/add responded 500 in 70.7246 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at UseCases.Repositoties.FriendRepository.AddFriendInListAsync(FriendList friendList) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.DATA\Repositoties\FriendRepository.cs:line 27
+   at UseCases.Services.FriendService.AddFriendInListAsync(FriendDto friend) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.Buisiness\Services\FriendService.cs:line 34
+   at ProxyAPILevel.FriendController.AddFriend(FriendDto friendDto) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel\Controllers\FriendController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-04-06 15:51:38.874 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at UseCases.Repositoties.FriendRepository.AddFriendInListAsync(FriendList friendList) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.DATA\Repositoties\FriendRepository.cs:line 27
+   at UseCases.Services.FriendService.AddFriendInListAsync(FriendDto friend) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.Buisiness\Services\FriendService.cs:line 34
+   at ProxyAPILevel.FriendController.AddFriend(FriendDto friendDto) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel\Controllers\FriendController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-04-06 15:51:38.886 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 500 null text/plain; charset=utf-8 96.5001ms
+2025-04-06 15:51:46.862 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 122
+2025-04-06 15:51:46.864 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 15:51:46.864 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-04-06 15:51:46.868 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 15:51:46.892 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-04-06 15:51:46.916 +03:00 [ERR] Failed executing DbCommand (22ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-04-06 15:51:46.919 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructure.DATA.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-04-06 15:51:46.927 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 61.4164ms
+2025-04-06 15:51:46.928 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 15:51:46.929 +03:00 [ERR] HTTP POST /api/Friends/add responded 500 in 65.5371 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at UseCases.Repositoties.FriendRepository.AddFriendInListAsync(FriendList friendList) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.DATA\Repositoties\FriendRepository.cs:line 27
+   at UseCases.Services.FriendService.AddFriendInListAsync(FriendDto friend) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.Buisiness\Services\FriendService.cs:line 34
+   at ProxyAPILevel.FriendController.AddFriend(FriendDto friendDto) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel\Controllers\FriendController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-04-06 15:51:46.939 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at UseCases.Repositoties.FriendRepository.AddFriendInListAsync(FriendList friendList) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.DATA\Repositoties\FriendRepository.cs:line 27
+   at UseCases.Services.FriendService.AddFriendInListAsync(FriendDto friend) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.Buisiness\Services\FriendService.cs:line 34
+   at ProxyAPILevel.FriendController.AddFriend(FriendDto friendDto) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel\Controllers\FriendController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-04-06 15:51:46.951 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 500 null text/plain; charset=utf-8 89.5933ms
+2025-04-06 15:51:53.622 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 126
+2025-04-06 15:51:53.624 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 15:51:53.624 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-04-06 15:51:53.626 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 15:51:53.651 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-04-06 15:51:53.678 +03:00 [ERR] Failed executing DbCommand (25ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-04-06 15:51:53.681 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructure.DATA.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-04-06 15:51:53.690 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 63.8943ms
+2025-04-06 15:51:53.691 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 15:51:53.692 +03:00 [ERR] HTTP POST /api/Friends/add responded 500 in 67.9171 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at UseCases.Repositoties.FriendRepository.AddFriendInListAsync(FriendList friendList) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.DATA\Repositoties\FriendRepository.cs:line 27
+   at UseCases.Services.FriendService.AddFriendInListAsync(FriendDto friend) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.Buisiness\Services\FriendService.cs:line 34
+   at ProxyAPILevel.FriendController.AddFriend(FriendDto friendDto) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel\Controllers\FriendController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-04-06 15:51:53.702 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at UseCases.Repositoties.FriendRepository.AddFriendInListAsync(FriendList friendList) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.DATA\Repositoties\FriendRepository.cs:line 27
+   at UseCases.Services.FriendService.AddFriendInListAsync(FriendDto friend) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.Buisiness\Services\FriendService.cs:line 34
+   at ProxyAPILevel.FriendController.AddFriend(FriendDto friendDto) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel\Controllers\FriendController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-04-06 15:51:53.714 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 500 null text/plain; charset=utf-8 92.7981ms
+2025-04-06 15:52:00.112 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 128
+2025-04-06 15:52:00.114 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 15:52:00.115 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-04-06 15:52:00.116 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 15:52:00.140 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-04-06 15:52:00.166 +03:00 [ERR] Failed executing DbCommand (23ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-04-06 15:52:00.169 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructure.DATA.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-04-06 15:52:00.178 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 62.5351ms
+2025-04-06 15:52:00.179 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 15:52:00.180 +03:00 [ERR] HTTP POST /api/Friends/add responded 500 in 66.4872 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at UseCases.Repositoties.FriendRepository.AddFriendInListAsync(FriendList friendList) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.DATA\Repositoties\FriendRepository.cs:line 27
+   at UseCases.Services.FriendService.AddFriendInListAsync(FriendDto friend) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.Buisiness\Services\FriendService.cs:line 34
+   at ProxyAPILevel.FriendController.AddFriend(FriendDto friendDto) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel\Controllers\FriendController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-04-06 15:52:00.191 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "friend_list" violates foreign key constraint "friend_list_appid_fkey"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: friend_list
+    ConstraintName: friend_list_appid_fkey
+    File: ri_triggers.c
+    Line: 2599
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at UseCases.Repositoties.FriendRepository.AddFriendInListAsync(FriendList friendList) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.DATA\Repositoties\FriendRepository.cs:line 27
+   at UseCases.Services.FriendService.AddFriendInListAsync(FriendDto friend) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\Infrastructure.Buisiness\Services\FriendService.cs:line 34
+   at ProxyAPILevel.FriendController.AddFriend(FriendDto friendDto) in C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel\Controllers\FriendController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-04-06 15:52:00.202 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 500 null text/plain; charset=utf-8 90.2793ms
+2025-04-06 15:52:15.833 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/Friends/add - application/json; charset=utf-8 134
+2025-04-06 15:52:15.835 +03:00 [INF] Executing endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 15:52:15.836 +03:00 [INF] Route matched with {action = "AddFriend", controller = "Friend"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddFriend(Domain.DTO.DTO.Friend.FriendDto) on controller ProxyAPILevel.FriendController (ProxyAPILevel).
+2025-04-06 15:52:15.838 +03:00 [INF] Executing action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 15:52:15.866 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__friendList_FriendUsername_0='?', @__friendList_Appid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM friend_list AS f
+    WHERE f.friend_username = @__friendList_FriendUsername_0 AND f.appid = @__friendList_Appid_1)
+2025-04-06 15:52:15.895 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Date), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO friend_list (appid, friend_username, date_birth, friend_name, id_pozdr)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-04-06 15:52:15.898 +03:00 [INF] Executed action method ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 59.0125ms.
+2025-04-06 15:52:15.899 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 15:52:15.900 +03:00 [INF] Executed action ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel) in 62.6699ms
+2025-04-06 15:52:15.901 +03:00 [INF] Executed endpoint 'ProxyAPILevel.FriendController.AddFriend (ProxyAPILevel)'
+2025-04-06 15:52:15.902 +03:00 [INF] HTTP POST /api/Friends/add responded 200 in 66.5862 ms
+2025-04-06 15:52:15.903 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/Friends/add - 200 null application/json; charset=utf-8 69.9577ms
+2025-04-06 16:02:01.179 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/register/exists/jenka228337 - null null
+2025-04-06 16:02:01.181 +03:00 [INF] Executing endpoint 'ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel)'
+2025-04-06 16:02:01.182 +03:00 [INF] Route matched with {action = "CheckUserExists", controller = "Register"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckUserExists(System.String) on controller ProxyAPILevel.RegisterController (ProxyAPILevel).
+2025-04-06 16:02:01.185 +03:00 [INF] Executing action method ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 16:02:01.393 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[@__login_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.appid, u.login, u.password
+FROM users AS u
+WHERE u.login = @__login_0
+LIMIT 1
+2025-04-06 16:02:01.398 +03:00 [INF] Executed action method ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 212.4173ms.
+2025-04-06 16:02:01.400 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 16:02:01.401 +03:00 [INF] Executed action ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel) in 217.5963ms
+2025-04-06 16:02:01.402 +03:00 [INF] Executed endpoint 'ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel)'
+2025-04-06 16:02:01.403 +03:00 [INF] HTTP GET /api/register/exists/jenka228337 responded 200 in 221.5977 ms
+2025-04-06 16:02:01.404 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/register/exists/jenka228337 - 200 null application/json; charset=utf-8 225.3902ms
+2025-04-06 16:02:53.966 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/register/exists/jenka228337 - null null
+2025-04-06 16:02:53.968 +03:00 [INF] Executing endpoint 'ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel)'
+2025-04-06 16:02:53.969 +03:00 [INF] Route matched with {action = "CheckUserExists", controller = "Register"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckUserExists(System.String) on controller ProxyAPILevel.RegisterController (ProxyAPILevel).
+2025-04-06 16:02:53.971 +03:00 [INF] Executing action method ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 16:02:54.020 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__login_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.appid, u.login, u.password
+FROM users AS u
+WHERE u.login = @__login_0
+LIMIT 1
+2025-04-06 16:02:54.022 +03:00 [INF] Executed action method ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 50.5597ms.
+2025-04-06 16:02:54.024 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 16:02:54.025 +03:00 [INF] Executed action ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel) in 54.4441ms
+2025-04-06 16:02:54.026 +03:00 [INF] Executed endpoint 'ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel)'
+2025-04-06 16:02:54.026 +03:00 [INF] HTTP GET /api/register/exists/jenka228337 responded 200 in 58.6157 ms
+2025-04-06 16:02:54.028 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/register/exists/jenka228337 - 200 null application/json; charset=utf-8 62.1174ms
+2025-04-06 16:02:58.802 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/register/exists/jenka2218337 - null null
+2025-04-06 16:02:58.804 +03:00 [INF] Executing endpoint 'ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel)'
+2025-04-06 16:02:58.805 +03:00 [INF] Route matched with {action = "CheckUserExists", controller = "Register"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckUserExists(System.String) on controller ProxyAPILevel.RegisterController (ProxyAPILevel).
+2025-04-06 16:02:58.807 +03:00 [INF] Executing action method ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 16:02:58.837 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__login_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.appid, u.login, u.password
+FROM users AS u
+WHERE u.login = @__login_0
+LIMIT 1
+2025-04-06 16:02:58.839 +03:00 [INF] Executed action method ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 31.3069ms.
+2025-04-06 16:02:58.840 +03:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 16:02:58.841 +03:00 [INF] Executed action ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel) in 35.1098ms
+2025-04-06 16:02:58.842 +03:00 [INF] Executed endpoint 'ProxyAPILevel.RegisterController.CheckUserExists (ProxyAPILevel)'
+2025-04-06 16:02:58.843 +03:00 [INF] HTTP GET /api/register/exists/jenka2218337 responded 400 in 38.9321 ms
+2025-04-06 16:02:58.844 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/register/exists/jenka2218337 - 400 null application/json; charset=utf-8 42.7499ms
+2025-04-06 16:02:58.858 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/register/create - application/json; charset=utf-8 null
+2025-04-06 16:02:58.860 +03:00 [INF] Executing endpoint 'ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel)'
+2025-04-06 16:02:58.861 +03:00 [INF] Route matched with {action = "RegisterUser", controller = "Register"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RegisterUser(Entities.Templates.RegisterDto) on controller ProxyAPILevel.RegisterController (ProxyAPILevel).
+2025-04-06 16:02:58.864 +03:00 [INF] Executing action method ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 16:02:58.888 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[@__user_Login_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM users AS u
+    WHERE u.login = @__user_Login_0)
+2025-04-06 16:02:58.913 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO users (login, password)
+VALUES (@p0, @p1)
+RETURNING appid;
+2025-04-06 16:02:58.915 +03:00 [INF] Executed action method ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 50.8276ms.
+2025-04-06 16:02:58.917 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 16:02:58.918 +03:00 [INF] Executed action ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel) in 54.7963ms
+2025-04-06 16:02:58.919 +03:00 [INF] Executed endpoint 'ProxyAPILevel.RegisterController.RegisterUser (ProxyAPILevel)'
+2025-04-06 16:02:58.919 +03:00 [INF] HTTP POST /api/register/create responded 200 in 59.0170 ms
+2025-04-06 16:02:58.921 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/register/create - 200 null application/json; charset=utf-8 62.3428ms
+2025-04-06 16:04:01.668 +03:00 [INF] Application is shutting down...
+2025-04-06 22:12:35.413 +03:00 [INF] 
+2025-04-06 22:12:35.672 +03:00 [WRN] Overriding address(es) 'http://localhost:8080'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-04-06 22:12:35.688 +03:00 [INF] Now listening on: http://[::]:5010
+2025-04-06 22:12:35.689 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-06 22:12:35.689 +03:00 [INF] Hosting environment: Development
+2025-04-06 22:12:35.690 +03:00 [INF] Content root path: C:\Users\trokh\RiderProjects\OTSC_DBProxy\ProxyAPILevel
+2025-04-06 22:13:23.114 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/4 - null null
+2025-04-06 22:13:23.148 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-04-06 22:13:23.150 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:13:23.161 +03:00 [INF] Route matched with {action = "GetIntAndPozh", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetIntAndPozh(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:13:23.501 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:13:24.737 +03:00 [INF] Executed DbCommand (69ms) [Parameters=[@__idPozdr_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id_pozdr, p.interest, p.pozhelanie, p.textpozdr
+FROM pozdrik AS p
+WHERE p.id_pozdr = @__idPozdr_0
+LIMIT 1
+2025-04-06 22:13:24.808 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1301.4462ms.
+2025-04-06 22:13:24.818 +03:00 [INF] Executing OkObjectResult, writing value of type 'Entities.Templates.AddIntAndPozhDto'.
+2025-04-06 22:13:24.831 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) in 1666.1799ms
+2025-04-06 22:13:24.833 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:13:24.836 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/4 responded 200 in 1687.8591 ms
+2025-04-06 22:13:24.849 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/4 - 200 null application/json; charset=utf-8 1736.4881ms
+2025-04-06 22:13:24.859 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/4 - null null
+2025-04-06 22:13:24.863 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:13:24.867 +03:00 [INF] Route matched with {action = "GetNameByPozdrikId", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNameByPozdrikId(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:13:24.870 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:13:24.941 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[@__pozdrikId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT f.friend_name
+FROM friend_list AS f
+WHERE f.id_pozdr = @__pozdrikId_0
+LIMIT 1
+2025-04-06 22:13:24.944 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.NotFoundObjectResult in 72.3587ms.
+2025-04-06 22:13:24.945 +03:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 22:13:24.950 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) in 81.0528ms
+2025-04-06 22:13:24.951 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:13:24.952 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/name/4 responded 404 in 88.7168 ms
+2025-04-06 22:13:24.953 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/4 - 404 null application/json; charset=utf-8 94.9047ms
+2025-04-06 22:14:27.522 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/5 - null null
+2025-04-06 22:14:27.525 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:14:27.526 +03:00 [INF] Route matched with {action = "GetIntAndPozh", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetIntAndPozh(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:14:27.531 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:14:27.567 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[@__idPozdr_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id_pozdr, p.interest, p.pozhelanie, p.textpozdr
+FROM pozdrik AS p
+WHERE p.id_pozdr = @__idPozdr_0
+LIMIT 1
+2025-04-06 22:14:27.570 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 38.4212ms.
+2025-04-06 22:14:27.572 +03:00 [INF] Executing OkObjectResult, writing value of type 'Entities.Templates.AddIntAndPozhDto'.
+2025-04-06 22:14:27.573 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) in 45.6597ms
+2025-04-06 22:14:27.574 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:14:27.575 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/5 responded 200 in 49.9221 ms
+2025-04-06 22:14:27.576 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/5 - 200 null application/json; charset=utf-8 54.5318ms
+2025-04-06 22:14:27.579 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/5 - null null
+2025-04-06 22:14:27.581 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:14:27.583 +03:00 [INF] Route matched with {action = "GetNameByPozdrikId", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNameByPozdrikId(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:14:27.585 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:14:27.607 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@__pozdrikId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT f.friend_name
+FROM friend_list AS f
+WHERE f.id_pozdr = @__pozdrikId_0
+LIMIT 1
+2025-04-06 22:14:27.610 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.NotFoundObjectResult in 23.5687ms.
+2025-04-06 22:14:27.611 +03:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 22:14:27.612 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) in 27.5502ms
+2025-04-06 22:14:27.613 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:14:27.614 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/name/5 responded 404 in 32.5838 ms
+2025-04-06 22:14:27.615 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/5 - 404 null application/json; charset=utf-8 36.4074ms
+2025-04-06 22:14:28.236 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/5 - null null
+2025-04-06 22:14:28.238 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:14:28.239 +03:00 [INF] Route matched with {action = "GetIntAndPozh", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetIntAndPozh(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:14:28.241 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:14:28.265 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[@__idPozdr_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id_pozdr, p.interest, p.pozhelanie, p.textpozdr
+FROM pozdrik AS p
+WHERE p.id_pozdr = @__idPozdr_0
+LIMIT 1
+2025-04-06 22:14:28.266 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 24.3105ms.
+2025-04-06 22:14:28.268 +03:00 [INF] Executing OkObjectResult, writing value of type 'Entities.Templates.AddIntAndPozhDto'.
+2025-04-06 22:14:28.269 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) in 27.94ms
+2025-04-06 22:14:28.270 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:14:28.270 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/5 responded 200 in 32.0010 ms
+2025-04-06 22:14:28.272 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/5 - 200 null application/json; charset=utf-8 35.2834ms
+2025-04-06 22:14:28.274 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/5 - null null
+2025-04-06 22:14:28.276 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:14:28.277 +03:00 [INF] Route matched with {action = "GetNameByPozdrikId", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNameByPozdrikId(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:14:28.278 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:14:28.301 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@__pozdrikId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT f.friend_name
+FROM friend_list AS f
+WHERE f.id_pozdr = @__pozdrikId_0
+LIMIT 1
+2025-04-06 22:14:28.303 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.NotFoundObjectResult in 23.2766ms.
+2025-04-06 22:14:28.304 +03:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 22:14:28.305 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) in 26.7242ms
+2025-04-06 22:14:28.306 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:14:28.307 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/name/5 responded 404 in 30.8282 ms
+2025-04-06 22:14:28.308 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/5 - 404 null application/json; charset=utf-8 33.831ms
+2025-04-06 22:14:28.673 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/5 - null null
+2025-04-06 22:14:28.675 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:14:28.676 +03:00 [INF] Route matched with {action = "GetIntAndPozh", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetIntAndPozh(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:14:28.678 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:14:28.700 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@__idPozdr_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id_pozdr, p.interest, p.pozhelanie, p.textpozdr
+FROM pozdrik AS p
+WHERE p.id_pozdr = @__idPozdr_0
+LIMIT 1
+2025-04-06 22:14:28.702 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 23.1459ms.
+2025-04-06 22:14:28.703 +03:00 [INF] Executing OkObjectResult, writing value of type 'Entities.Templates.AddIntAndPozhDto'.
+2025-04-06 22:14:28.704 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) in 26.9065ms
+2025-04-06 22:14:28.705 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:14:28.706 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/5 responded 200 in 31.2961 ms
+2025-04-06 22:14:28.708 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/5 - 200 null application/json; charset=utf-8 34.9877ms
+2025-04-06 22:14:28.710 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/5 - null null
+2025-04-06 22:14:28.712 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:14:28.713 +03:00 [INF] Route matched with {action = "GetNameByPozdrikId", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNameByPozdrikId(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:14:28.715 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:14:28.737 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@__pozdrikId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT f.friend_name
+FROM friend_list AS f
+WHERE f.id_pozdr = @__pozdrikId_0
+LIMIT 1
+2025-04-06 22:14:28.739 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.NotFoundObjectResult in 22.8117ms.
+2025-04-06 22:14:28.740 +03:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 22:14:28.741 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) in 26.3376ms
+2025-04-06 22:14:28.742 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:14:28.743 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/name/5 responded 404 in 30.2612 ms
+2025-04-06 22:14:28.744 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/5 - 404 null application/json; charset=utf-8 33.581ms
+2025-04-06 22:14:54.061 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/5 - null null
+2025-04-06 22:14:54.063 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:14:54.064 +03:00 [INF] Route matched with {action = "GetIntAndPozh", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetIntAndPozh(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:14:54.066 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:14:54.093 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@__idPozdr_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id_pozdr, p.interest, p.pozhelanie, p.textpozdr
+FROM pozdrik AS p
+WHERE p.id_pozdr = @__idPozdr_0
+LIMIT 1
+2025-04-06 22:14:54.096 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 29.3868ms.
+2025-04-06 22:14:54.098 +03:00 [INF] Executing OkObjectResult, writing value of type 'Entities.Templates.AddIntAndPozhDto'.
+2025-04-06 22:14:54.099 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) in 33.6389ms
+2025-04-06 22:14:54.100 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:14:54.101 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/5 responded 200 in 37.8561 ms
+2025-04-06 22:14:54.102 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/5 - 200 null application/json; charset=utf-8 41.2135ms
+2025-04-06 22:14:54.104 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/5 - null null
+2025-04-06 22:14:54.106 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:14:54.107 +03:00 [INF] Route matched with {action = "GetNameByPozdrikId", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNameByPozdrikId(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:14:54.109 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:14:54.132 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@__pozdrikId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT f.friend_name
+FROM friend_list AS f
+WHERE f.id_pozdr = @__pozdrikId_0
+LIMIT 1
+2025-04-06 22:14:54.134 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.NotFoundObjectResult in 24.0035ms.
+2025-04-06 22:14:54.135 +03:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 22:14:54.137 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) in 28.0393ms
+2025-04-06 22:14:54.138 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:14:54.138 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/name/5 responded 404 in 32.1639 ms
+2025-04-06 22:14:54.140 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/5 - 404 null application/json; charset=utf-8 35.4852ms
+2025-04-06 22:15:07.965 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/5 - null null
+2025-04-06 22:15:07.968 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:15:07.969 +03:00 [INF] Route matched with {action = "GetIntAndPozh", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetIntAndPozh(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:15:07.970 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:15:07.996 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[@__idPozdr_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id_pozdr, p.interest, p.pozhelanie, p.textpozdr
+FROM pozdrik AS p
+WHERE p.id_pozdr = @__idPozdr_0
+LIMIT 1
+2025-04-06 22:15:07.998 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 26.5741ms.
+2025-04-06 22:15:07.999 +03:00 [INF] Executing OkObjectResult, writing value of type 'Entities.Templates.AddIntAndPozhDto'.
+2025-04-06 22:15:08.000 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) in 29.9816ms
+2025-04-06 22:15:08.001 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:15:08.002 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/5 responded 200 in 34.2569 ms
+2025-04-06 22:15:08.003 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/5 - 200 null application/json; charset=utf-8 37.6214ms
+2025-04-06 22:15:08.006 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/5 - null null
+2025-04-06 22:15:08.007 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:15:08.008 +03:00 [INF] Route matched with {action = "GetNameByPozdrikId", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNameByPozdrikId(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:15:08.010 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:15:08.032 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@__pozdrikId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT f.friend_name
+FROM friend_list AS f
+WHERE f.id_pozdr = @__pozdrikId_0
+LIMIT 1
+2025-04-06 22:15:08.034 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.NotFoundObjectResult in 23.0936ms.
+2025-04-06 22:15:08.035 +03:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 22:15:08.036 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) in 26.4751ms
+2025-04-06 22:15:08.037 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:15:08.038 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/name/5 responded 404 in 30.5532 ms
+2025-04-06 22:15:08.039 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/5 - 404 null application/json; charset=utf-8 33.8183ms
+2025-04-06 22:15:09.262 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/5 - null null
+2025-04-06 22:15:09.264 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:15:09.265 +03:00 [INF] Route matched with {action = "GetIntAndPozh", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetIntAndPozh(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:15:09.267 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:15:09.289 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@__idPozdr_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id_pozdr, p.interest, p.pozhelanie, p.textpozdr
+FROM pozdrik AS p
+WHERE p.id_pozdr = @__idPozdr_0
+LIMIT 1
+2025-04-06 22:15:09.291 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 23.3997ms.
+2025-04-06 22:15:09.293 +03:00 [INF] Executing OkObjectResult, writing value of type 'Entities.Templates.AddIntAndPozhDto'.
+2025-04-06 22:15:09.294 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) in 26.9766ms
+2025-04-06 22:15:09.295 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:15:09.296 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/5 responded 200 in 31.4442 ms
+2025-04-06 22:15:09.297 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/5 - 200 null application/json; charset=utf-8 34.7872ms
+2025-04-06 22:15:09.300 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/5 - null null
+2025-04-06 22:15:09.301 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:15:09.302 +03:00 [INF] Route matched with {action = "GetNameByPozdrikId", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNameByPozdrikId(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:15:09.304 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:15:09.325 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@__pozdrikId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT f.friend_name
+FROM friend_list AS f
+WHERE f.id_pozdr = @__pozdrikId_0
+LIMIT 1
+2025-04-06 22:15:09.327 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.NotFoundObjectResult in 22.1469ms.
+2025-04-06 22:15:09.328 +03:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 22:15:09.329 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) in 25.5715ms
+2025-04-06 22:15:09.330 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:15:09.331 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/name/5 responded 404 in 29.7253 ms
+2025-04-06 22:15:09.333 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/5 - 404 null application/json; charset=utf-8 32.9211ms
+2025-04-06 22:15:16.278 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/9 - null null
+2025-04-06 22:15:16.280 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:15:16.281 +03:00 [INF] Route matched with {action = "GetIntAndPozh", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetIntAndPozh(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:15:16.282 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:15:16.307 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[@__idPozdr_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id_pozdr, p.interest, p.pozhelanie, p.textpozdr
+FROM pozdrik AS p
+WHERE p.id_pozdr = @__idPozdr_0
+LIMIT 1
+2025-04-06 22:15:16.309 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 25.4004ms.
+2025-04-06 22:15:16.310 +03:00 [INF] Executing OkObjectResult, writing value of type 'Entities.Templates.AddIntAndPozhDto'.
+2025-04-06 22:15:16.311 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) in 28.9395ms
+2025-04-06 22:15:16.312 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:15:16.313 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/9 responded 200 in 32.7018 ms
+2025-04-06 22:15:16.314 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/9 - 200 null application/json; charset=utf-8 36.1678ms
+2025-04-06 22:15:16.316 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/9 - null null
+2025-04-06 22:15:16.318 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:15:16.319 +03:00 [INF] Route matched with {action = "GetNameByPozdrikId", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNameByPozdrikId(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:15:16.321 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:15:16.345 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[@__pozdrikId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT f.friend_name
+FROM friend_list AS f
+WHERE f.id_pozdr = @__pozdrikId_0
+LIMIT 1
+2025-04-06 22:15:16.347 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.NotFoundObjectResult in 25.7054ms.
+2025-04-06 22:15:16.348 +03:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 22:15:16.349 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) in 29.006ms
+2025-04-06 22:15:16.350 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:15:16.351 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/name/9 responded 404 in 32.8124 ms
+2025-04-06 22:15:16.352 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/9 - 404 null application/json; charset=utf-8 36.0045ms
+2025-04-06 22:15:16.899 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/9 - null null
+2025-04-06 22:15:16.900 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:15:16.901 +03:00 [INF] Route matched with {action = "GetIntAndPozh", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetIntAndPozh(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:15:16.903 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:15:16.925 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@__idPozdr_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id_pozdr, p.interest, p.pozhelanie, p.textpozdr
+FROM pozdrik AS p
+WHERE p.id_pozdr = @__idPozdr_0
+LIMIT 1
+2025-04-06 22:15:16.927 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 23.4932ms.
+2025-04-06 22:15:16.929 +03:00 [INF] Executing OkObjectResult, writing value of type 'Entities.Templates.AddIntAndPozhDto'.
+2025-04-06 22:15:16.930 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) in 27.1126ms
+2025-04-06 22:15:16.931 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:15:16.932 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/9 responded 200 in 31.2313 ms
+2025-04-06 22:15:16.933 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/9 - 200 null application/json; charset=utf-8 34.5236ms
+2025-04-06 22:15:16.935 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/9 - null null
+2025-04-06 22:15:16.937 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:15:16.938 +03:00 [INF] Route matched with {action = "GetNameByPozdrikId", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNameByPozdrikId(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:15:16.940 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:15:16.961 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@__pozdrikId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT f.friend_name
+FROM friend_list AS f
+WHERE f.id_pozdr = @__pozdrikId_0
+LIMIT 1
+2025-04-06 22:15:16.963 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.NotFoundObjectResult in 22.697ms.
+2025-04-06 22:15:16.965 +03:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 22:15:16.966 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) in 26.5781ms
+2025-04-06 22:15:16.967 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:15:16.968 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/name/9 responded 404 in 30.3927 ms
+2025-04-06 22:15:16.969 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/9 - 404 null application/json; charset=utf-8 33.7805ms
+2025-04-06 22:15:17.209 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/9 - null null
+2025-04-06 22:15:17.211 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:15:17.212 +03:00 [INF] Route matched with {action = "GetIntAndPozh", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetIntAndPozh(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:15:17.214 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:15:17.236 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@__idPozdr_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id_pozdr, p.interest, p.pozhelanie, p.textpozdr
+FROM pozdrik AS p
+WHERE p.id_pozdr = @__idPozdr_0
+LIMIT 1
+2025-04-06 22:15:17.238 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 23.2547ms.
+2025-04-06 22:15:17.239 +03:00 [INF] Executing OkObjectResult, writing value of type 'Entities.Templates.AddIntAndPozhDto'.
+2025-04-06 22:15:17.240 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel) in 26.7637ms
+2025-04-06 22:15:17.241 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetIntAndPozh (ProxyAPILevel)'
+2025-04-06 22:15:17.242 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/9 responded 200 in 31.0314 ms
+2025-04-06 22:15:17.243 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/9 - 200 null application/json; charset=utf-8 34.4511ms
+2025-04-06 22:15:17.246 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/9 - null null
+2025-04-06 22:15:17.248 +03:00 [INF] Executing endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:15:17.249 +03:00 [INF] Route matched with {action = "GetNameByPozdrikId", controller = "NeiroGen"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNameByPozdrikId(Int32) on controller ProxyAPILevel.Controllers.NeiroGenController (ProxyAPILevel).
+2025-04-06 22:15:17.250 +03:00 [INF] Executing action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) - Validation state: "Valid"
+2025-04-06 22:15:17.272 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@__pozdrikId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT f.friend_name
+FROM friend_list AS f
+WHERE f.id_pozdr = @__pozdrikId_0
+LIMIT 1
+2025-04-06 22:15:17.274 +03:00 [INF] Executed action method ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel), returned result Microsoft.AspNetCore.Mvc.NotFoundObjectResult in 22.6097ms.
+2025-04-06 22:15:17.275 +03:00 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-04-06 22:15:17.275 +03:00 [INF] Executed action ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel) in 25.5843ms
+2025-04-06 22:15:17.276 +03:00 [INF] Executed endpoint 'ProxyAPILevel.Controllers.NeiroGenController.GetNameByPozdrikId (ProxyAPILevel)'
+2025-04-06 22:15:17.277 +03:00 [INF] HTTP GET /api/neirogen/pozdrik/name/9 responded 404 in 29.3085 ms
+2025-04-06 22:15:17.278 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/neirogen/pozdrik/name/9 - 404 null application/json; charset=utf-8 32.5457ms
+2025-04-06 22:29:49.387 +03:00 [INF] Application is shutting down...
