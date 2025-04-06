@@ -379,9 +379,7 @@ networks:
 📦 Что использовано:
 Установлен пакет StyleCop.Analyzers через NuGet:
 
-bash
-Копировать
-Редактировать
+
 dotnet add package StyleCop.Analyzers --version 1.2.0-beta.435
 🔍 Как работает:
 После установки при компиляции проекта Visual Studio и Rider показывают предупреждения (SAxxxx) — например:
@@ -420,14 +418,10 @@ Visual Studio и Rider автоматически применяют эти пр
 Инструмент от Microsoft, который автоматически исправляет стиль кода в соответствии с .editorconfig.
 
 ⚙ Установка:
-bash
-Копировать
-Редактировать
+
 dotnet tool install -g dotnet-format
 ▶ Применение:
-bash
-Копировать
-Редактировать
+
 dotnet format
 Применяет форматирование ко всему решению.
 
