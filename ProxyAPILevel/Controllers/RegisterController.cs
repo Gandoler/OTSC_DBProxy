@@ -30,8 +30,12 @@ public class RegisterController : ControllerBase
     [SwaggerResponse(400, "Ошибка при регистрации")] 
     public async Task<IActionResult> RegisterUser([FromBody] RegisterDto dto)
     {
-        var result = await _registerService.RegisterAsync(dto);
-        return result ? Ok(new { message = "User registered successfully" }) : BadRequest(new { message = "Registration failed" });
+        Guid? result = await _registerService.RegisterAsync(dto);
+        if (!(result is null))
+        {
+            return Ok(result);
+        }
+        else return BadRequest();
     }
 
     /// <summary>

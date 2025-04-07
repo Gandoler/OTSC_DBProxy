@@ -31,7 +31,8 @@ public class RegisterControllerTests
             Password = "123456",
             Email = "email@mail.com",
         };
-        _mockService.Setup(s => s.RegisterAsync(registerDto)).ReturnsAsync(true);
+        Guid g=new Guid();
+        _mockService.Setup(s => s.RegisterAsync(registerDto)).ReturnsAsync(g);
 
         // Act
         var result = await _controller.RegisterUser(registerDto).ConfigureAwait(false);
@@ -51,7 +52,8 @@ public class RegisterControllerTests
             Email = "email@mail.com"
 
         };
-        _mockService.Setup(s => s.RegisterAsync(registerDto)).ReturnsAsync(false);
+        Guid g = new Guid();
+        _mockService.Setup(s => s.RegisterAsync(registerDto)).ReturnsAsync(g);
 
         // Act
         var result = await _controller.RegisterUser(registerDto).ConfigureAwait(false);

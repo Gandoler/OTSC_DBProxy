@@ -18,10 +18,16 @@ public class RegistrService:IRegistrService
         _mailComprRepository = mailComprRepository;
     }
     
-    public async Task<bool> RegisterAsync(RegisterDto dto)
+    public async Task<Guid?> RegisterAsync(RegisterDto dto)
     {
         User usr = new User{Login = dto.Login, Password = dto.Password};
-        return await _userRepository.CreateAsync(usr);
+
+        if (await _userRepository.CreateAsync(usr))
+        {
+            return await _userRepository.GetUserByLoginAsync(usr.Login);
+        }
+        return null;
+        
     }
 
     public async Task<bool> ExicstCheckAsync(CheckExistDto dto)
