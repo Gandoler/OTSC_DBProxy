@@ -1,6 +1,6 @@
 # OTSC
 
-![telegram-cloud-photo-size-2-5416022763656834188-y](https://github.com/user-attachments/assets/042c7915-a270-4d72-8e37-561cc6109158)
+<img width="1060" alt="image" src="https://github.com/user-attachments/assets/ec097db4-b922-4693-b671-8becfe659c5d" />
 
 
 ```
