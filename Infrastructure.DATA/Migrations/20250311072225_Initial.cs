@@ -1,11 +1,15 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+﻿// <copyright file="20250311072225_Initial.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 #nullable disable
 
 namespace Infrastructure.Migrations
 {
+    using System;
+    using Microsoft.EntityFrameworkCore.Migrations;
+    using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+
     /// <inheritdoc />
     public partial class Initial : Migration
     {
@@ -20,7 +24,7 @@ namespace Infrastructure.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     interest = table.Column<string>(type: "text", nullable: true),
                     pozhelanie = table.Column<string>(type: "text", nullable: true),
-                    textpozdr = table.Column<string>(type: "text", nullable: true)
+                    textpozdr = table.Column<string>(type: "text", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -33,7 +37,7 @@ namespace Infrastructure.Migrations
                 {
                     appid = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "gen_random_uuid()"),
                     login = table.Column<string>(type: "text", nullable: false),
-                    password = table.Column<string>(type: "text", nullable: false)
+                    password = table.Column<string>(type: "text", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -48,7 +52,7 @@ namespace Infrastructure.Migrations
                     friend_username = table.Column<string>(type: "text", nullable: true),
                     friend_name = table.Column<string>(type: "text", nullable: false),
                     date_birth = table.Column<DateOnly>(type: "date", nullable: false),
-                    id_pozdr = table.Column<int>(type: "integer", nullable: true)
+                    id_pozdr = table.Column<int>(type: "integer", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -71,7 +75,7 @@ namespace Infrastructure.Migrations
                 columns: table => new
                 {
                     appid = table.Column<Guid>(type: "uuid", nullable: false),
-                    mail = table.Column<string>(type: "text", nullable: false)
+                    mail = table.Column<string>(type: "text", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -88,7 +92,7 @@ namespace Infrastructure.Migrations
                 columns: table => new
                 {
                     appid = table.Column<Guid>(type: "uuid", nullable: false),
-                    tg_id = table.Column<long>(type: "bigint", nullable: true)
+                    tg_id = table.Column<long>(type: "bigint", nullable: true),
                 },
                 constraints: table =>
                 {
