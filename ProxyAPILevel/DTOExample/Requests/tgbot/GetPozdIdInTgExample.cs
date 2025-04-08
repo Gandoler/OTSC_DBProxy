@@ -1,9 +1,13 @@
-using Domain.DTO.DTO.Friend;
-using Swashbuckle.AspNetCore.Filters;
+// <copyright file="GetPozdIdInTgExample.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProxyAPILeval.DTOExample;
 
-public class GetPozdIdInTgExample: IExamplesProvider<FriendDto>
+using Domain.DTO.DTO.Friend;
+using Swashbuckle.AspNetCore.Filters;
+
+public class GetPozdIdInTgExample : IExamplesProvider<FriendDto>
 {
     public FriendDto GetExamples()
     {

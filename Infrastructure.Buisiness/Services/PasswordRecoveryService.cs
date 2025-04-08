@@ -1,44 +1,48 @@
+// <copyright file="PasswordRecoveryService.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace UseCases.Services;
+
 using Domain.Interfaces;
 using Domain.Interfaces.IServices;
 using Domain.Models;
 using Entities.Templates;
 
-namespace UseCases.Services;
-
 public class PasswordRecoveryService : IPasswordRecoveryService
 {
-    private readonly IUserRepository _userRepository;
-    private readonly IMailComprRepository _mailComprRepository;
+    private readonly IUserRepository userRepository;
+    private readonly IMailComprRepository mailComprRepository;
 
     public PasswordRecoveryService(IUserRepository userRepository, IMailComprRepository mailComprRepository)
     {
-        _userRepository = userRepository;
-        _mailComprRepository = mailComprRepository;
+        this.userRepository = userRepository;
+        this.mailComprRepository = mailComprRepository;
     }
-    
+
     public async Task<AppIdDto> GetIdByMailAsync(string mail)
     {
-        return new AppIdDto { AppId = await _mailComprRepository.GetIdByMailAsync(mail) };
-    }//
+        return new AppIdDto { AppId = await this.mailComprRepository.GetIdByMailAsync(mail).ConfigureAwait(false) };
+    }
 
     public async Task<bool> ExicstCheckByLoginAsync(string login)
     {
-        return await _userRepository.ExicstCheckByLoginAsync(login);
+        return await this.userRepository.ExicstCheckByLoginAsync(login).ConfigureAwait(false);
     }
 
     public async Task<bool> ExistByMailAsync(string mail)
     {
-        return await _mailComprRepository.ExistByMailAsync(mail);
+        return await this.mailComprRepository.ExistByMailAsync(mail).ConfigureAwait(false);
     }
 
     public async Task<bool> UpdateAsync(LoginDto loginDto)
     {
-        User usr = new User{Login = loginDto.Login, Password = loginDto.Password};
-        return await _userRepository.UpdateAsync(usr);
+        User usr = new User { Login = loginDto.Login, Password = loginDto.Password };
+        return await this.userRepository.UpdateAsync(usr).ConfigureAwait(false);
     }
 
     public async Task<string?> GetLoginByMailAsync(string mail)
     {
-        return await _userRepository.GetUserByIdAsync(await _mailComprRepository.GetIdByMailAsync(mail));
+        return await this.userRepository.GetUserByIdAsync(await this.mailComprRepository.GetIdByMailAsync(mail).ConfigureAwait(false)).ConfigureAwait(false);
     }
 }

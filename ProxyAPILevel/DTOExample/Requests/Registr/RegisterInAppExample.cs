@@ -1,9 +1,13 @@
-using Entities.Templates;
-using Swashbuckle.AspNetCore.Filters;
+// <copyright file="RegisterInAppExample.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProxyAPILeval.DTOExample;
 
-public class RegisterInAppExample: IExamplesProvider<RegisterDto>
+using Entities.Templates;
+using Swashbuckle.AspNetCore.Filters;
+
+public class RegisterInAppExample : IExamplesProvider<RegisterDto>
 {
     public RegisterDto GetExamples()
     {

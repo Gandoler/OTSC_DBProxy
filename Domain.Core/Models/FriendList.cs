@@ -1,20 +1,24 @@
-﻿    using Domain.Models;
+﻿// <copyright file="FriendList.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
-    namespace Domain.Models;
+namespace Domain.Models;
 
-    public partial class FriendList
-    {
-        public Guid Appid { get; set; }
+using Domain.Models;
 
-        public string FriendUsername { get; set; } = null!;
+public partial class FriendList
+{
+    public Guid Appid { get; set; }
 
-        public string FriendName { get; set; } = null!;
+    public string FriendUsername { get; set; } = null!;
 
-        public DateOnly DateBirth { get; set; }
+    public string FriendName { get; set; } = null!;
 
-        public int? IdPozdr { get; set; }
+    public DateOnly DateBirth { get; set; }
 
-        public virtual User App { get; set; } = null!;
+    public int? IdPozdr { get; set; }
 
-        public virtual Pozdrik? IdPozdrNavigation { get; set; }
-    }
+    public virtual User App { get; set; } = null!;
+
+    public virtual Pozdrik? IdPozdrNavigation { get; set; }
+}

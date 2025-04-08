@@ -13,7 +13,7 @@ namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
     [Migration("20250311101739_username not null")]
-    partial class usernamenotnull
+    partial class Usernamenotnull
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

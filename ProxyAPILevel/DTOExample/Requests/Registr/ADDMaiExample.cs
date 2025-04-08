@@ -1,9 +1,13 @@
-using Domain.DTO.DTO.MailComp;
-using Swashbuckle.AspNetCore.Filters;
+// <copyright file="ADDMaiExample.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProxyAPILeval.DTOExample;
 
-public class ADDMaiExample: IExamplesProvider<ADDMailDto>
+using Domain.DTO.DTO.MailComp;
+using Swashbuckle.AspNetCore.Filters;
+
+public class ADDMaiExample : IExamplesProvider<ADDMailDto>
 {
     public ADDMailDto GetExamples()
     {

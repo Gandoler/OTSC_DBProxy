@@ -1,9 +1,13 @@
-﻿using System;
+﻿// <copyright file="NeiroGenControllersTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Entities.Templates;
 using Domain.DTO.DTO.Pozdr;
 using Domain.Interfaces.IServices;
+using Entities.Templates;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using ProxyAPILevel.Controllers;
@@ -11,13 +15,13 @@ using Xunit;
 
 public class NeiroGenControllerTests
 {
-    private readonly Mock<INeiroGenService> _mockService;
-    private readonly NeiroGenController _controller;
+    private readonly Mock<INeiroGenService> mockService;
+    private readonly NeiroGenController controller;
 
     public NeiroGenControllerTests()
     {
-        _mockService = new Mock<INeiroGenService>();
-        _controller = new NeiroGenController(_mockService.Object);
+        this.mockService = new Mock<INeiroGenService>();
+        this.controller = new NeiroGenController(this.mockService.Object);
     }
 
     [Fact]
@@ -25,18 +29,18 @@ public class NeiroGenControllerTests
     {
         // Arrange
         var pozdrikId = 1;
-        var pozdrikDto = new PozdrStringDTO { _pozdrikId = pozdrikId, _pozdr = "Поздравление" };
+        var pozdrikDto = new PozdrStringDTO { PozdrikId = pozdrikId, Pozdr = "Поздравление" };
         var addIntAndPozh = new AddIntAndPozhDto()
         {
             IdPozdr = pozdrikId,
             Pozhelania = "pozhelania",
-            Interests = "interests"
+            Interests = "interests",
         };
-        _mockService.Setup(s => s.SelectIntAndPozhAsync(It.IsAny<PozdrikIdDto>()))
+        this.mockService.Setup(s => s.SelectIntAndPozhAsync(It.IsAny<PozdrikIdDto>()))
                     .ReturnsAsync(addIntAndPozh);
 
         // Act
-        var result = await _controller.GetIntAndPozh(pozdrikId).ConfigureAwait(false);
+        var result = await this.controller.GetIntAndPozh(pozdrikId);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
@@ -47,13 +51,13 @@ public class NeiroGenControllerTests
     public async Task AddPozdrik_ShouldReturnOk_WhenPozdrikAddedSuccessfully()
     {
         // Arrange
-        var pozdrikDto = new PozdrStringDTO { _pozdrikId = 1, _pozdr = "С Днем Рождения!" };
+        var pozdrikDto = new PozdrStringDTO { PozdrikId = 1, Pozdr = "С Днем Рождения!" };
 
-        _mockService.Setup(s => s.AddPozdrAsync(pozdrikDto))
+        this.mockService.Setup(s => s.AddPozdrAsync(pozdrikDto))
             .ReturnsAsync(true);
 
         // Act
-        var result = await _controller.AddPozdrik(pozdrikDto).ConfigureAwait(false);
+        var result = await this.controller.AddPozdrik(pozdrikDto);
 
         // Assert
         Assert.IsType<OkObjectResult>(result);
@@ -63,13 +67,13 @@ public class NeiroGenControllerTests
     public async Task AddPozdrik_ShouldReturnBadRequest_WhenPozdrikAdditionFails()
     {
         // Arrange
-        var pozdrikDto = new PozdrStringDTO { _pozdrikId = 3, _pozdr = "Удачи!" };
+        var pozdrikDto = new PozdrStringDTO { PozdrikId = 3, Pozdr = "Удачи!" };
 
-        _mockService.Setup(s => s.AddPozdrAsync(pozdrikDto))
+        this.mockService.Setup(s => s.AddPozdrAsync(pozdrikDto))
                     .ReturnsAsync(false);
 
         // Act
-        var result = await _controller.AddPozdrik(pozdrikDto).ConfigureAwait(false);
+        var result = await this.controller.AddPozdrik(pozdrikDto);
 
         // Assert
         Assert.IsType<BadRequestObjectResult>(result);
@@ -82,11 +86,11 @@ public class NeiroGenControllerTests
         var pozdrikId = 4;
         var name = "Иван";
 
-        _mockService.Setup(s => s.GetNameByPozdrikId(It.IsAny<PozdrikIdDto>()))
+        this.mockService.Setup(s => s.GetNameByPozdrikId(It.IsAny<PozdrikIdDto>()))
                     .ReturnsAsync(name);
 
         // Act
-        var result = await _controller.GetNameByPozdrikId(pozdrikId).ConfigureAwait(false);
+        var result = await this.controller.GetNameByPozdrikId(pozdrikId);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
@@ -99,11 +103,11 @@ public class NeiroGenControllerTests
         // Arrange
         var pozdrikId = 5;
 
-        _mockService.Setup(s => s.GetNameByPozdrikId(It.IsAny<PozdrikIdDto>()))
+        this.mockService.Setup(s => s.GetNameByPozdrikId(It.IsAny<PozdrikIdDto>()))
                     .ReturnsAsync((string)null);
 
         // Act
-        var result = await _controller.GetNameByPozdrikId(pozdrikId).ConfigureAwait(false);
+        var result = await this.controller.GetNameByPozdrikId(pozdrikId);
 
         // Assert
         Assert.IsType<NotFoundObjectResult>(result);
@@ -116,11 +120,11 @@ public class NeiroGenControllerTests
         var pozdrikId = 6;
         var username = "user123";
 
-        _mockService.Setup(s => s.GetUserNameByPozdrikId(It.IsAny<PozdrikIdDto>()))
+        this.mockService.Setup(s => s.GetUserNameByPozdrikId(It.IsAny<PozdrikIdDto>()))
                     .ReturnsAsync(username);
 
         // Act
-        var result = await _controller.GetUserNameByPozdrikId(pozdrikId).ConfigureAwait(false);
+        var result = await this.controller.GetUserNameByPozdrikId(pozdrikId);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
@@ -133,15 +137,13 @@ public class NeiroGenControllerTests
         // Arrange
         var pozdrikId = 7;
 
-        _mockService.Setup(s => s.GetUserNameByPozdrikId(It.IsAny<PozdrikIdDto>()))
+        this.mockService.Setup(s => s.GetUserNameByPozdrikId(It.IsAny<PozdrikIdDto>()))
                     .ReturnsAsync((string)null);
 
         // Act
-        var result = await _controller.GetUserNameByPozdrikId(pozdrikId).ConfigureAwait(false);
+        var result = await this.controller.GetUserNameByPozdrikId(pozdrikId);
 
         // Assert
         Assert.IsType<NotFoundObjectResult>(result);
-
     }
-
 }

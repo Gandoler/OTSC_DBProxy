@@ -13,7 +13,7 @@ namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
     [Migration("20250312091100_chilia20")]
-    partial class chilia20
+    partial class Chilia20
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

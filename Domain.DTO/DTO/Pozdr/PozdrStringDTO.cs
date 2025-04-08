@@ -1,7 +1,12 @@
+// <copyright file="PozdrStringDTO.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
 namespace Entities.Templates;
 
 public class PozdrStringDTO
 {
-    public int _pozdrikId { get; set; }
-    public string? _pozdr { get; set; }
+    public int PozdrikId { get; set; }
+
+    public string? Pozdr { get; set; }
 }

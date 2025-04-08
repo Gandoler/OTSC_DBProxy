@@ -1,17 +1,21 @@
+// <copyright file="PozdrikstringExample.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace ProxyAPILeval.DTOExample;
+
 using Domain.DTO.DTO.Pozdr;
 using Entities.Templates;
 using Swashbuckle.AspNetCore.Filters;
 
-namespace ProxyAPILeval.DTOExample;
-
-public class PozdrikstringExample: IExamplesProvider<PozdrStringDTO>
+public class PozdrikstringExample : IExamplesProvider<PozdrStringDTO>
 {
     public PozdrStringDTO GetExamples()
     {
         return new PozdrStringDTO
         {
-           _pozdrikId = 2,
-           _pozdr = "efefaiwjijpaifjkpiafjoawfpoawfkpaof"
+            PozdrikId = 2,
+            Pozdr = "efefaiwjijpaifjkpiafjoawfpoawfkpaof",
         };
     }
 }

@@ -1,15 +1,18 @@
+// <copyright file="FriendProfile.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace UseCases.Profiles;
+
 using AutoMapper;
 using Domain.DTO.DTO.Friend;
 using Domain.Models;
 using Entities.Templates;
 
-namespace UseCases.Profiles;
-
-public class FriendProfile: Profile
+public class FriendProfile : Profile
 {
     public FriendProfile()
     {
-        CreateMap<FriendList, FriendDto>();
-
+        this.CreateMap<FriendList, FriendDto>();
     }
 }

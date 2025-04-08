@@ -1,3 +1,7 @@
+// <copyright file="Program.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
 using AutoMapper;
 using Domain.Interfaces;
 using Domain.Interfaces.IServices;
@@ -14,17 +18,17 @@ using UseCases.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string connectionString = String.Empty;
+string connectionString = string.Empty;
 
 if (builder.Environment.IsDevelopment())
 {
     // тут настройки для дефолтного запуска без докера
     builder.WebHost.ConfigureKestrel(options =>
     {
-        options.ListenAnyIP(5010);  
+        options.ListenAnyIP(5010);
     });
- builder.Services.AddDbContext<ApplicationContext>(options => 
-     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    builder.Services.AddDbContext<ApplicationContext>(options =>
+        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 }
 else
 {
@@ -45,8 +49,6 @@ else
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 
-
-#region swagger swagerovich
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
@@ -66,39 +68,33 @@ builder.Services.AddSwaggerExamplesFromAssemblyOf<RegisterInAppExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<CheckExistByMailExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<ADDMaiExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<ChangePasswordExample>();
-#endregion
-
 
 builder.Services.AddScoped<IFriendService, FriendService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IMailBotService, MailBotService>(); 
+builder.Services.AddScoped<IMailBotService, MailBotService>();
 builder.Services.AddScoped<INeiroGenService, NeiroGenService>();
 builder.Services.AddScoped<IPasswordRecoveryService, PasswordRecoveryService>();
 builder.Services.AddScoped<ITgBotService, TgBotService>();
 builder.Services.AddScoped<IRegistrService, RegistrService>();
 builder.Services.AddScoped<ITgSubscriptionService, TgSubscriptionService>();
 
-
 var mapperConfig = new MapperConfiguration(cfg =>
-{//
-    cfg.AddProfile(new FriendProfile()); 
+{    cfg.AddProfile(new FriendProfile());
 });
 var mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
 Log.Logger = new LoggerConfiguration()
-    .WriteTo.Console() 
+    .WriteTo.Console()
     .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 builder.Host.UseSerilog();
-
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IFriendRepository, FriendRepository>();
 builder.Services.AddScoped<IPozdrikRepository, PozdrikRepository>();
 builder.Services.AddScoped<ITgComprRepository, TgComprRepository>();
 builder.Services.AddScoped<IMailComprRepository, MailComprRepository>();
-
 
 Log.Information(connectionString);
 
@@ -110,15 +106,16 @@ app.UseSwaggerUI();
 app.MapControllers();
 
 app.UseSerilogRequestLogging();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
     app.MapControllers();
 }
+
 app.MapOpenApi();
 app.MapControllers();
 app.UseHttpsRedirection();
-
 
 app.Run();

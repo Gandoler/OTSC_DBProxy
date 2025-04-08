@@ -1,4 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿// <copyright file="TgSubscriptionControllerTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+using System.Threading.Tasks;
 using Domain.Interfaces.IServices;
 using Entities.Templates;
 using Microsoft.AspNetCore.Mvc;
@@ -10,13 +14,13 @@ using Xunit;
 
 public class TgSubscriptionControllerTests
 {
-    private readonly Mock<ITgSubscriptionService> _mockService;
-    private readonly TgSubscriptionController _controller;
+    private readonly Mock<ITgSubscriptionService> mockService;
+    private readonly TgSubscriptionController controller;
 
     public TgSubscriptionControllerTests()
     {
-        _mockService = new Mock<ITgSubscriptionService>();
-        _controller = new TgSubscriptionController(_mockService.Object);
+        this.mockService = new Mock<ITgSubscriptionService>();
+        this.controller = new TgSubscriptionController(this.mockService.Object);
     }
 
     [Fact]
@@ -24,14 +28,13 @@ public class TgSubscriptionControllerTests
     {
         // Arrange
         var dto = new RegisterTgDto { AppId = Guid.NewGuid(), TgId = 123456789 };
-        _mockService.Setup(s => s.SubscribeAsync(dto)).ReturnsAsync(true);
+        this.mockService.Setup(s => s.SubscribeAsync(dto)).ReturnsAsync(true);
 
         // Act
-        var result = await _controller.Subscribe(dto).ConfigureAwait(false);
+        var result = await this.controller.Subscribe(dto);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
-
     }
 
     [Fact]
@@ -39,13 +42,12 @@ public class TgSubscriptionControllerTests
     {
         // Arrange
         var dto = new RegisterTgDto { AppId = Guid.NewGuid(), TgId = 123456789 };
-        _mockService.Setup(s => s.SubscribeAsync(dto)).ReturnsAsync(false);
+        this.mockService.Setup(s => s.SubscribeAsync(dto)).ReturnsAsync(false);
 
         // Act
-        var result = await _controller.Subscribe(dto).ConfigureAwait(false);
+        var result = await this.controller.Subscribe(dto);
 
         // Assert
         var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
-
     }
 }

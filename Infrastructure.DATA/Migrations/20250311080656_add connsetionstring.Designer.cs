@@ -13,7 +13,7 @@ namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
     [Migration("20250311080656_add connsetionstring")]
-    partial class addconnsetionstring
+    partial class Addconnsetionstring
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

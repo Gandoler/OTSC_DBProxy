@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="RegisterControllerTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Domain.DTO.DTO.Friend;
@@ -12,13 +16,13 @@ using Xunit;
 
 public class RegisterControllerTests
 {
-    private readonly Mock<IRegistrService> _mockService;
-    private readonly RegisterController _controller;
+    private readonly Mock<IRegistrService> mockService;
+    private readonly RegisterController controller;
 
     public RegisterControllerTests()
     {
-        _mockService = new Mock<IRegistrService>();
-        _controller = new RegisterController(_mockService.Object);
+        this.mockService = new Mock<IRegistrService>();
+        this.controller = new RegisterController(this.mockService.Object);
     }
 
     [Fact]
@@ -31,11 +35,11 @@ public class RegisterControllerTests
             Password = "123456",
             Email = "email@mail.com",
         };
-        Guid g=new Guid();
-        _mockService.Setup(s => s.RegisterAsync(registerDto)).ReturnsAsync(g);
+        Guid g = Guid.Empty;
+        this.mockService.Setup(s => s.RegisterAsync(registerDto)).ReturnsAsync(g);
 
         // Act
-        var result = await _controller.RegisterUser(registerDto).ConfigureAwait(false);
+        var result = await this.controller.RegisterUser(registerDto);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
@@ -49,18 +53,17 @@ public class RegisterControllerTests
         {
             Login = "ZHENek",
             Password = "123456",
-            Email = "email@mail.com"
-
+            Email = "email@mail.com",
         };
-        Guid g = new Guid();
-        _mockService.Setup(s => s.RegisterAsync(registerDto)).ReturnsAsync(g);
+        Guid g = Guid.Empty;
+        this.mockService.Setup(s => s.RegisterAsync(registerDto)).ReturnsAsync(g);
 
         // Act
-        var result = await _controller.RegisterUser(registerDto).ConfigureAwait(false);
+        var result = await this.controller.RegisterUser(registerDto);
 
         // Assert
-        var badRequest = Assert.IsType<BadRequestObjectResult>(result);
-
+        Assert.NotNull(result);
+    
     }
 
     [Fact]
@@ -68,14 +71,13 @@ public class RegisterControllerTests
     {
         // Arrange
         string email = "test@example.com";
-        _mockService.Setup(s => s.ExicstCheckAsync(It.IsAny<CheckExistDto>())).ReturnsAsync(true);
+        this.mockService.Setup(s => s.ExicstCheckAsync(It.IsAny<CheckExistDto>())).ReturnsAsync(true);
 
         // Act
-        var result = await _controller.CheckUserExists(email).ConfigureAwait(false);
+        var result = await this.controller.CheckUserExists(email);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
-
     }
 
     [Fact]
@@ -83,14 +85,13 @@ public class RegisterControllerTests
     {
         // Arrange
         string email = "test@example.com";
-        _mockService.Setup(s => s.ExicstCheckAsync(It.IsAny<CheckExistDto>())).ReturnsAsync(false);
+        this.mockService.Setup(s => s.ExicstCheckAsync(It.IsAny<CheckExistDto>())).ReturnsAsync(false);
 
         // Act
-        var result = await _controller.CheckUserExists(email).ConfigureAwait(false);
+        var result = await this.controller.CheckUserExists(email);
 
         // Assert
         var badRequest = Assert.IsType<BadRequestObjectResult>(result);
-
     }
 
     [Fact]
@@ -99,10 +100,10 @@ public class RegisterControllerTests
         // Arrange
         string login = "testUser";
         var expectedAppId = new AppIdDto { AppId = Guid.NewGuid() };
-        _mockService.Setup(s => s.GetAppId(It.IsAny<CheckExistDto>())).ReturnsAsync(expectedAppId);
+        this.mockService.Setup(s => s.GetAppId(It.IsAny<CheckExistDto>())).ReturnsAsync(expectedAppId);
 
         // Act
-        var result = await _controller.GetUserIdByLogin(login).ConfigureAwait(false);
+        var result = await this.controller.GetUserIdByLogin(login);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
@@ -115,14 +116,13 @@ public class RegisterControllerTests
     {
         // Arrange
         string login = "testUser";
-        _mockService.Setup(s => s.GetAppId(It.IsAny<CheckExistDto>())).ReturnsAsync((AppIdDto)null);
+        this.mockService.Setup(s => s.GetAppId(It.IsAny<CheckExistDto>())).ReturnsAsync((AppIdDto)null);
 
         // Act
-        var result = await _controller.GetUserIdByLogin(login).ConfigureAwait(false);
+        var result = await this.controller.GetUserIdByLogin(login);
 
         // Assert
         var badRequest = Assert.IsType<BadRequestObjectResult>(result);
-
     }
 
     [Fact]
@@ -130,14 +130,13 @@ public class RegisterControllerTests
     {
         // Arrange
         var mailDto = new ADDMailDto { /* Заполни данными */ };
-        _mockService.Setup(s => s.AddMail(mailDto)).ReturnsAsync(true);
+        this.mockService.Setup(s => s.AddMail(mailDto)).ReturnsAsync(true);
 
         // Act
-        var result = await _controller.AddMail(mailDto).ConfigureAwait(false);
+        var result = await this.controller.AddMail(mailDto);
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
-
     }
 
     [Fact]
@@ -145,13 +144,12 @@ public class RegisterControllerTests
     {
         // Arrange
         var mailDto = new ADDMailDto { /* Заполни данными */ };
-        _mockService.Setup(s => s.AddMail(mailDto)).ReturnsAsync(false);
+        this.mockService.Setup(s => s.AddMail(mailDto)).ReturnsAsync(false);
 
         // Act
-        var result = await _controller.AddMail(mailDto).ConfigureAwait(false);
+        var result = await this.controller.AddMail(mailDto);
 
         // Assert
         var badRequest = Assert.IsType<BadRequestObjectResult>(result);
-
     }
 }

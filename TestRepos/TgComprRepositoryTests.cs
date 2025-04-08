@@ -1,14 +1,18 @@
-﻿using System;
+﻿// <copyright file="TgComprRepositoryTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+using System;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Xunit;
 using Domain.Models;
 using Infrastructure.DATA;
+using Microsoft.EntityFrameworkCore;
 using UseCases.Repositoties;
+using Xunit;
 
 public class TgComprRepositoryTests
 {
-    private ApplicationContext GetInMemoryContext()
+    private static ApplicationContext GetInMemoryContext()
     {
         var options = new DbContextOptionsBuilder<ApplicationContext>()
             .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()) // Создаём уникальную БД в памяти
@@ -25,10 +29,10 @@ public class TgComprRepositoryTests
         Guid appId = Guid.NewGuid();
         long telegramId = 123456789;
 
-        bool result = await repository.AddTgAsync(appId, telegramId);
+        bool result = await repository.AddTgAsync(appId, telegramId).ConfigureAwait(false);
 
         Assert.True(result); // Проверяем, что добавление прошло успешно
-        Assert.NotNull(await context.Set<TgComprehension>().FirstOrDefaultAsync(x => x.TgId == telegramId));
+        Assert.NotNull(await context.Set<TgComprehension>().FirstOrDefaultAsync(x => x.TgId == telegramId).ConfigureAwait(false));
     }
 
     [Fact]
@@ -41,10 +45,10 @@ public class TgComprRepositoryTests
         long telegramId = 123456789;
 
         // Добавляем первый раз
-        await repository.AddTgAsync(appId, telegramId);
+        await repository.AddTgAsync(appId, telegramId).ConfigureAwait(false);
 
         // Попытка добавить тот же Telegram ID снова
-        bool result = await repository.AddTgAsync(Guid.NewGuid(), telegramId);
+        bool result = await repository.AddTgAsync(Guid.NewGuid(), telegramId).ConfigureAwait(false);
 
         Assert.False(result); // Должен вернуть false, так как ID уже есть
     }
@@ -58,9 +62,9 @@ public class TgComprRepositoryTests
         Guid expectedAppId = Guid.NewGuid();
         long telegramId = 123456789;
 
-        await repository.AddTgAsync(expectedAppId, telegramId);
+        await repository.AddTgAsync(expectedAppId, telegramId).ConfigureAwait(false);
 
-        Guid result = await repository.GetIdByTgAsync(telegramId);
+        Guid result = await repository.GetIdByTgAsync(telegramId).ConfigureAwait(false);
 
         Assert.Equal(expectedAppId, result);
     }
@@ -71,7 +75,7 @@ public class TgComprRepositoryTests
         using var context = GetInMemoryContext();
         var repository = new TgComprRepository(context);
 
-        Guid result = await repository.GetIdByTgAsync(999999999); // Несуществующий ID
+        Guid result = await repository.GetIdByTgAsync(999999999).ConfigureAwait(false); // Несуществующий ID
 
         Assert.Equal(Guid.Empty, result); // Должен вернуть пустой GUID
     }
@@ -85,9 +89,9 @@ public class TgComprRepositoryTests
         Guid appId = Guid.NewGuid();
         long expectedTelegramId = 123456789;
 
-        await repository.AddTgAsync(appId, expectedTelegramId);
+        await repository.AddTgAsync(appId, expectedTelegramId).ConfigureAwait(false);
 
-        long? result = await repository.GetTgId(appId);
+        long? result = await repository.GetTgId(appId).ConfigureAwait(false);
 
         Assert.Equal(expectedTelegramId, result);
     }
@@ -97,10 +101,10 @@ public class TgComprRepositoryTests
     {
         using var context = GetInMemoryContext();
         var repository = new TgComprRepository(context);
-        Guid id=Guid.NewGuid();
-        context.Set<TgComprehension>().Add(new TgComprehension{Appid = id,TgId = 123456789});
-        await context.SaveChangesAsync();
-        long? result = await repository.GetTgId(Guid.NewGuid());
+        Guid id = Guid.NewGuid();
+        context.Set<TgComprehension>().Add(new TgComprehension { Appid = id, TgId = 123456789 });
+        await context.SaveChangesAsync().ConfigureAwait(false);
+        long? result = await repository.GetTgId(Guid.NewGuid()).ConfigureAwait(false);
 
         Assert.Null(result); // Должен вернуть null
     }

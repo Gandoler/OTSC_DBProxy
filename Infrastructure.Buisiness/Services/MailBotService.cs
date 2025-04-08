@@ -1,3 +1,9 @@
+// <copyright file="MailBotService.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace UseCases.Services;
+
 using Domain.DTO.DTO.Friend;
 using Domain.DTO.DTO.Pozdr;
 using Domain.Interfaces;
@@ -6,39 +12,38 @@ using Domain.Models;
 using Entities.Templates;
 using UseCases.Repositoties;
 
-namespace UseCases.Services;
-
-public class MailBotService: IMailBotService
+public class MailBotService : IMailBotService
 {
-    private readonly IMailComprRepository _mailComprRepository;
-    private readonly IFriendRepository _friendRepository;
-    private readonly IPozdrikRepository _pozdrikRepository;
+    private readonly IMailComprRepository mailComprRepository;
+    private readonly IFriendRepository friendRepository;
+    private readonly IPozdrikRepository pozdrikRepository;
 
     public MailBotService(IMailComprRepository mailComprRepository, IFriendRepository friendRepository,
         IPozdrikRepository pozdrikRepository)
     {
-        _mailComprRepository = mailComprRepository;
-        _friendRepository = friendRepository;
-        _pozdrikRepository = pozdrikRepository;
+        this.mailComprRepository = mailComprRepository;
+        this.friendRepository = friendRepository;
+        this.pozdrikRepository = pozdrikRepository;
     }
-        
+
     public async Task<List<FriendList>> SelectForTodayBithrday()
     {
-        return await _friendRepository.SelectForTodayBithrdayAsync();
+        return await this.friendRepository.SelectForTodayBithrdayAsync().ConfigureAwait(false);
     }
 
     public async Task<string?> SelectPozdStringAsync(PozdrikIdDto pozdrikId)
     {
-        return await _pozdrikRepository.SelectPozdrikAsync(pozdrikId._pozdrikId);
+        return await this.pozdrikRepository.SelectPozdrikAsync(pozdrikId.PozdrikId).ConfigureAwait(false);
     }
 
     public Task<string?> GetEmailAsync(AppIdDto appId)
     {
-        return _mailComprRepository.GetMailByIdAsync(appId.AppId);
+        return this.mailComprRepository.GetMailByIdAsync(appId.AppId);
     }
+
     public async Task<PozdrikIdDto> GetPozdrikId(FriendDto friendDto)
     {
         return new PozdrikIdDto
-            { _pozdrikId = await _friendRepository.GetPozdrikIdAsync(friendDto.FriendUsername, friendDto.AppId) };
+        { PozdrikId = await this.friendRepository.GetPozdrikIdAsync(friendDto.FriendUsername, friendDto.AppId).ConfigureAwait(false) };
     }
 }

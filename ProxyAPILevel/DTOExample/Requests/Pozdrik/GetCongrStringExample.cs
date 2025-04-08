@@ -1,7 +1,11 @@
-using Domain.DTO.DTO.Pozdr;
-using Swashbuckle.AspNetCore.Filters;
+// <copyright file="GetCongrStringExample.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ProxyAPILeval.DTOExample;
+
+using Domain.DTO.DTO.Pozdr;
+using Swashbuckle.AspNetCore.Filters;
 
 public class GetCongrStringExample : IExamplesProvider<PozdrikIdDto>
 {
@@ -9,6 +13,7 @@ public class GetCongrStringExample : IExamplesProvider<PozdrikIdDto>
     {
         return new PozdrikIdDto
         {
-            _pozdrikId = 6
+            PozdrikId = 6,
         };
-    }}
+    }
+}

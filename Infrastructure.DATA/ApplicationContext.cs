@@ -1,27 +1,30 @@
-﻿using Domain.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿// <copyright file="ApplicationContext.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace Infrastructure.DATA;
+
+using Domain.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 public partial class ApplicationContext : DbContext
 {
     public ApplicationContext()
     {
-        
     }
 
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
         : base(options)
     {
     }
-    
-    private readonly string? _connectionString;
+
+    private readonly string? connectionString;
 
     public ApplicationContext(DbContextOptions<ApplicationContext> options, IConfiguration configuration)
         : base(options)
     {
-        _connectionString = configuration.GetConnectionString("DefaultConnection");
+        this.connectionString = configuration.GetConnectionString("DefaultConnection");
     }
 
     public virtual DbSet<FriendList> FriendLists { get; set; }
@@ -39,29 +42,30 @@ public partial class ApplicationContext : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseNpgsql(_connectionString);
+            optionsBuilder.UseNpgsql(this.connectionString);
         }
-// #if DEBUG
-//         if (!optionsBuilder.IsConfigured)
-//         {
-//             var config = new ConfigurationBuilder()
-//                 .SetBasePath(Directory.GetCurrentDirectory())
-//                 .AddJsonFile("appsettings.json")
-//                 .Build();
-//
-//             var connectionString = config.GetConnectionString("DefaultConnection");
-//
-//             if (string.IsNullOrEmpty(connectionString))
-//             {
-//                 throw new InvalidOperationException("Connection string 'DefaultConnection' is not set.");
-//             }
-//
-//             optionsBuilder.UseNpgsql(connectionString);
-//         }
-// #endif
+
+        // #if DEBUG
+        //         if (!optionsBuilder.IsConfigured)
+        //         {
+        //             var config = new ConfigurationBuilder()
+        //                 .SetBasePath(Directory.GetCurrentDirectory())
+        //                 .AddJsonFile("appsettings.json")
+        //                 .Build();
+        //
+        //             var connectionString = config.GetConnectionString("DefaultConnection");
+        //
+        //             if (string.IsNullOrEmpty(connectionString))
+        //             {
+        //                 throw new InvalidOperationException("Connection string 'DefaultConnection' is not set.");
+        //             }
+        //
+        //             optionsBuilder.UseNpgsql(connectionString);
+        //         }
+        // #endif
     }
 
-   protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<FriendList>(entity =>
         {
@@ -150,7 +154,7 @@ public partial class ApplicationContext : DbContext
             entity.Property(e => e.Password).HasColumnName("password");
         });
 
-        OnModelCreatingPartial(modelBuilder);
+        this.OnModelCreatingPartial(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

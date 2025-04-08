@@ -13,7 +13,7 @@ namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
     [Migration("20250312084034_testjenek")]
-    partial class testjenek
+    partial class Testjenek
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

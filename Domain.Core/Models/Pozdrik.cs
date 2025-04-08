@@ -1,7 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// <copyright file="Pozdrik.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace Domain.Models;
+
+using System;
+using System.Collections.Generic;
 
 public partial class Pozdrik
 {

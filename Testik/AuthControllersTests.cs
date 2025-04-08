@@ -1,4 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿// <copyright file="AuthControllersTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace Testik;
+
+using System.Threading.Tasks;
 using Domain.Interfaces.IServices;
 using Entities.Templates;
 using Microsoft.AspNetCore.Mvc;
@@ -6,17 +12,15 @@ using Moq;
 using ProxyAPILevel;
 using Xunit;
 
-namespace Testik;
-
 public class AuthControllerTests
 {
-    private readonly Mock<IAuthService> _authServiceMock;
-    private readonly AuthController _authController;
+    private readonly Mock<IAuthService> authServiceMock;
+    private readonly AuthController authController;
 
     public AuthControllerTests()
     {
-        _authServiceMock = new Mock<IAuthService>();
-        _authController = new AuthController(_authServiceMock.Object);
+        this.authServiceMock = new Mock<IAuthService>();
+        this.authController = new AuthController(this.authServiceMock.Object);
     }
 
     [Fact]
@@ -24,10 +28,10 @@ public class AuthControllerTests
     {
         // Arrange
         var loginDto = new LoginDto { Login = "user1", Password = "password1" };
-        _authServiceMock.Setup(s => s.ExicstCheckAsync(loginDto)).ReturnsAsync(true);
+        this.authServiceMock.Setup(s => s.ExicstCheckAsync(loginDto)).ReturnsAsync(true);
 
         // Act
-        var result = await _authController.CheckUserExists(loginDto).ConfigureAwait(false) as OkObjectResult;
+        var result = await this.authController.CheckUserExists(loginDto)as OkObjectResult;
 
         // Assert
         Assert.NotNull(result);
@@ -40,10 +44,10 @@ public class AuthControllerTests
     {
         // Arrange
         var loginDto = new LoginDto { Login = "unknownuser", Password = "password123" };
-        _authServiceMock.Setup(s => s.ExicstCheckAsync(loginDto)).ReturnsAsync(false);
-        //
+        this.authServiceMock.Setup(s => s.ExicstCheckAsync(loginDto)).ReturnsAsync(false);
+
         // Act
-        var result = await _authController.CheckUserExists(loginDto).ConfigureAwait(false) as OkObjectResult;
+        var result = await this.authController.CheckUserExists(loginDto)as OkObjectResult;
 
         // Assert
         Assert.NotNull(result);

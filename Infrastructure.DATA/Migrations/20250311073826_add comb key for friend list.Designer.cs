@@ -13,7 +13,7 @@ namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
     [Migration("20250311073826_add comb key for friend list")]
-    partial class addcombkeyforfriendlist
+    partial class Addcombkeyforfriendlist
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

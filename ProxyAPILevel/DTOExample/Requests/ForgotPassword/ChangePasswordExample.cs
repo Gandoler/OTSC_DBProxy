@@ -1,8 +1,12 @@
+// <copyright file="ChangePasswordExample.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace ProxyAPILeval.DTOExample.ForgotPassword;
+
 using Entities.Templates;
 using ProxyAPILevel;
 using Swashbuckle.AspNetCore.Filters;
-
-namespace ProxyAPILeval.DTOExample.ForgotPassword;
 
 public class ChangePasswordExample : IExamplesProvider<LoginDto>
 {
@@ -10,8 +14,8 @@ public class ChangePasswordExample : IExamplesProvider<LoginDto>
     {
         return new LoginDto
         {
-           Password = "faaweafafw234",
-           Login = "admin"
+            Password = "faaweafafw234",
+            Login = "admin",
         };
     }
 }
